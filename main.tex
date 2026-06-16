@@ -1,14 +1,742 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
 
-\title{BSS_PRAVO}
-\author{248689 }
-\date{June 2026}
+\geometry{margin=2.35cm}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={B-CS statnice - pravo a politika pro kyberbezpecnost},
+  pdfauthor={Petr Marinec}
+}
+\setlist[itemize]{leftmargin=*, topsep=2pt, itemsep=2pt}
+\setlist[enumerate]{leftmargin=*, topsep=2pt, itemsep=2pt}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.8em}{}
+\newcommand{\otazka}[3]{\section*{#1}\addcontentsline{toc}{section}{#1}\noindent\textbf{Znění otázky:} #2\par\medskip\noindent\textbf{Kurz:} #3\par\medskip}
+\newcommand{\zkouska}[1]{\medskip\noindent\colorbox{blue!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Co říct u zkoušky:} #1}}\medskip}
+\newcommand{\pozor}[1]{\medskip\noindent\colorbox{red!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Pozor:} #1}}\medskip}
+\newcommand{\priklad}[1]{\medskip\noindent\colorbox{green!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Příklad:} #1}}\medskip}
+\newcommand{\zdroje}[1]{\medskip\noindent\textbf{Zdroje k opakování:} #1\medskip}
+
+\title{B-CS státnice: právo a politika pro kyberbezpečnost\\\large Rozšířené učební poznámky k otázkám 15-23}
+\author{248689}
+\date{Aktualizováno 16. června 2026}
 
 \begin{document}
-
 \maketitle
+\tableofcontents
+\newpage
 
-\section{Introduction}
+\section*{Jak s materiálem pracovat}
+\addcontentsline{toc}{section}{Jak s materiálem pracovat}
+Tyto poznámky vycházejí z přiloženého PDF \emph{Statnice B-CS blok 3, otázky 15-23, v4.2}, zachovávají jeho právní korekce a doplňují je do podoby širších studijních zápisků. U prvních tří BSS otázek jsou navíc zapracované dodané starší poznámky: širší vymezení bezpečnostních studií, vztah bezpečnostních a strategických studií, sektory, pojmy hrozba/riziko a základy kyberválky. U právních otázek je hlavním východiskem ověřený aktuální stav, ne starší právo.
+
+U každé otázky je nejdříve kostra odpovědi, potom rozbor přesně podle podotázek ze zadání. U zkoušky je dobré nemluvit jen seznamem pojmů, ale vždy ukázat vztah: \emph{co chráním, před kým nebo čím, jaký je právní/institucionální režim, jaký je praktický dopad a kde je typická zkoušková chyba}.
+
+\section*{Stavová tabulka k právu a strategiím}
+\addcontentsline{toc}{section}{Stavová tabulka k právu a strategiím}
+\begin{longtable}{p{0.25\linewidth}p{0.24\linewidth}p{0.20\linewidth}p{0.24\linewidth}}
+\toprule
+\textbf{Předpis / dokument} & \textbf{Stav k 16. 6. 2026} & \textbf{Použitelnost / účinnost} & \textbf{Co si pamatovat}\\
+\midrule
+NIS2 - směrnice 2022/2555 & Platná; transpoziční lhůta skončila 17. 10. 2024. & V ČR transponována hlavně zákonem č. 264/2025 Sb. & Směrnice se neuplatní jako běžný český zákon sama o sobě; do praxe ji převádí národní úprava.\\
+\addlinespace
+Zákon č. 264/2025 Sb., o kybernetické bezpečnosti & Účinný, nahradil zákon č. 181/2014 Sb. & 1. 11. 2025. & Režim vyšších a nižších povinností, sebeidentifikace regulované služby, hlášení incidentů, odpovědnost vedení.\\
+\addlinespace
+Vyhlášky k novému ZKB & Účinné od 1. 11. 2025. & Zejména vyhl. č. 408/2025 Sb. k regulovaným službám, 409/2025 Sb. k vyšším povinnostem, 410/2025 Sb. k nižším povinnostem. & U zkoušky je důležité rozlišit, jestli subjekt vůbec poskytuje regulovanou službu a v jakém režimu.\\
+\addlinespace
+Národní strategie kybernetické bezpečnosti 2026-2030 & Zveřejněna NÚKIB 8. 9. 2025. & Strategický dokument od roku 2026. & Navazuje na Bezpečnostní strategii ČR 2023, Obrannou strategii 2023, EU a NATO dokumenty; akční plán je samostatný implementační dokument.\\
+\addlinespace
+CER - směrnice 2022/2557 a zákon č. 266/2025 Sb. & Nová úprava odolnosti kritických subjektů. & Zákon účinný od 19. 8. 2025, praktické zařazování probíhá v přechodných lhůtách. & Vedle kybernetické bezpečnosti řeší fyzickou a organizační odolnost kritických subjektů.\\
+\addlinespace
+DORA - nařízení 2022/2554 & Platné a použitelné. & 17. 1. 2025. & Lex specialis pro finanční sektor: ICT rizika, incidenty, testování digitální odolnosti, dohled nad ICT třetími stranami.\\
+\addlinespace
+CRA - nařízení 2024/2847 & V platnosti. & Hlášení od 11. 9. 2026, hlavní povinnosti od 11. 12. 2027. & Produkty s digitálními prvky: bezpečný vývoj, zranitelnosti, aktualizace, CE logika.\\
+\addlinespace
+EU e-evidence - nařízení 2023/1543 & Platné. & Použitelné od 18. 8. 2026. & EPOC je evropský příkaz k vydání, EPOC-PR je příkaz k uchování. Neplést lhůty vydání a uchování.\\
+\addlinespace
+EU e-evidence - směrnice 2023/1544 & Platná; členské státy měly transponovat do 18. 2. 2026. & Navazuje na použitelnost e-evidence režimu. & Určené provozovny a právní zástupci poskytovatelů pro příjem příkazů.\\
+\addlinespace
+eIDAS 2.0 - nařízení 2024/1183 & V platnosti od 20. 5. 2024. & EUDI peněženky do konce roku 2026; další povinnosti postupně. & Kvalifikovaný elektronický podpis má účinky vlastnoručního podpisu; EUDI peněženka přidává digitální identitu.\\
+\addlinespace
+2. dodatkový protokol k Budapešťské úmluvě - CETS 224 & Stále není v platnosti, protože je potřeba pět ratifikací. & Vstup po splnění ratifikační podmínky. & Nelze ho uvádět jako už účinný právní základ; je to budoucí nástroj přímější spolupráce.\\
+\addlinespace
+Úmluva OSN proti kyberkriminalitě & Není v platnosti; UNTC uvádí 77 signatářů a 3 strany. & Vstup 90 dní po 40. ratifikaci. & Podpis není ratifikace. U zkoušky říct, že jde zatím hlavně o politický a budoucí kooperační rámec.\\
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\otazka{15. Vymezení bezpečnostních studií}{Pojmy bezpečnost, hrozba a riziko a jejich použití v oblasti kyberbezpečnosti. Vnitřní a vnější bezpečnost a sektory z pohledu kyberbezpečnosti. Vymezení bezpečnostní politiky a její analýza se zaměřením na politiku v oblasti kyberbezpečnosti.}{BSSb1101}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Vymezit bezpečnostní studia: co zkoumají, proč se po studené válce rozšířila a jak souvisejí se strategickými studii.
+  \item Vysvětlit řetězec bezpečnost - hrozba - zranitelnost - riziko, vždy obecně i kyberneticky.
+  \item Ukázat rozdíl mezi vnitřní a vnější bezpečností a vysvětlit, proč ho kyberprostor rozmazává.
+  \item Popsat sektory bezpečnosti podle Kodaňské školy a pojem sekuritizace.
+  \item Vymezit bezpečnostní politiku a nabídnout postup její analýzy v kyberbezpečnosti.
+\end{enumerate}
+
+\subsection*{Bezpečnostní studia jako obor}
+Bezpečnostní studia zkoumají, jaké hodnoty jsou ohroženy, odkud ohrožení přichází, kdo je za bezpečnost odpovědný a jakými nástroji lze bezpečnost zajišťovat. V klasickém pojetí byla bezpečnost spojena hlavně se státem, armádou a válkou. Proto se bezpečnostní studia dlouho brala jako subdisciplína mezinárodních vztahů a strategická studia byla jejich vojensky orientovanou částí.
+
+Po studené válce se pojetí bezpečnosti rozšířilo. Do centra se dostala nejen vojenská agrese, ale i ekonomická závislost, terorismus, organizovaný zločin, energetika, migrace, pandemie, klimatické dopady, informační operace a kybernetické útoky. Po 11. září 2001 se významně posílila také studia vnitřní bezpečnosti, protože hrozby už nebylo možné pohodlně rozdělit na "venku je armáda" a "uvnitř je policie".
+
+Bezpečnostní studia jsou proto průřezová. Berou si pojmy z politologie, mezinárodních vztahů, práva, sociologie, ekonomie, psychologie, historie, kriminologie, vojenské vědy a technických oborů. Kyberbezpečnost je v tom typická: nejde čistě o techniku, protože útok na nemocnici je zároveň technický incident, právní problém, krizové řízení, otázka lidské bezpečnosti, ekonomická škoda a často i zahraničněpolitický signál.
+
+\zkouska{Začni větou: "Bezpečnostní studia nejsou jen studium války, ale širší obor zkoumající hrozby vůči chráněným hodnotám a způsoby jejich zvládání." Potom hned ukaž, že kyberbezpečnost je dobrý příklad rozšířeného pojetí bezpečnosti.}
+
+\subsection*{Bezpečnost, hrozba, zranitelnost a riziko}
+\subsubsection*{Bezpečnost}
+Bezpečnost je stav i proces. Jako stav znamená, že chráněná hodnota není vystavena nepřijatelnému nebezpečí. Jako proces znamená soustavné snižování hrozeb, zranitelností a dopadů na přijatelnou úroveň. Důležité je ptát se: bezpečnost koho nebo čeho? Referenčním objektem může být stát, obyvatelstvo, jednotlivec, firma, nemocnice, informační systém, data nebo důvěra ve volby.
+
+V kyberbezpečnosti se bezpečnost často konkretizuje přes triádu CIA:
+\begin{itemize}
+  \item \textbf{Důvěrnost} - k datům se dostane jen oprávněná osoba.
+  \item \textbf{Integrita} - data a systémy nejsou neoprávněně změněny.
+  \item \textbf{Dostupnost} - služba funguje, když ji uživatel potřebuje.
+\end{itemize}
+U kritických služeb je potřeba doplnit i odolnost, schopnost obnovy, auditovatelnost, autenticitu a bezpečnost dodavatelského řetězce.
+
+Je také užitečné rozlišit \emph{security} a \emph{safety}. Security míří na úmyslné jednání, například hacking, sabotáž nebo špionáž. Safety míří na neúmyslné nebo přírodní události, například požár, povodeň, technické selhání nebo chybu obsluhy. V praxi se prolínají: výpadek nemocničního systému může začít jako security incident, ale dopady má na safety pacientů.
+
+\subsubsection*{Hrozba}
+Hrozba je potenciální zdroj škody. Může být intencionální, tedy spojená s vůlí aktéra, nebo neintencionální, například přírodní událost či lidská chyba. V kyberbezpečnosti je hrozbou ransomwarová skupina, státem podporovaná APT skupina, insider, botnet, chyba administrátora, požár serverovny nebo výpadek dodavatele cloudu.
+
+Hrozby lze dál popsat jako aktivní, pasivní, pokročilé nebo trvalé:
+\begin{itemize}
+  \item aktivní hrozba se snaží přímo škodit, typicky malware, DDoS nebo kompromitace účtu,
+  \item pasivní hrozba sleduje, odposlouchává nebo sbírá informace,
+  \item pokročilá hrozba používá sofistikované metody, zero-day zranitelnosti a cílený spear phishing,
+  \item trvalá hrozba odpovídá APT logice - dlouhodobé a skryté působení v systému.
+\end{itemize}
+
+\subsubsection*{Zranitelnost}
+Zranitelnost je slabina, přes kterou hrozba může způsobit škodu. Technicky to může být neopravená chyba, špatná konfigurace, slabé heslo nebo chybějící MFA. Organizačně to může být chybějící plán obnovy, nejasné odpovědnosti, neproškolení lidé nebo závislost na jednom dodavateli. Zranitelnost je prakticky nejlépe ovlivnitelná: opravy, segmentace, zálohy, řízení přístupů, školení, monitoring a testování obnovy.
+
+\subsubsection*{Riziko}
+Riziko je vztah hrozby ke konkrétnímu referenčnímu objektu. Jednoduše se říká, že riziko je pravděpodobnost krát dopad, ale je to jen pomůcka. Přesnější je vnímat riziko jako kombinaci pravděpodobnosti, dopadu, zranitelnosti, expozice, nejistoty a schopnosti reakce. Stejná hrozba vytváří jiné riziko pro malý blog, jiné pro banku a jiné pro nemocnici.
+
+\priklad{Ransomwarová skupina je hrozba. Nemocnice se starými systémy, bez segmentace a bez ověřených offline záloh má vysoké riziko, protože dopad na péči bude kritický. Firma se segmentací, EDR, testovanými zálohami a plánem obnovy čelí stejné hrozbě, ale riziko je nižší.}
+
+\pozor{Neříkej "hrozba rovná se riziko". Hrozba je zdroj možného poškození, riziko je míra ohrožení konkrétního objektu.}
+
+\subsection*{Vnitřní a vnější bezpečnost v kyberprostoru}
+Vnější bezpečnost tradičně chrání stát před hrozbami zvenčí: vojenskou agresí, nepřátelskými státy, zahraničními zpravodajskými službami nebo mezinárodním nátlakem. Nástroje jsou diplomacie, obrana, aliance a zpravodajství. Vnitřní bezpečnost řeší stabilitu a pořádek uvnitř státu: kriminalitu, terorismus, extremismus, ochranu obyvatelstva, veřejný pořádek a fungování institucí.
+
+Kyberprostor toto dělení stírá ze tří důvodů. Zaprvé je neteritoriální: útok může být řízen z jiného kontinentu, infrastruktura může být v cloudu ve třetí zemi a dopad se projeví v české nemocnici. Zadruhé je atribuce nejistá: nevíme hned, jestli útočí stát, kriminální skupina, hacktivisté nebo proxy aktér. Zatřetí většinu relevantní infrastruktury vlastní soukromý sektor, takže bezpečnost nelze zajistit jen státním rozkazem.
+
+Proto se v kyberbezpečnosti potkává NÚKIB, policie, zpravodajské služby, armáda, ministerstva, kraje, obce, regulované organizace, poskytovatelé služeb, dodavatelé technologií, CERT/CSIRT týmy a mezinárodní partneři. Kybernetický incident může být současně trestným činem, porušením GDPR, incidentem podle ZKB, krizovou situací a zahraničněpolitickou otázkou.
+
+\subsection*{Sektory bezpečnosti a sekuritizace}
+Kodaňská škola rozšířila bezpečnost do pěti sektorů:
+\begin{itemize}
+  \item \textbf{vojenský} - obrana, ozbrojené síly, schopnost odstrašení,
+  \item \textbf{politický} - suverenita, legitimita, stabilita institucí,
+  \item \textbf{ekonomický} - finance, obchod, energie, dodavatelské řetězce,
+  \item \textbf{societální} - identita, sociální soudržnost, důvěra,
+  \item \textbf{environmentální} - životní prostředí a přírodní zdroje.
+\end{itemize}
+Kyberbezpečnost je průřezová. Útok na energetiku je vojenský i ekonomický problém, ransomware v nemocnici je lidská bezpečnost a kritická infrastruktura, dezinformační operace míří na politický a societální sektor.
+
+Sekuritizace je proces, kdy aktér prohlásí téma za existenční hrozbu pro referenční objekt a publikum toto rámování přijme. Nestačí tedy, že politik řekne "tohle je bezpečnostní hrozba". Úspěšná sekuritizace nastává až tehdy, když relevantní publikum přijme mimořádná opatření. Kyberbezpečnost se za poslední dvě dekády sekuritizovala: z technické otázky správců sítí se stala součást národní bezpečnosti, vznikl samostatný úřad, zákon, strategie, povinnosti organizací a mezinárodní sankční/diplomatická reakce.
+
+\subsection*{Bezpečnostní politika a její analýza}
+Bezpečnostní politika je soubor cílů, nástrojů, institucí a rozhodnutí, jimiž stát chrání své zájmy, obyvatelstvo a základní funkce. Patří do ní zahraniční, obranná, vnitrobezpečnostní, hospodářská, informační a kybernetická dimenze. V kyberbezpečnosti má bezpečnostní politika navíc regulační a koordinační roli: stát často nevlastní infrastrukturu, ale stanovuje pravidla, motivuje, kontroluje a koordinuje reakci.
+
+Analýzu bezpečnostní politiky je dobré dělat podle jednoduché šablony:
+\begin{enumerate}
+  \item \textbf{Referenční objekt} - co chráníme: stát, službu, data, volby, pacienty?
+  \item \textbf{Hrozby a rizika} - kdo nebo co škodí, jaké jsou zranitelnosti a dopady?
+  \item \textbf{Aktéři} - kdo rozhoduje, kdo provozuje, kdo útočí, kdo pomáhá?
+  \item \textbf{Nástroje} - právo, strategie, regulace, technická opatření, diplomacie, trestní právo, vzdělávání.
+  \item \textbf{Priority a trade-offy} - kolik to stojí, jaký je dopad na práva, podnikání a inovace?
+  \item \textbf{Vyhodnocení} - jak poznáme, že politika funguje?
+\end{enumerate}
+
+\zkouska{Když dostaneš otázku na analýzu kyberpolitiky, použij větu: "Nejdřív určím referenční objekt, pak hrozby a rizika, poté aktéry a nástroje, a nakonec hodnotím proporcionalitu, náklady, odpovědnosti a dopady na práva."}
+
+\zdroje{Původní PDF v4.2; dodané BSS poznámky; NIS2 definice v čl. 6 směrnice 2022/2555; Buzan, Waever, de Wilde: \emph{Security: A New Framework for Analysis}.}
+
+\newpage
+
+\otazka{16. Bezpečnostní strategie}{Dokumenty České republiky a význam kyberbezpečnosti v nich. Bezpečnostní systém České republiky a role institucí v oblasti kyberbezpečnosti.}{BSSb1103}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Vysvětlit, co je bezpečnostní strategie a jak se liší od zákona a akčního plánu.
+  \item Vyjmenovat klíčové dokumenty ČR a zařadit kyberbezpečnost.
+  \item Popsat bezpečnostní systém ČR: prezident, Parlament, vláda, BRS, ÚKŠ, ministerstva, kraje, složky.
+  \item Vysvětlit roli NÚKIB, MV, MO/Armády, policie, zpravodajských služeb, DIA, ČTÚ a soukromého sektoru.
+  \item Ukázat, jak strategie vede k právu, institucionálnímu systému a praktické reakci na incident.
+\end{enumerate}
+
+\subsection*{Co je bezpečnostní strategie}
+Bezpečnostní strategie je vrcholný politicko-strategický dokument. Nezakládá sama o sobě jednotlivci povinnosti jako zákon, ale určuje, jak stát chápe bezpečnostní prostředí, jaké má zájmy, jaké hrozby považuje za zásadní a jakými nástroji chce reagovat. Je to most mezi analýzou hrozeb a konkrétní politikou: z ní se odvozují rezortní strategie, akční plány, rozpočty, organizační změny a legislativa.
+
+Rozdíl mezi strategiemi je v úrovni obecnosti. Bezpečnostní strategie ČR je nejširší rámec. Obranná strategie řeší obranu státu a vojenskou dimenzi. Národní strategie kybernetické bezpečnosti řeší digitální a kybernetickou část bezpečnosti. Akční plán je implementační dokument: překládá strategické cíle do úkolů, termínů a odpovědných institucí.
+
+\subsection*{Dokumenty ČR a kyberbezpečnost}
+\textbf{Bezpečnostní strategie ČR 2023} vychází z výrazně zhoršeného bezpečnostního prostředí po ruské agresi proti Ukrajině. Zdůrazňuje, že hrozby jsou propojené: vojenské, hybridní, kybernetické, ekonomické, energetické a informační. Kyberbezpečnost v ní není okrajová IT agenda, ale součást ochrany suverenity, demokracie, kritické infrastruktury, ekonomiky a důvěry v instituce.
+
+\textbf{Obranná strategie ČR 2023} zdůrazňuje obranyschopnost, odstrašení, vazbu na NATO a potřebu připravit se i na operace v kyberprostoru a informačním prostředí. Pro státnice je důležité říct, že kyberobrana není totéž co kybernetická bezpečnost: kyberobrana je vojenská dimenze a spadá hlavně pod Ministerstvo obrany a Armádu ČR, zatímco civilní kyberbezpečnost koordinuje NÚKIB.
+
+\textbf{Národní strategie kybernetické bezpečnosti 2026-2030} je aktuální specializovaný dokument. NÚKIB ji zveřejnil v roce 2025 jako strategii platnou pro období 2026-2030. Navazuje na Bezpečnostní strategii ČR 2023, Obrannou strategii 2023, Strategickou koncepci NATO 2022 a unijní kybernetickou strategii. Důraz klade na odolnost státu a kritických služeb, bezpečnost dodavatelských řetězců, technologickou suverenitu, sdílení informací, detekci a reakci, lidské zdroje, mezinárodní spolupráci a koordinované odstrašení škodlivých aktérů.
+
+\textbf{Další relevantní dokumenty} jsou například Koncepce rozvoje NÚKIB, Národní politika koordinovaného zveřejňování zranitelností, strategické dokumenty k hybridnímu působení, krizovému řízení, ochraně kritické infrastruktury a digitální transformaci veřejné správy. U zkoušky není nutné vyjmenovat všechno, ale je dobré ukázat hierarchii: obecná bezpečnostní strategie - rezortní/specializovaná strategie - akční plán - zákony a vyhlášky - metodiky.
+
+\pozor{Nepoužívej starou formulaci, že strategie 2026-2030 není zveřejněná. Zveřejněná je; samostatný akční plán je potřeba ověřovat zvlášť.}
+
+\subsection*{Bezpečnostní systém ČR}
+Bezpečnostní systém ČR je soubor institucí, pravidel a procesů, jimiž stát zajišťuje bezpečnost. Ústavní rámec tvoří zejména Ústava, Listina, ústavní zákon č. 110/1998 Sb., o bezpečnosti ČR, krizová legislativa a zvláštní zákony.
+
+Základní logika systému:
+\begin{itemize}
+  \item \textbf{Parlament} přijímá zákony, rozhoduje o některých bezpečnostních otázkách a kontroluje vládu.
+  \item \textbf{Vláda} je hlavní výkonný orgán bezpečnostní politiky.
+  \item \textbf{Bezpečnostní rada státu} je stálý pracovní orgán vlády pro koordinaci bezpečnostních otázek.
+  \item \textbf{Ústřední krizový štáb} podporuje vládu při krizových situacích.
+  \item \textbf{Ministerstva a jiné ústřední orgány} mají gesce podle oblastí: vnitro, obrana, zahraničí, průmysl, zdravotnictví, doprava atd.
+  \item \textbf{Kraje, obce a složky IZS} zajišťují konkrétní výkon krizového řízení a ochrany obyvatelstva.
+\end{itemize}
+
+Kybernetická bezpečnost do toho vstupuje průřezově. Incident může vyžadovat technickou reakci, právní posouzení, krizové řízení, komunikaci s veřejností, trestní řízení a mezinárodní koordinaci. Proto nestačí jeden úřad: NÚKIB je gestor, ale není jediný aktér.
+
+\subsection*{Role institucí v kyberbezpečnosti}
+\textbf{NÚKIB} je ústřední správní úřad pro kybernetickou bezpečnost. Vede regulaci podle zákona o kybernetické bezpečnosti, provozuje vládní CERT GovCERT.CZ, vydává varování, metodiky, opatření a koordinuje reakce na významné incidenty. Je také klíčovým aktérem strategické a mezinárodní kyberpolitiky.
+
+\textbf{CSIRT.CZ} je národní CSIRT tým, který pomáhá hlavně s koordinací incidentů mimo vládní sektor. V praxi je důležité rozlišit vládní CERT a národní CSIRT.
+
+\textbf{Policie ČR a státní zastupitelství} řeší kyberkriminalitu. Technickou expertizu mají specializované útvary, ale procesní rámec je trestní řád.
+
+\textbf{Zpravodajské služby} sledují hrozby podle své působnosti: BIS vnitřní bezpečnost, ÚZSI zahraniční zpravodajství, Vojenské zpravodajství obrannou oblast. V kyberprostoru je jejich význam velký hlavně u státních aktérů, špionáže, atribuce a varování.
+
+\textbf{Ministerstvo obrany a Armáda ČR} odpovídají za kyberobranu a vojenské působení v kyberprostoru. Národní centrum kybernetických operací a další vojenské kapacity patří do obranné logiky státu.
+
+\textbf{Ministerstvo vnitra} je důležité pro krizové řízení, vnitřní bezpečnost, ochranu obyvatelstva, veřejnou správu a podle nové úpravy také odolnost kritických subjektů v nekybernetické dimenzi. \textbf{DIA} je významná pro digitální služby státu, identitu občana a architekturu eGovernmentu. \textbf{ČTÚ} má roli v elektronických komunikacích a bude relevantní i u e-evidence režimu pro poskytovatele.
+
+\textbf{Soukromý sektor} je nezastupitelný, protože vlastní nebo provozuje velkou část sítí, služeb a technologií. Stát proto kombinuje regulaci, dohled, sdílení informací, pobídky, metodickou podporu a krizovou koordinaci.
+
+\priklad{Ransomware v nemocnici: nemocnice řeší obnovu, NÚKIB posuzuje incident podle ZKB a koordinuje, policie řeší trestný čin, ÚOOÚ řeší únik osobních údajů, kraj a zdravotnictví řeší kontinuitu péče, dodavatelé obnovují systémy a komunikační tým řeší důvěru veřejnosti.}
+
+\zkouska{Dobrá odpověď propojí strategické dokumenty s institucemi: strategie říká, co je problém a cíl; zákony dávají pravomoci a povinnosti; instituce provádějí prevenci, detekci, reakci a obnovu.}
+
+\zdroje{Bezpečnostní strategie ČR 2023; Obranná strategie ČR 2023; NÚKIB: Národní strategie kybernetické bezpečnosti 2026-2030; ústavní zákon č. 110/1998 Sb.; zákon č. 264/2025 Sb.}
+
+\newpage
+
+\otazka{17. Kyberválka}{Definice, historie, současné trendy. Identifikace aktérů, problémy s přisouzením kyberútoků, možnost odstrašení v kyberprostoru. Koncept netwars a jeho použití v kyberkonfliktu.}{BSSb1152}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Definovat kyberválku opatrně: ne každý kyberútok je válka.
+  \item Popsat historii: od raných incidentů přes Estonsko 2007, Gruzii 2008, Stuxnet, Ukrajinu, NotPetya až po současné hybridní konflikty.
+  \item Identifikovat aktéry: státy, proxy, kriminálníci, hacktivisté, firmy, jednotlivci.
+  \item Vysvětlit problém atribuce: technická, operační, strategická a politická rovina.
+  \item Vyložit odstrašení: by punishment, by denial, resilience, normy, sankce, právo.
+  \item Definovat netwars a ukázat jejich vztah k informačním a kybernetickým konfliktům.
+\end{enumerate}
+
+\subsection*{Definice kyberválky}
+Kyberválka je použití kybernetických prostředků v konfliktu mezi politickými aktéry, zejména státy, takovým způsobem, že účinky dosahují úrovně ozbrojeného konfliktu nebo jsou jeho součástí. Důležitá opatrnost: většina kyberútoků není kyberválka. Phishing, ransomware, špionáž nebo DDoS mohou být závažné, ale samy o sobě obvykle nepředstavují válku.
+
+U státnic je nejlepší definovat kyberválku jako užší pojem než kyberkonflikt. Kyberkonflikt zahrnuje špionáž, sabotáž, informační operace, kriminální outsourcing a nátlak pod prahem ozbrojeného útoku. Kyberválka je až krajní forma, kdy kybernetické operace plní vojenské cíle, působí rozsáhlé fyzické nebo funkční škody, případně jsou integrovány do konvenční války.
+
+Mezinárodní právo platí i v kyberprostoru. To znamená, že se uvažuje zákaz použití síly, právo na sebeobranu, mezinárodní humanitární právo, princip rozlišování, proporcionality a vojenské nezbytnosti. Sporné je, kdy přesně kyberoperace dosáhne prahu použití síly nebo ozbrojeného útoku.
+
+\subsection*{Historie a současné trendy}
+Vývoj kyberkonfliktu lze vykládat v několika milnících:
+\begin{itemize}
+  \item \textbf{rané incidenty} - ukázaly zranitelnost propojených systémů a význam špionáže,
+  \item \textbf{Estonsko 2007} - masivní DDoS a politicky motivované útoky jako symbol zranitelnosti digitální společnosti,
+  \item \textbf{Gruzie 2008} - kyberútoky doprovázející konvenční vojenský konflikt,
+  \item \textbf{Stuxnet} - sabotáž průmyslových systémů, propojení kyberprostoru a fyzického světa,
+  \item \textbf{Ukrajina od roku 2014} - útoky na energetiku, destruktivní malware, informační operace a testování ruských kapacit,
+  \item \textbf{NotPetya 2017} - destruktivní malware maskovaný jako ransomware, globální dopady na soukromé firmy,
+  \item \textbf{válka Ruska proti Ukrajině po roce 2022} - integrace kyberoperací, zpravodajství, satelitních služeb, informačních kampaní a civilní digitální infrastruktury.
+\end{itemize}
+
+Současné trendy jsou hlavně profesionalizace, komoditizace nástrojů, outsourcing přes proxy aktéry, ransomware jako strategická hrozba, útoky na dodavatelské řetězce, zneužívání cloudových identit, prolínání kyberoperací s dezinformacemi a využívání AI pro sociální inženýrství, automatizaci a analýzu cílů. Zároveň roste význam obrany: sdílení indikátorů, threat intelligence, zero trust, segmentace, cvičení a odolnost.
+
+\subsection*{Aktéři}
+\begin{itemize}
+  \item \textbf{Státy} - mají strategické cíle, zpravodajské kapacity, peníze a dlouhodobost.
+  \item \textbf{Státem podporované skupiny} - APT aktéři, kteří mohou být formálně odděleni od státu, ale plní jeho zájmy.
+  \item \textbf{Proxy aktéři} - kriminální nebo hacktivistické skupiny, které stát toleruje, řídí nebo využívá.
+  \item \textbf{Kyberkriminální skupiny} - motivované ziskem, ale někdy s politickým přesahem.
+  \item \textbf{Hacktivisté} - motivovaní ideologií, solidaritou nebo politickým protestem.
+  \item \textbf{Soukromé firmy} - poskytují bezpečnost, cloud, satelitní komunikaci, threat intelligence i ofensivní nástroje.
+  \item \textbf{Jednotlivci} - menší kapacita, ale v asymetrickém prostředí mohou způsobit velký dopad.
+\end{itemize}
+
+\subsection*{Atribuce kyberútoků}
+Atribuce je přisouzení útoku konkrétnímu aktérovi. Je obtížná, protože útočníci používají proxy servery, kompromitovanou infrastrukturu, falešné stopy, sdílené nástroje a ukradený kód. Atribuce má několik rovin:
+\begin{itemize}
+  \item \textbf{technická} - indikátory kompromitace, malware, infrastruktura, TTPs,
+  \item \textbf{operační} - jak skupina pracuje, kdy útočí, jaké cíle vybírá,
+  \item \textbf{strategická} - komu útok prospívá a zapadá do politického kontextu,
+  \item \textbf{právní a politická} - zda stát atribuci veřejně oznámí a s jakými důkazy.
+\end{itemize}
+Technicky lze mít vysokou pravděpodobnost, ale politická atribuce je rozhodnutí. Stát často nezveřejní všechny důkazy, protože by odhalil zpravodajské zdroje a metody.
+
+\subsection*{Odstrašení v kyberprostoru}
+Klasické jaderné odstrašení stojí na jasné atribuci, vysoké ceně útoku a věrohodné odvetě. V kyberprostoru je to složitější: atribuce je nejistá, útoky jsou pod prahem války, aktéři jsou různí a náklady na útok mohou být nízké.
+
+Přesto odstrašení existuje:
+\begin{itemize}
+  \item \textbf{deterrence by punishment} - hrozba odvetou: sankce, trestní stíhání, diplomatické kroky, kybernetická protiopatření,
+  \item \textbf{deterrence by denial} - ztížení útoku tak, aby se nevyplatil: segmentace, MFA, zálohy, monitoring,
+  \item \textbf{resilience} - schopnost rychle obnovit provoz a snížit strategický efekt útoku,
+  \item \textbf{normy a reputace} - budování pravidel odpovědného chování států,
+  \item \textbf{kolektivní reakce} - NATO, EU, společné atribuce, sankční režimy.
+\end{itemize}
+V praxi je nejúčinnější kombinace. Samotná hrozba odvetou nestačí, pokud útočník věří, že nebude odhalen nebo že oběť nebude reagovat.
+
+\subsection*{Netwars}
+Koncept netwars popisuje konflikty vedené síťově organizovanými aktéry, kteří využívají informační technologie, decentralizaci, rychlou komunikaci a propojení mnoha uzlů. Nejde jen o hacking. Netwar může zahrnovat propagandu, mobilizaci, dezinformace, psychologické působení, hacktivismus, úniky dat, koordinované kampaně a tlak na veřejné mínění.
+
+V kyberkonfliktu se netwars projevují tak, že vedle technických útoků běží informační operace. Útočník nejen shodí službu, ale zároveň šíří narativ, že stát je neschopný. Nejen ukradne e-maily, ale zveřejní je ve správný politický moment. Nejen napadne infrastrukturu, ale posiluje chaos na sociálních sítích.
+
+\priklad{Před volbami dojde k průniku do e-mailů politické strany, selektivnímu úniku dokumentů, DDoS na volební web a koordinované kampani na sociálních sítích. Technická část je kyberoperace, celek je síťový informační konflikt - netwar.}
+
+\zkouska{V odpovědi zdůrazni hranici: kyberválka je úzký pojem, kyberkonflikt širší. Nejčastější realita je působení pod prahem války, v šedé zóně, s nejistou atribucí a kombinací technických a informačních prostředků.}
+
+\zdroje{Přiložené PDF a BSS poznámky; Tallinn Manual jako akademický rámec; NATO a EU dokumenty k odpovědnému chování a kolektivní reakci.}
+
+\newpage
+
+\otazka{18. Ochrana kritické infrastruktury}{Kyberútoky na kritickou infrastrukturu. Přisouzení a odstrašování v kyberprostoru.}{BSSb1103}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Vymezit kritickou infrastrukturu a kritické subjekty: služby nezbytné pro fungování státu a společnosti.
+  \item Vysvětlit specifika OT/ICS, SCADA a propojení fyzického a digitálního světa.
+  \item Popsat typické kyberútoky na KI a jejich dopady.
+  \item Vyložit ochranu: prevence, detekce, reakce, obnova, kontinuita, fyzická bezpečnost.
+  \item Zopakovat atribuci a odstrašení v kontextu KI.
+\end{enumerate}
+
+\subsection*{Vymezení kritické infrastruktury}
+Kritická infrastruktura zahrnuje prvky, systémy a služby, jejichž narušení by mělo závažný dopad na bezpečnost státu, životy a zdraví osob, ekonomiku nebo základní funkce společnosti. Typicky jde o energetiku, dopravu, zdravotnictví, vodní hospodářství, digitální infrastrukturu, finanční služby, veřejnou správu, potraviny, chemický průmysl a další základní odvětví.
+
+Novější evropský přístup používá vedle kritické infrastruktury také jazyk kritických subjektů a odolnosti. Směrnice CER a česká transpozice posouvají důraz od pouhého seznamu objektů k tomu, aby subjekt zvládal rizika, kontinuitu a obnovu. Zákon o kybernetické bezpečnosti zase řeší kybernetickou rovinu regulovaných služeb. Tyto režimy se mohou překrývat: nemocnice může být důležitá zdravotní služba, regulovaný subjekt podle ZKB a zároveň správce osobních údajů podle GDPR.
+
+\subsection*{Proč je kyberútok na KI zvláštní}
+Útok na běžnou firmu může znamenat finanční škodu. Útok na kritickou infrastrukturu může zastavit péči, dodávky elektřiny, dopravu, komunikaci nebo fungování úřadů. U KI se proto neřeší jen důvěrnost dat, ale hlavně dostupnost, integrita provozu a bezpečnost lidí.
+
+Specifické jsou průmyslové systémy OT/ICS:
+\begin{itemize}
+  \item mají dlouhou životnost a často běží na starších technologiích,
+  \item nelze je snadno vypnout kvůli aktualizaci,
+  \item výpadek může způsobit fyzickou škodu,
+  \item priorita je bezpečný provoz, ne jen IT čistota,
+  \item bývají závislé na dodavatelích a vzdálené správě.
+\end{itemize}
+Proto se ochrana OT nedá kopírovat z kancelářského IT. Potřebuje segmentaci, řízení vzdáleného přístupu, monitoring průmyslových protokolů, testované manuální režimy, bezpečnost změn a silnou spolupráci provozu s bezpečností.
+
+\subsection*{Typické útoky}
+\begin{itemize}
+  \item \textbf{Ransomware} - zašifruje IT a nepřímo zastaví provoz; u nemocnic ohrožuje péči.
+  \item \textbf{Destruktivní malware} - cílem není výkupné, ale zničení nebo chaos.
+  \item \textbf{Útok na OT/ICS} - manipulace s řídicími systémy, senzory nebo logikou provozu.
+  \item \textbf{DDoS} - nedostupnost služeb veřejnosti nebo podpůrných systémů.
+  \item \textbf{Dodavatelský řetězec} - kompromitace aktualizace, dodavatele nebo vzdálené správy.
+  \item \textbf{Špionáž} - dlouhodobé mapování infrastruktury pro budoucí krizi.
+\end{itemize}
+
+\priklad{Útok na energetickou distribuční společnost nemusí okamžitě vypnout elektřinu. Může nejdřív mapovat síť, ukrást přístupy, narušit dohledové systémy a připravit možnost škody v době politické nebo vojenské krize.}
+
+\subsection*{Ochrana kritické infrastruktury}
+Ochrana KI je kombinace prevence, detekce, reakce a obnovy:
+\begin{itemize}
+  \item \textbf{řízení rizik} - vědět, které služby jsou kritické a na čem závisejí,
+  \item \textbf{segmentace} - oddělit kancelářské IT, kritické systémy a OT,
+  \item \textbf{přístupová práva} - MFA, privilegované účty, princip nejmenších oprávnění,
+  \item \textbf{zálohy a obnova} - offline/immutable zálohy a pravidelné testy obnovy,
+  \item \textbf{monitoring a detekce} - SIEM, EDR, logy, OT monitoring,
+  \item \textbf{dodavatelská bezpečnost} - smlouvy, kontrola vzdálených přístupů, bezpečnostní požadavky,
+  \item \textbf{BCM a krizové plány} - kontinuita služeb, manuální postupy, cvičení,
+  \item \textbf{fyzická bezpečnost} - přístup do objektů, napájení, ochrana datových center.
+\end{itemize}
+
+\subsection*{Přisouzení a odstrašování u KI}
+Atribuce u útoků na KI je politicky citlivá, protože veřejné přisouzení státu může znamenat eskalaci. Přesto je důležitá pro odstrašení: pokud útočník ví, že bude identifikován a ponese náklady, může si útok rozmyslet. U KI se kombinuje odstrašení odvetou a odstrašení znemožněním. Prakticky je nejdůležitější resilience: i když útok přijde, nesmí splnit strategický cíl.
+
+\zkouska{U KI vždy řekni "nejde jen o data, ale o kontinuitu základní služby a fyzické dopady". To je hlavní rozdíl oproti běžnému IT incidentu.}
+
+\zdroje{Přiložené PDF; směrnice CER 2022/2557; zákon č. 266/2025 Sb.; zákon č. 264/2025 Sb.; NÚKIB metodiky k regulovaným službám.}
+
+\newpage
+
+\otazka{19. Právní úprava kyberbezpečnosti v ČR a EU}{Základní instituty, principy, povinné orgány, systém zajištění kybernetické bezpečnosti.}{BVV03K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Odlišit kybernetickou bezpečnost, kyberobranu, kyberkriminalitu a ochranu osobních údajů.
+  \item Vyložit EU rámec: NIS2, CER, DORA, CRA a související předpisy.
+  \item Vyložit český rámec: zákon č. 264/2025 Sb. a prováděcí vyhlášky.
+  \item Popsat regulované služby, vyšší a nižší režim, sebeidentifikaci a hlášení incidentů.
+  \item Popsat orgány a systém zajištění kybernetické bezpečnosti.
+\end{enumerate}
+
+\subsection*{Základní rozlišení}
+Kybernetická bezpečnost je prevence, řízení rizik, ochrana systémů a služeb, detekce incidentů, reakce a obnova. Kyberobrana je vojenská dimenze kyberprostoru a patří do obranné politiky. Kyberkriminalita je trestná činnost a řeší ji orgány činné v trestním řízení. Ochrana osobních údajů chrání práva subjektů údajů a řeší ji hlavně GDPR a ÚOOÚ.
+
+Jeden incident může spadat do více režimů. Ransomware v nemocnici může být kybernetický bezpečnostní incident podle ZKB, trestný čin podle trestního zákoníku, porušení zabezpečení osobních údajů podle GDPR a krizová situace z hlediska zdravotnictví.
+
+\subsection*{EU rámec}
+\textbf{NIS2} je hlavní směrnice EU pro vysokou společnou úroveň kybernetické bezpečnosti. Rozšiřuje okruh regulovaných subjektů, posiluje řízení rizik, odpovědnost vedení, hlášení incidentů, dohled a sankce. V ČR je transponována novým zákonem o kybernetické bezpečnosti.
+
+\textbf{CER} řeší odolnost kritických subjektů v širším smyslu: fyzická, organizační a provozní odolnost. Je důležitá tam, kde narušení služby ohrožuje společnost bez ohledu na to, zda příčinou je kyberútok, sabotáž, přírodní událost nebo technické selhání.
+
+\textbf{DORA} je zvláštní úprava pro finanční sektor. Zaměřuje se na řízení ICT rizik, hlášení incidentů, testování digitální provozní odolnosti a rizika spojená s externími ICT poskytovateli. U zkoušky je dobré říct, že DORA je lex specialis pro finance, ale neznamená, že finanční subjekt nikdy neřeší jiné předpisy.
+
+\textbf{CRA} zavádí požadavky na produkty s digitálními prvky. Posouvá kyberbezpečnost do fáze návrhu, vývoje a uvádění produktů na trh. Výrobci budou řešit bezpečnostní požadavky, správu zranitelností, aktualizace a hlášení aktivně zneužívaných zranitelností.
+
+\subsection*{Český zákon o kybernetické bezpečnosti}
+Zákon č. 264/2025 Sb. je nový základ české kyberbezpečnostní regulace. Upravuje práva a povinnosti osob a orgánů veřejné moci v oblasti zajišťování kybernetické bezpečnosti, působnost NÚKIB a systém spolupráce.
+
+Praktické jádro je v určení regulovaných služeb a režimů:
+\begin{itemize}
+  \item subjekt musí posoudit, zda poskytuje regulovanou službu v regulovaném odvětví,
+  \item pokud ano, řeší se velikost, význam služby a další kritéria podle vyhlášky o regulovaných službách,
+  \item výsledek vede k režimu vyšších nebo nižších povinností,
+  \item subjekt provádí sebeidentifikaci a ohlašuje regulovanou službu NÚKIB,
+  \item po zápisu plní organizační a technická opatření, hlásí incidenty a udržuje kontaktní údaje.
+\end{itemize}
+
+Vyšší režim je přísnější: detailnější bezpečnostní opatření, audity a vyšší nároky na řízení. Nižší režim je jednodušší, ale stále vyžaduje základní řízení bezpečnosti, odpovědnosti, opatření a hlášení.
+
+\subsection*{Hlášení incidentů}
+NIS2 logika stojí na rychlém hlášení významných incidentů. V praxi je třeba znát základní rytmus: včasné/prvotní varování do 24 hodin, oznámení nebo doplnění do 72 hodin, průběžné informace a závěrečná zpráva po obnově. Přesný postup se řídí zákonem a vyhláškami.
+
+Hlášení incidentu není totéž co oznámení porušení zabezpečení osobních údajů podle GDPR. Pokud incident obsahuje únik osobních údajů, běží vedle kybernetického hlášení i GDPR režim: dozorovému úřadu zpravidla do 72 hodin od zjištění, subjektům údajů při vysokém riziku.
+
+\subsection*{Orgány a systém}
+\begin{itemize}
+  \item \textbf{NÚKIB} - gestor kybernetické bezpečnosti, dohled, varování, opatření, metodiky, GovCERT.CZ.
+  \item \textbf{GovCERT.CZ} - vládní tým pro řešení incidentů.
+  \item \textbf{CSIRT.CZ} - národní CSIRT, koordinace incidentů v širším ekosystému.
+  \item \textbf{Regulované subjekty} - nesou primární odpovědnost za bezpečnost svých služeb.
+  \item \textbf{Vrcholové vedení} - schvaluje a nese odpovědnost za bezpečnostní opatření; NIS2 posiluje osobní odpovědnost managementu.
+  \item \textbf{Policie, zpravodajské služby, armáda, ÚOOÚ, ČTÚ, DIA a další} - vstupují podle povahy incidentu a právního režimu.
+\end{itemize}
+
+\priklad{Výrobní podnik nejdřív neřeší "jsme NIS2?", ale konkrétně: poskytujeme regulovanou službu podle české vyhlášky? V jakém odvětví? Splňujeme velikostní nebo významová kritéria? Až potom určí režim povinností.}
+
+\pozor{Neříkej, že NIS2 přímo ukládá české firmě všechny povinnosti. Jako směrnice potřebuje transpozici; v ČR je klíčový zákon č. 264/2025 Sb. a prováděcí vyhlášky.}
+
+\zdroje{Směrnice 2022/2555 (NIS2); zákon č. 264/2025 Sb.; vyhlášky č. 408/2025 Sb., 409/2025 Sb. a 410/2025 Sb.; DORA 2022/2554; CRA 2024/2847.}
+
+\newpage
+
+\otazka{20. Kyberkriminalita}{Prameny práva (národní, evropské a mezinárodní), typická trestná činnost, klasifikace trestných činů, právní kvalifikace a související postupy a kritéria, mezinárodní spolupráce.}{BVV03K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Definovat kyberkriminalitu a rozlišit cyber-dependent a cyber-enabled trestnou činnost.
+  \item Vyjmenovat prameny práva: trestní zákoník, trestní řád, Budapešťská úmluva, EU předpisy, e-evidence.
+  \item Popsat typické skutkové podstaty a právní kvalifikaci.
+  \item Vysvětlit postup orgánů činných v trestním řízení a práci s elektronickými důkazy.
+  \item Popsat mezinárodní spolupráci a její limity.
+\end{enumerate}
+
+\subsection*{Definice a klasifikace}
+Kyberkriminalita je trestná činnost páchaná v kyberprostoru, prostřednictvím ICT nebo proti ICT systémům a datům. Základní rozlišení:
+\begin{itemize}
+  \item \textbf{cyber-dependent} - bez počítače nebo sítě by trestný čin nedával smysl: neoprávněný přístup, malware, DDoS, poškození dat,
+  \item \textbf{cyber-enabled} - klasická kriminalita, kterou technologie usnadňuje nebo škáluje: podvod, vydírání, stalking, šíření obsahu, porušení autorských práv.
+\end{itemize}
+Toto dělení pomáhá u kvalifikace. Ransomware je typicky kombinace cyber-dependent jednání (průnik, malware, poškození dat) a klasických trestných činů jako vydírání.
+
+\subsection*{Prameny práva}
+Národně je základem \textbf{trestní zákoník} a \textbf{trestní řád}. Trestní zákoník obsahuje skutkové podstaty jako neoprávněný přístup k počítačovému systému a nosiči informací, opatření a přechovávání přístupového zařízení a hesla, poškození záznamu v počítačovém systému z nedbalosti, podvod, vydírání, porušení tajemství dopravovaných zpráv nebo neoprávněné nakládání s osobními údaji. Trestní řád dává procesní nástroje pro zajištění důkazů.
+
+Evropsky jsou důležité nástroje justiční spolupráce, zejména evropský vyšetřovací příkaz, spolupráce přes Eurojust a Europol, e-evidence nařízení 2023/1543 a směrnice 2023/1544. E-evidence má umožnit přímější získávání elektronických důkazů od poskytovatelů v EU pomocí evropských příkazů k vydání a uchování.
+
+Mezinárodně je základ \textbf{Budapešťská úmluva o kyberkriminalitě}. Je prakticky nejdůležitější globální rámec pro harmonizaci skutkových podstat, procesní nástroje a spolupráci. Druhý dodatkový protokol k Budapešťské úmluvě má posílit přeshraniční přístup k elektronickým důkazům, ale k 16. 6. 2026 ještě není v platnosti. Úmluva OSN proti kyberkriminalitě také není v platnosti; UNTC uvádí 77 signatářů a 3 strany, zatímco vstup vyžaduje 40 ratifikací.
+
+\pozor{Podpis mezinárodní úmluvy neznamená, že je účinná. U 2. dodatkového protokolu i Úmluvy OSN výslovně řekni, že zatím nejsou v platnosti.}
+
+\subsection*{Typická trestná činnost a kvalifikace}
+\begin{itemize}
+  \item \textbf{Hacking} - neoprávněný přístup do systému; často navazuje zneužití dat.
+  \item \textbf{Malware a ransomware} - vytvoření, šíření nebo použití škodlivého kódu; poškození dat; vydírání.
+  \item \textbf{Phishing} - podvodné získání údajů; často podvod, neoprávněné opatření platebního prostředku, zneužití identity.
+  \item \textbf{DDoS} - omezení dostupnosti služby; podle okolností poškození systému, vydírání, útok na službu.
+  \item \textbf{Krádež a prodej databáze} - neoprávněný přístup, nakládání s daty, osobní údaje, obchodní tajemství.
+  \item \textbf{Online vydírání a sextortion} - vydírání, případně trestné činy proti důstojnosti a soukromí.
+  \item \textbf{Nenávistné a extremistické projevy online} - podle obsahu podpora a propagace hnutí, podněcování nenávisti atd.
+\end{itemize}
+
+Právní kvalifikace není jen název útoku. Musí se rozebrat jednání, objekt, následek, zavinění, výše škody, rozsah dat, počet poškozených, povaha systému a případná organizovanost. U kyberkriminality se často kumuluje více skutkových podstat.
+
+\priklad{Phishing na internetbanking: vytvoření falešné stránky je příprava nebo prostředek, zaslání e-mailů je sociální inženýrství, zadání údajů obětí vede ke zneužití platebního prostředku a převod peněz je typicky podvod nebo související majetková kriminalita.}
+
+\subsection*{Související postupy}
+Orgány činné v trestním řízení musí rychle zajistit data, protože elektronické důkazy jsou snadno měnitelné a často přeshraniční. Typicky se řeší uchování dat u poskytovatele, vydání věci nebo dat, domovní prohlídka, prohlídka jiných prostor, znalecké zkoumání, zajištění účtů, analýza logů a mezinárodní žádosti.
+
+Důležitá kritéria jsou zákonnost, proporcionalita, nezbytnost, dokumentace postupu, integrita důkazu a chain of custody. Pokud se důkaz získá nezákonně nebo se nedá prokázat, že nebyl změněn, může být procesně problematický.
+
+\subsection*{Mezinárodní spolupráce}
+Kyberkriminalita je typicky přeshraniční: oběť je v ČR, server v Irsku, útočník v jiné zemi, platba přes kryptoměny a komunikace přes globální platformu. Používají se:
+\begin{itemize}
+  \item vzájemná právní pomoc,
+  \item evropský vyšetřovací příkaz,
+  \item Europol a Eurojust,
+  \item síť kontaktních bodů 24/7 podle Budapešťské úmluvy,
+  \item budoucí e-evidence příkazy v EU,
+  \item dobrovolná spolupráce poskytovatelů v mezích jejich pravidel a práva.
+\end{itemize}
+
+\zkouska{U kvalifikace vždy postupuj od faktů: co pachatel udělal, k jakému systému nebo datům, s jakým úmyslem, jaká škoda a jaký následek. Nepiš "je to hacking", ale převeď hacking na skutkové podstaty.}
+
+\zdroje{Trestní zákoník; trestní řád; Budapešťská úmluva; e-evidence nařízení 2023/1543 a směrnice 2023/1544; UNTC status Úmluvy OSN proti kyberkriminalitě.}
+
+\newpage
+
+\otazka{21. Elektronické důkazy a jejich zajišťování}{Procesní instituty a jejich praktické využití, nakládání s elektronickými důkazy, elektronické dokumenty.}{BVV03K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Definovat elektronický důkaz.
+  \item Vysvětlit jeho vlastnosti: volatilita, objem, přeshraničnost, metadata, šifrování.
+  \item Popsat procesní instituty v trestním řádu a praktické použití.
+  \item Vysvětlit forenzní zásady: integrita, dokumentace, hash, chain of custody.
+  \item Popsat elektronické dokumenty, podpisy, pečetě a časová razítka.
+\end{enumerate}
+
+\subsection*{Co je elektronický důkaz}
+Elektronický důkaz je jakákoli digitální informace použitelná k prokázání skutečnosti v řízení. Může jít o soubor, e-mail, log, metadata, databázi, fotografii, zprávu v aplikaci, záznam přihlášení, IP adresu, cookies, data z telefonu, cloudový účet, kamerový záznam, GPS stopu nebo blockchainovou transakci.
+
+Elektronické důkazy jsou zvláštní tím, že jsou snadno změnitelné, rychle mizí, často jsou uložené u třetích stran, mohou být šifrované a bývají přeshraniční. Proto je u nich extrémně důležitý správný postup zajištění a dokumentace.
+
+\subsection*{Procesní instituty a praktické využití}
+V trestním řízení se podle situace používají zejména:
+\begin{itemize}
+  \item \textbf{vydání a odnětí věci} - získání zařízení, nosiče nebo dat,
+  \item \textbf{domovní prohlídka a prohlídka jiných prostor} - zajištění zařízení a infrastruktury,
+  \item \textbf{uchování a vydání dat od poskytovatele} - důležité u cloudů, e-mailů a účtů,
+  \item \textbf{odposlech a záznam telekomunikačního provozu} - pro budoucí komunikaci při splnění zákonných podmínek,
+  \item \textbf{znalecké zkoumání} - forenzní analýza zařízení, dat a stop,
+  \item \textbf{mezinárodní nástroje} - EIO, MLA, Budapešťská úmluva, e-evidence po použitelnosti.
+\end{itemize}
+
+Praktická volba institutu záleží na tom, zda data už existují, zda mají být teprve zachycena, kde jsou uložena, komu patří zařízení, kdo je drží a jak invazivní zásah je přiměřený. Jinak se postupuje u zabaveného notebooku, jinak u dat v cloudu a jinak u budoucí komunikace.
+
+\subsection*{Nakládání s elektronickými důkazy}
+Forenzní zásady:
+\begin{itemize}
+  \item \textbf{minimalizovat změny} - pokud možno pracovat s kopií, ne s originálem,
+  \item \textbf{vytvořit forenzní obraz} - bitová kopie zařízení nebo relevantních dat,
+  \item \textbf{hashovat} - otisk pro prokázání integrity,
+  \item \textbf{dokumentovat} - kdo, kdy, kde, jak a proč s důkazem nakládal,
+  \item \textbf{chain of custody} - nepřerušený řetězec držení a manipulace,
+  \item \textbf{oddělit živou a mrtvou analýzu} - u běžícího šifrovaného systému může být potřeba nejdřív zajistit volatilní data.
+\end{itemize}
+
+\priklad{Běžící server je šifrovaný. Pokud ho vyšetřovatel bez rozmyslu vypne, může přijít o klíče v paměti a data už neotevře. Někdy je proto vhodná živá akvizice, dokumentovaná a provedená tak, aby zásah byl vysvětlitelný.}
+
+Co důkaz znehodnotí: nezdokumentovaná manipulace, změna časů souborů, práce přímo s originálem bez kopie, chybějící hash, nejasný původ dat, překročení povoleného rozsahu, nepřiměřený zásah do soukromí nebo nezákonné získání.
+
+\subsection*{Elektronické dokumenty}
+Elektronický dokument není méněcenný jen proto, že je elektronický. eIDAS stanoví, že elektronickému dokumentu a elektronickému podpisu nelze upírat právní účinky pouze kvůli elektronické formě. Důkazní hodnota ale závisí na tom, zda lze prokázat autenticitu, integritu a čas.
+
+Elektronický podpis dokládá vazbu osoby k dokumentu a integritu od podpisu. Elektronická pečeť dokládá původ u právnické osoby nebo instituce. Časové razítko dokládá, že data existovala v určité podobě v určitém čase. Ani podpis, ani pečeť, ani razítko nedokazují pravdivost obsahu. Dokazují pouze původ, integritu a časové souvislosti.
+
+\pozor{Kvalifikovaný podpis má účinky vlastnoručního podpisu, ale neznamená to, že obsah dokumentu je pravdivý. Podepsat lze i nepravdivé prohlášení.}
+
+\zkouska{U elektronických důkazů opakuj tři slova: volatilita, integrita, dokumentace. To je jádro praktické odpovědi.}
+
+\zdroje{Trestní řád; eIDAS; e-evidence nařízení 2023/1543; Budapešťská úmluva; přiložené PDF.}
+
+\newpage
+
+\otazka{22. Ochrana osobních údajů}{Právní úprava. Principy a zásady zpracování osobních údajů - definice, základní zásady, posouzení rizik, test proporcionality. Účely zpracování. Právní tituly. Zákon o zpracování osobních údajů - ÚOOÚ a jeho úloha a postavení v České republice.}{BI301K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Právní rámec: GDPR, zákon č. 110/2019 Sb., zvláštní předpisy, ePrivacy.
+  \item Pojmy: osobní údaj, subjekt údajů, správce, zpracovatel, zpracování, pseudonymizace, anonymizace.
+  \item Zásady: zákonnost, korektnost, transparentnost, účelové omezení, minimalizace, přesnost, omezení uložení, integrita a důvěrnost, odpovědnost.
+  \item Účel a právní titul podle čl. 6 GDPR, zvláštní kategorie podle čl. 9, trestní údaje podle čl. 10.
+  \item Riziko, DPIA, proporcionalita, práva subjektů údajů a breach reporting.
+  \item ÚOOÚ: nezávislý dozorový úřad, pravomoci a evropská spolupráce.
+\end{enumerate}
+
+\subsection*{Právní úprava}
+Základem je GDPR, tedy nařízení EU 2016/679. Je přímo použitelné a sjednocuje pravidla ochrany osobních údajů v EU. Český zákon č. 110/2019 Sb., o zpracování osobních údajů, doplňuje národní odchylky, postavení ÚOOÚ a některé specifické režimy. Vedle toho existují zvláštní předpisy pro policii, zpravodajské služby, zdravotnictví, pracovní právo, elektronické komunikace a archivnictví.
+
+GDPR není "zákaz zpracování dat". Je to pravidlový rámec: osobní údaje zpracovávat lze, ale musí být jasný účel, právní titul, přiměřenost, bezpečnost a odpovědnost.
+
+\subsection*{Základní pojmy}
+\textbf{Osobní údaj} je informace o identifikované nebo identifikovatelné fyzické osobě. Identifikovatelnost znamená, že osobu lze určit přímo nebo nepřímo pomocí rozumně dostupných prostředků. Jméno a rodné číslo jsou zřejmé příklady, ale osobním údajem může být i IP adresa, cookie identifikátor, poloha, hlas, fotografie, pracovní identifikátor nebo kombinace údajů.
+
+Ne každý technický identifikátor je osobním údajem vždy a pro každého. Dynamická IP adresa nebo cookie je osobní údaj tehdy, pokud existují rozumně pravděpodobné prostředky, jak ji spojit s osobou. Pro poskytovatele služby to často osobní údaj bude; pro subjekt bez možnosti vazby to tak být nemusí.
+
+\textbf{Správce} určuje účely a prostředky zpracování. \textbf{Zpracovatel} zpracovává údaje pro správce. \textbf{Zpracování} je skoro jakákoli operace s údaji: sběr, ukládání, změna, použití, předání, výmaz. \textbf{Pseudonymizace} nahrazuje identifikátory kódem, ale klíč existuje, takže GDPR stále platí. \textbf{Anonymizace} musí být prakticky nevratná; pak už nejde o osobní údaje.
+
+\pozor{Pseudo není anonym. Pseudonymizovaná data zůstávají osobními údaji, protože existuje vazba zpět na člověka.}
+
+\subsection*{Zásady zpracování}
+GDPR stojí na zásadách:
+\begin{itemize}
+  \item \textbf{zákonnost, korektnost a transparentnost} - zpracování musí mít právní titul a člověk má vědět, co se děje,
+  \item \textbf{účelové omezení} - data se sbírají pro konkrétní účel a nelze je libovolně použít jinak,
+  \item \textbf{minimalizace} - sbírat jen to, co je nezbytné,
+  \item \textbf{přesnost} - údaje mají být aktuální a správné,
+  \item \textbf{omezení uložení} - neuchovávat déle, než je potřeba,
+  \item \textbf{integrita a důvěrnost} - zajistit bezpečnost,
+  \item \textbf{odpovědnost} - správce musí soulad nejen dodržet, ale i doložit.
+\end{itemize}
+
+\subsection*{Účely a právní tituly}
+Účel říká, proč údaje zpracovávám. Právní titul říká, proč to smím. Nejdřív se určí účel, pak se hledá právní titul. Čl. 6 GDPR zná šest titulů:
+\begin{enumerate}
+  \item souhlas,
+  \item plnění smlouvy,
+  \item právní povinnost,
+  \item ochrana životně důležitých zájmů,
+  \item úkol ve veřejném zájmu nebo výkon veřejné moci,
+  \item oprávněný zájem.
+\end{enumerate}
+
+Souhlas není univerzální náplast. Musí být svobodný, konkrétní, informovaný a odvolatelný. Ve veřejné správě nebo v pracovním vztahu často svobodný být nemusí, proto se používají jiné tituly. Oprávněný zájem vyžaduje balanční test: zájem správce proti právům a svobodám subjektu údajů.
+
+Zvláštní kategorie údajů podle čl. 9, například zdravotní údaje, biometrické údaje pro identifikaci, politické názory nebo náboženství, potřebují nejen titul podle čl. 6, ale i výjimku podle čl. 9. Údaje o trestních věcech podle čl. 10 mají samostatný přísnější režim.
+
+\subsection*{Riziko, DPIA a proporcionalita}
+GDPR je rizikově orientované. Správce musí přiměřeně posoudit rizika pro práva a svobody osob. Když zpracování pravděpodobně povede k vysokému riziku, provádí se DPIA - posouzení vlivu na ochranu osobních údajů. Typicky u rozsáhlého monitorování, citlivých údajů, profilování, biometrie nebo nových technologií.
+
+Test proporcionality se dá vyložit jednoduše:
+\begin{enumerate}
+  \item \textbf{legitimní cíl} - sleduji oprávněný a jasný účel?
+  \item \textbf{vhodnost} - pomůže zpracování cíle dosáhnout?
+  \item \textbf{nezbytnost} - nejde to méně invazivně?
+  \item \textbf{přiměřenost v užším smyslu} - nepřevažuje zásah do práv nad přínosem?
+\end{enumerate}
+
+\priklad{Kamerový systém ve škole: účel může být bezpečnost. Vhodnost ano, kamery mohou pomoci. Nezbytnost se ptá, zda nestačí méně kamer, kratší uchování nebo jen vstupy. Přiměřenost řeší, zda se nesledují šatny, toalety nebo žáci nepřiměřeně dlouho.}
+
+\subsection*{Porušení zabezpečení a práva subjektů}
+Porušení zabezpečení osobních údajů je únik, ztráta, zničení, změna nebo neoprávněný přístup. Správce oznamuje dozorovému úřadu zpravidla do 72 hodin od zjištění, pokud je pravděpodobné riziko pro práva a svobody. Subjektům údajů oznamuje bez zbytečného odkladu, pokud je vysoké riziko.
+
+Subjekty údajů mají právo na informace, přístup, opravu, výmaz, omezení zpracování, přenositelnost, námitku a nebýt předmětem čistě automatizovaného rozhodování s významnými účinky, pokud nejsou splněny podmínky.
+
+\subsection*{ÚOOÚ}
+ÚOOÚ je nezávislý dozorový úřad. Kontroluje dodržování GDPR a českého zákona, řeší stížnosti, ukládá opatření a pokuty, vydává metodiku a spolupracuje v Evropském sboru pro ochranu osobních údajů. Nezávislost je klíčová, protože úřad dohlíží i na veřejnou moc.
+
+\zkouska{U GDPR odpovědi nikdy nezačínej "potřebujeme souhlas". Začni účelem, pak právním titulem, zásadami, minimalizací, rizikem a dokumentací.}
+
+\zdroje{GDPR 2016/679; zákon č. 110/2019 Sb.; metodiky ÚOOÚ a EDPB; přiložené PDF.}
+
+\newpage
+
+\otazka{23. Elektronický podpis a elektronická pečeť}{Právní úprava a druhy. Datové schránky - právní úprava a praxe používání.}{BI301K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Vysvětlit technický princip podpisu: hash, soukromý a veřejný klíč, certifikát.
+  \item Vyložit eIDAS, eIDAS 2.0 a české zákony č. 297/2016 Sb., 250/2017 Sb. a 300/2008 Sb.
+  \item Popsat druhy podpisu: prostý, zaručený, kvalifikovaný; český uznávaný podpis.
+  \item Popsat elektronickou pečeť a časové razítko.
+  \item Vyložit datové schránky: zřízení, dodání, doručení, fikce, vztah k podpisu.
+  \item Zmínit autorizovanou konverzi.
+\end{enumerate}
+
+\subsection*{Technický princip}
+Elektronický podpis využívá asymetrickou kryptografii. Z dokumentu se vypočte hash, tedy krátký otisk. Podepisující použije soukromý klíč k vytvoření podpisové hodnoty. Ověřovatel použije veřejný klíč, ověří podpis a znovu vypočte hash dokumentu. Pokud se dokument změní, hash nesedí a podpis neprojde.
+
+Veřejný klíč je spojen s osobou certifikátem. Certifikát vydává certifikační autorita. Ověření podpisu proto znamená nejen ověřit kryptografii, ale i řetězec certifikátů, platnost, účel certifikátu, revokaci a čas podpisu. Pro dlouhodobé ověřování je důležité časové razítko a uchování validačních dat.
+
+\subsection*{Právní rámec}
+Základem je eIDAS - nařízení EU 910/2014, novelizované eIDAS 2.0 nařízením 2024/1183. eIDAS upravuje elektronickou identifikaci, elektronické podpisy, pečetě, časová razítka, služby elektronického doporučeného doručování, certifikáty a důvěryhodné služby. Českou úpravu doplňuje zákon č. 297/2016 Sb., o službách vytvářejících důvěru, zákon č. 250/2017 Sb., o elektronické identifikaci, a zákon č. 300/2008 Sb., o elektronických úkonech a autorizované konverzi dokumentů.
+
+eIDAS stanoví důležitou zásadu: elektronickému podpisu nesmí být upírány právní účinky jen proto, že je elektronický. Kvalifikovaný elektronický podpis má stejné právní účinky jako vlastnoruční podpis.
+
+\subsection*{Druhy elektronického podpisu}
+\begin{itemize}
+  \item \textbf{Prostý elektronický podpis} - jakákoli elektronická data připojená k projevu vůle: jméno v e-mailu, zaškrtnutí, sken podpisu. Má právní účinky, ale slabší důkazní jistotu.
+  \item \textbf{Zaručený elektronický podpis} - splňuje požadavky vazby na podepisujícího, identifikace, výhradní kontroly a detekce změn.
+  \item \textbf{Kvalifikovaný elektronický podpis (QES)} - zaručený podpis založený na kvalifikovaném certifikátu a vytvořený kvalifikovaným prostředkem. Má účinky vlastnoručního podpisu v celé EU.
+\end{itemize}
+
+Český pojem \textbf{uznávaný elektronický podpis} zahrnuje kvalifikovaný podpis a zaručený podpis založený na kvalifikovaném certifikátu. Není totožný s QES. Každý QES je uznávaný, ale ne každý uznávaný podpis je QES.
+
+\pozor{Nepleť zaručený, kvalifikovaný a uznávaný podpis. "Uznávaný" je český pojem, "kvalifikovaný" je eIDAS pojem s účinky vlastnoručního podpisu.}
+
+\subsection*{Elektronická pečeť a časové razítko}
+Elektronická pečeť je obdobou podpisu pro právnickou osobu nebo instituci. Podpis vyjadřuje jednání fyzické osoby, pečeť dokládá původ a integritu dokumentu od právnické osoby. I pečeť může být prostá, zaručená nebo kvalifikovaná.
+
+Elektronické časové razítko spojuje data s konkrétním časem a prokazuje, že data v dané podobě v daném čase existovala. Kvalifikované časové razítko má vyšší důkazní sílu. Dlouhodobá validace kombinuje podpis, certifikát, revokační informace a časová razítka tak, aby bylo možné podpis ověřit i po vypršení certifikátu nebo zestárnutí algoritmů.
+
+Podpis, pečeť ani časové razítko nedokazují pravdivost obsahu. Dokazují původ, integritu a čas. Dokument může být formálně správně podepsaný a přesto obsahovat nepravdu.
+
+\subsection*{Datové schránky}
+Datové schránky upravuje zákon č. 300/2008 Sb. Slouží k elektronickému doručování a k činění úkonů vůči orgánům veřejné moci. Datová zpráva je dodána do schránky okamžikem dodání, doručena přihlášením oprávněné osoby, a pokud se osoba nepřihlásí, nastupuje fikce doručení zpravidla po 10 dnech.
+
+Datová schránka není elektronický podpis. Odeslání z datové schránky ale může mít účinky podepsaného úkonu, pokud to zákon připouští. Jde o zákonné nahrazení podpisu, ne o vytvoření podpisu uvnitř dokumentu. Proto je nutné rozlišit:
+\begin{itemize}
+  \item dokument podepsaný elektronickým podpisem,
+  \item dokument odeslaný datovou schránkou,
+  \item dokument autorizovaně konvertovaný,
+  \item běžný sken vlastnoručně podepsaného dokumentu.
+\end{itemize}
+
+Datové zprávy nejsou ve schránce uchovávány navždy. V praxi je nutné řešit archivaci, doručenky a dlouhodobé ověření dokumentů. Pro právní jistotu je vhodné ukládat nejen přílohu, ale i obálku datové zprávy a doručenku.
+
+\subsection*{Autorizovaná konverze}
+Autorizovaná konverze převádí dokument mezi listinnou a elektronickou podobou se zachováním právních účinků formy. Není to obyčejný sken, tisk ani ověření pravdivosti obsahu. Konverze potvrzuje shodu podoby dokumentu. Při konverzi elektronického dokumentu se kontrolují elektronické prvky, například podpisy, pečetě a časová razítka.
+
+\priklad{Podání soudu lze učinit datovou schránkou; podpis se pak zpravidla nevyžaduje, protože zákon přiznává úkonu účinky podepsaného podání. Když stejný dokument pošlu obyčejným e-mailem bez uznávaného podpisu, účinky mohou být jiné.}
+
+\zkouska{Závěrečná věta může být: "Elektronický podpis řeší, kdo a s jakou integritou dokument podepsal; datová schránka řeší důvěryhodný kanál doručení a identifikaci schránky; autorizovaná konverze řeší převod formy dokumentu."}
+
+\zdroje{eIDAS 910/2014 a eIDAS 2.0 - nařízení 2024/1183; zákon č. 297/2016 Sb.; zákon č. 250/2017 Sb.; zákon č. 300/2008 Sb.; přiložené PDF.}
+
+\newpage
+\section*{Rychlé opakování před zkouškou}
+\addcontentsline{toc}{section}{Rychlé opakování před zkouškou}
+\begin{itemize}
+  \item Hrozba není riziko. Hrozba je zdroj škody, riziko je míra ohrožení konkrétního objektu.
+  \item Kyberbezpečnost stírá hranici vnitřní a vnější bezpečnosti.
+  \item Strategie není zákon. Strategie určuje cíle, zákon ukládá povinnosti, akční plán rozepisuje úkoly.
+  \item Ne každý kyberútok je kyberválka. Většina operací je pod prahem ozbrojeného konfliktu.
+  \item U kritické infrastruktury nejde jen o data, ale o kontinuitu základní služby a fyzické dopady.
+  \item NIS2 se v ČR učí přes zákon č. 264/2025 Sb. a vyhlášky.
+  \item U kyberkriminality převáděj technický popis na skutkové podstaty.
+  \item U elektronických důkazů hlídej volatilitu, integritu, hash a chain of custody.
+  \item U GDPR nejdřív účel, potom právní titul, minimalizace, riziko a dokumentace.
+  \item Datová schránka není elektronický podpis, ale zákon jí může dát účinky podepsaného úkonu.
+\end{itemize}
+
+\section*{Ověřené online zdroje}
+\addcontentsline{toc}{section}{Ověřené online zdroje}
+\begin{itemize}
+  \item NÚKIB - strategie a akční plány: \url{https://nukib.gov.cz/cs/infoservis/dokumenty-a-publikace/strategie-akcni-plan/}
+  \item Portál NÚKIB k novému zákonu o kybernetické bezpečnosti: \url{https://portal.nukib.gov.cz/}
+  \item e-Sbírka - zákon č. 264/2025 Sb.: \url{https://e-sbirka.gov.cz/sb/2025/264}
+  \item EUR-Lex - NIS2: \url{https://eur-lex.europa.eu/eli/dir/2022/2555/oj}
+  \item EUR-Lex - e-evidence nařízení 2023/1543: \url{https://eur-lex.europa.eu/eli/reg/2023/1543/oj}
+  \item EUR-Lex - e-evidence směrnice 2023/1544: \url{https://eur-lex.europa.eu/eli/dir/2023/1544/oj}
+  \item EUR-Lex - Cyber Resilience Act 2024/2847: \url{https://eur-lex.europa.eu/eli/reg/2024/2847/oj}
+  \item EUR-Lex - eIDAS 2.0, nařízení 2024/1183: \url{https://eur-lex.europa.eu/eli/reg/2024/1183/oj}
+  \item Council of Europe - Budapešťská úmluva a protokoly: \url{https://www.coe.int/en/web/cybercrime/the-budapest-convention}
+  \item UN Treaty Collection - Úmluva OSN proti kyberkriminalitě: \url{https://treaties.un.org/pages/ViewDetails.aspx?chapter=18&clang=_en&mtdsg_no=XVIII-16&src=TREATY}
+\end{itemize}
 
 \end{document}
