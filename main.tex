@@ -29,6 +29,8 @@
 \newcommand{\zkouska}[1]{\medskip\noindent\colorbox{blue!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Co říct u zkoušky:} #1}}\medskip}
 \newcommand{\pozor}[1]{\medskip\noindent\colorbox{red!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Pozor:} #1}}\medskip}
 \newcommand{\priklad}[1]{\medskip\noindent\colorbox{green!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Příklad:} #1}}\medskip}
+\newcommand{\aktualni}[1]{\medskip\noindent\colorbox{green!10}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Aktuální příklad z praxe:} #1}}\medskip}
+\newcommand{\modelovy}[1]{\medskip\noindent\colorbox{green!7}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Modelový příklad:} #1}}\medskip}
 \newcommand{\pravobox}[1]{\medskip\noindent\colorbox{yellow!18}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Právní kontext:} #1}}\medskip}
 \newcommand{\zdroje}[1]{\medskip\noindent\textbf{Zdroje k opakování:} #1\medskip}
 
@@ -61,7 +63,7 @@ Vyhlášky k novému ZKB & Účinné od 1. 11. 2025. & Zejména vyhláška o reg
 \addlinespace
 Národní strategie kybernetické bezpečnosti 2026-2030 & Zveřejněna NÚKIB 8. 9. 2025. & Strategický dokument od roku 2026. & Navazuje na Bezpečnostní strategii ČR 2023, Obrannou strategii 2023, EU a NATO dokumenty; akční plán je samostatný implementační dokument.\\
 \addlinespace
-CER - směrnice 2022/2557 a zákon o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.) & Nová úprava odolnosti kritických subjektů. & Zákon účinný od 19. 8. 2025, praktické zařazování probíhá v přechodných lhůtách. & Vedle kybernetické bezpečnosti řeší fyzickou a organizační odolnost kritických subjektů.\\
+CER - směrnice 2022/2557 a zákon o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.) & Nová úprava odolnosti kritických subjektů. & Zákon účinný od 19. 8. 2025; k 18. 6. 2026 nebylo v dostupných oficiálních zdrojích potvrzeno účinné nařízení vlády o základních službách a kritériích významnosti. & Vedle kybernetické bezpečnosti řeší fyzickou a organizační odolnost; plné nové určování subjektů závisí na prováděcím nařízení a rozhodnutích MV.\\
 \addlinespace
 DORA - nařízení 2022/2554 & Platné a použitelné. & 17. 1. 2025. & Lex specialis pro finanční sektor: ICT rizika, incidenty, testování digitální odolnosti, dohled nad ICT třetími stranami.\\
 \addlinespace
@@ -277,20 +279,20 @@ Nemocnice pak zavede MFA, segmentaci, monitoring, školení, zálohy a plán kon
 
 \subsection*{Kostra odpovědi}
 \begin{enumerate}
-  \item Odlišit kybernetickou bezpečnost, kyberobranu, kyberkriminalitu, kybernetický konflikt a kyberválku.
-  \item Definovat kyberválku opatrně a vysvětlit vrstvy kyberprostoru, účinky operací a rozdíl vůči elektronickému boji.
-  \item Popsat hlavní historické milníky a současné trendy.
-  \item Identifikovat aktéry a vysvětlit problém atribuce.
-  \item Vyložit možnosti odstrašení a základní rámec mezinárodního práva.
-  \item Definovat netwar, typy sítí a swarming.
+  \item Přesně odlišit incident, kriminalitu, špionáž, sabotáž, informační operaci, kyberkonflikt, kyberobranu a kyberválku.
+  \item Definovat kyberválku úzce: ne každý státem podporovaný útok je kyberválka.
+  \item Vysvětlit historický vývoj přes konkrétní příklady a jejich význam.
+  \item Popsat současné trendy vždy s případem: APT31, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), AI, dodavatelé a soukromý sektor.
+  \item Vysvětlit aktéry, atribuci, odstrašení a základní mezinárodněprávní rámec.
+  \item Ukázat netwar na proruských hacktivistických kampaních.
 \end{enumerate}
 
-\subsection*{Základní vymezení}
-\textbf{Kybernetická bezpečnost} chrání systémy, data, služby a uživatele. \textbf{Kybernetická obrana} je vojenská a státně-obranná dimenze působení v kyberprostoru. \textbf{Kyberkriminalita} je trestná činnost spojená s informačními systémy nebo páchaná jejich prostřednictvím. \textbf{Kybernetický konflikt} je širší pojem zahrnující špionáž, sabotáž, nátlak, informační působení a operace pod prahem války.
+\subsection*{Přesné rozlišení pojmů}
+U této otázky je nejdůležitější nezačít tím, že každý velký kyberútok označíš za kyberválku. \textbf{Kybernetický incident} je událost, která narušuje nebo může narušit bezpečnost systému, služby nebo dat. Může být technickou chybou, omylem, kriminalitou nebo státní operací. \textbf{Kyberkriminalita} je trestná činnost, například ransomware, phishing, podvod, neoprávněný přístup nebo vydírání. \textbf{Kyberšpionáž} je získávání informací, přístupů a dokumentů; může být státní i nestátní a typicky zůstává pod prahem ozbrojeného útoku. \textbf{Kybernetická sabotáž} míří na narušení, poškození nebo vyřazení systému či procesu. \textbf{Informační operace} míří na vnímání, rozhodování a důvěru veřejnosti nebo institucí.
 
-Kyberválka je použití kybernetických operací státem nebo jiným politickým aktérem jako součást ozbrojeného konfliktu nebo k dosažení účinků srovnatelných se závažným vojenským útokem. Pojem nemá jednu všeobecně přijímanou hranici a jeho vymezení je odborně i právně sporné. Důležité je ale jedno pravidlo: většina kyberútoků není kyberválkou. Kyberšpionáž, běžný ransomware, DDoS nebo krádež dat mohou být velmi závažné, ale zpravidla zůstávají pod prahem ozbrojeného konfliktu.
+\textbf{Kybernetický konflikt} je širší pojem pro soutěžení a střet v kyberprostoru: špionáž, sabotáž, nátlak, DDoS, vlivové operace, úniky dat, příprava přístupu nebo operace během války. \textbf{Kyberobrana} je vojenská a státně-obranná dimenze působení v kyberprostoru. \textbf{Kyberválka} je užší pojem: použití kybernetických operací státem nebo jiným politickým aktérem jako součást ozbrojeného konfliktu nebo k dosažení účinků srovnatelných se závažným vojenským útokem.
 
-Rozhodující je aktér, účel, rozsah, účinky a vztah k širšímu konfliktu. Jinak hodnotíme kriminální ransomware proti firmě, jinak státní špionáž proti ministerstvu a jinak destruktivní operaci, která je koordinována s konvenční vojenskou invazí.
+Rozhodující je aktér, účel, rozsah, účinky a vztah k širšímu konfliktu. APT31 proti MZV ČR, Salt Typhoon nebo Volt Typhoon jsou velmi významné státní nebo státem podporované operace, ale bez dalšího je nelze automaticky označit za ozbrojený útok nebo kyberválku. U zkoušky stačí říct: "Kyberválka je úzký pojem, většina škodlivých kyberoperací zůstává v šedé zóně pod prahem války."
 
 \subsection*{Kyberprostor, vrstvy a typy účinků}
 Kyberprostor není jen "internet". Pro zkoušku je užitečné ho rozdělit na několik vrstev. \textbf{Fyzická vrstva} jsou kabely, servery, datová centra, satelity, koncová zařízení a průmyslová zařízení. \textbf{Logická/protokolová vrstva} jsou adresace, směrování, protokoly, domény, autentizace a síťová pravidla. \textbf{Datová nebo sémantická vrstva} je obsah: databáze, e-maily, dokumenty, konfigurace, účty. \textbf{Kognitivní vrstva} je lidské vnímání, rozhodování, důvěra a informační působení.
@@ -303,27 +305,44 @@ Typy kyberoperací se dají vysvětlit podle toho, co chtějí způsobit. \textb
 
 \pozor{Kyberválku nepleť s elektronickým bojem. Elektronický boj pracuje s elektromagnetickým spektrem, rušením, radiolokací a signály. Může vojensky souviset s kyberoperacemi, ale není to totéž.}
 
-\subsection*{Historický vývoj}
-Historii není potřeba odříkat jako katalog útoků. Stačí vybrat milníky, které změnily chápání kybernetického konfliktu. \textbf{Morrisův červ 1988} ukázal zranitelnost propojených sítí, ale nebyl kyberválkou. \textbf{Estonsko 2007} ukázalo politicky motivované rozsáhlé DDoS proti digitálnímu státu a problém atribuce. \textbf{Gruzie 2008} ukázala kybernetické útoky souběžně s konvenčním konfliktem. \textbf{Stuxnet} ukázal cílenou sabotáž průmyslového systému a překročení hranice mezi digitálním a fyzickým světem.
-
-\textbf{Útoky na ukrajinskou energetiku 2015-2016} ukázaly zásah do kritické infrastruktury. \textbf{NotPetya 2017} ukázal destruktivní malware s globálními vedlejšími dopady. \textbf{SolarWinds} ukázal kompromitaci dodavatelského řetězce a dlouhodobou špionáž, nikoli automaticky kyberválku. \textbf{Ukrajina od roku 2022} ukazuje propojení wiperů, DDoS, satelitní komunikace, špionáže, informačních operací a konvenční války.
+\subsection*{Historický vývoj přes příklady}
+Historii neříkej jako seznam let, ale jako vývoj toho, co kyberoperace dokázaly.
+\begin{itemize}
+  \item \textbf{Estonsko 2007} ukázalo politicky motivované DDoS proti digitálnímu státu. Význam: dostupnost online služeb, informační tlak, mobilizace aktérů a problém atribuce.
+  \item \textbf{Gruzie 2008} ukázala souběh kybernetických a konvenčních operací. Význam: kyberprostor může podporovat vojenskou a politickou operaci, i když sám nerozhodne válku.
+  \item \textbf{Stuxnet} ukázal cílený zásah do průmyslového procesu. Význam: kyberoperace může přejít z digitální vrstvy do fyzického poškození zařízení.
+  \item \textbf{Ukrajinská energetika 2015/2016} ukázala výpadky elektřiny způsobené kompromitací distribučních společností a zásahem do provozních procesů. Význam: IT/OT propojení, manuální obnova a kontinuita služby.
+  \item \textbf{NotPetya 2017} ukázal destruktivní operaci s globálními vedlejšími dopady. Význam: nástroj mířený do jednoho politického kontextu může nekontrolovaně zasáhnout globální firmy a dodavatelské řetězce.
+  \item \textbf{Viasat KA-SAT 2022} ukázal kyberoperaci časově spojenou s ruskou invazí proti Ukrajině. Význam: satelitní komunikace jako civilně-vojenská infrastruktura a přeshraniční dopady.
+  \item \textbf{Válka na Ukrajině od roku 2022} ukazuje kombinaci wiperů, DDoS, špionáže, satelitní komunikace, informačních operací, dobrovolnických skupin, cloudu a threat intelligence firem.
+\end{itemize}
 
 \subsection*{Současné trendy}
-Dnešní kyberkonflikt se často odehrává pod prahem války. Typická je dlouhodobá špionáž, získávání přístupu pro budoucí konflikt, mapování kritické infrastruktury, pre-positioning, krádeže přístupových údajů a informační nebo vlivové operace. Útočník nemusí systém hned zničit; může si připravit přístup, který využije až v krizi.
+\textbf{Působení pod prahem války.} Dnešní kyberkonflikt se často odehrává v šedé zóně: špionáž, krádeže přístupů, DDoS, vlivové operace, zveřejňování odcizených dat, kompromitace účtů a příprava přístupu pro budoucí konflikt. Cílem nemusí být okamžitě něco vypnout; často stačí získat informace, oslabit důvěru nebo držet možnost budoucího nátlaku.
 
-\textbf{APT} je dobře organizovaný a dlouhodobě působící aktér, který cíleně proniká do vybraných systémů a snaží se v nich skrytě udržet přístup. Není nutné memorovat desítky názvů. \textbf{APT28} je veřejně spojován s ruskými státními zájmy a slouží jako příklad špionáže, politického tlaku a zneužívání infrastruktury třetích osob. \textbf{APT31} je v českém kontextu důležitý kvůli veřejné atribuci kampaně proti MZV ČR Čínské lidové republice. \textbf{Lazarus Group} se typicky spojuje se Severní Koreou a ukazuje propojení státních zájmů s finančně motivovanými operacemi. U všech těchto příkladů je nutné rozlišovat veřejnou atribuci, technické přiřazení a právně prokázanou odpovědnost.
+\aktualni{\textbf{APT31 proti MZV ČR.} Česká vláda v květnu 2025 veřejně atribuovala škodlivou kampaň skupině APT31 spojované s čínskou zpravodajskou službou. Podle NÚKIB cílila minimálně od roku 2022 na jednu z neutajovaných sítí Ministerstva zahraničních věcí ČR. Příklad vysvětluje kyberšpionáž, veřejnou politickou atribuci a šedou zónu: jde o závažnou státní operaci proti infrastruktuře státu, ale ne automaticky o kyberválku.}
 
-\priklad{APT31 proti MZV ČR je dobrý příklad šedé zóny: podle české vlády šlo o dlouhodobou škodlivou kybernetickou kampaň spojovanou s ČLR, která cílila na neutajovanou síť MZV. Je to závažná bezpečnostní a diplomatická věc, ale sama o sobě to není automaticky kyberválka.}
+\textbf{Pre-positioning v kritické infrastruktuře.} Útočník nemusí infrastrukturu hned vypnout. Může si tiše připravovat přístup, mapovat závislosti, získávat účty a držet perzistenci pro budoucí politickou nebo vojenskou krizi.
 
-U kritické infrastruktury je klíčový pre-positioning. Příklady jako Volt Typhoon ukazují, že cílem nemusí být okamžité vypnutí služby, ale tiché udržování přístupu v infrastruktuře pro budoucí krizi. Podobně útoky proti ukrajinské energetice nebo satelitním službám ukazují, že kyberoperace mohou mít strategický význam, pokud ovlivní komunikaci, energii nebo schopnost velení.
+\aktualni{\textbf{Volt Typhoon.} CISA a partneři popsali čínským státem podporovaného aktéra, který si udržoval dlouhodobý přístup v prostředí americké kritické infrastruktury. Typické byly living off the land techniky, legitimní účty, silná operační bezpečnost a dlouhodobá perzistence. Význam případu není v prokázané destrukci, ale v přípravě možnosti budoucího narušení energetiky, vody, dopravy, komunikací nebo dalších služeb v krizi.}
 
-Stále větší význam mají cloud, identity a dodavatelské řetězce. Útočníci necílí jen na koncové počítače, ale na cloudové účty, autentizační tokeny, správní rozhraní, poskytovatele služeb, aktualizační mechanismy, telekomunikační sítě a okrajová zařízení. Nejde o frázi "hacknout cloud", ale o zneužití chybné konfigurace, kompromitované identity nebo závislosti na poskytovateli.
+\textbf{Telekomunikace jako strategický cíl.} Telekomunikační sítě mají zpravodajskou hodnotu, protože přes jednoho poskytovatele lze sledovat provozní údaje, správní přístupy, komunikaci vybraných osob a vztahy mezi institucemi. Routery a síťová zařízení jsou proto strategické cíle, ne jen technická periferie.
 
-AI je hlavně zesilovač existujících metod. Zrychluje phishing, překlady, personalizaci sociálního inženýrství, deepfake audio a video, analýzu odcizených dat, průzkum a tvorbu skriptů. Bez spolehlivých důkazů není vhodné tvrdit, že už probíhá plně autonomní kyberválka bez lidské kontroly.
+\aktualni{\textbf{Salt Typhoon.} NÚKIB se v srpnu 2025 připojil ke společnému upozornění amerických a dalších partnerů na čínské státem podporované aktéry, jejichž aktivity částečně odpovídají označení Salt Typhoon. Cílem byly zejména telekomunikační sítě, dopravní infrastruktura, ubytovací zařízení a vojenské systémy. Případ ukazuje strategickou hodnotu páteřních routerů, provider edge/customer edge zařízení, důvěryhodných propojení a dlouhodobého přístupu pro špionáž.}
 
-Hacktivismus a proxy aktéři zvyšují politickou viditelnost útoků. Hacktivisté jednají z politických nebo ideologických důvodů a často používají DDoS, úniky dat, defacement a informační kampaně. Mohou být spontánní, státem tolerovaní nebo státem využívaní jako proxy. Proruské DDoS skupiny, například NoName057(16), ukazují, že i technicky jednodušší útoky mohou působit reputační tlak a zahlcovat komunikaci organizací.
+\textbf{Zneužití infrastruktury třetích stran.} Zdrojová IP adresa neprokazuje identitu útočníka. Státní i kriminální aktéři mohou používat domácí routery, malé firemní routery, VPS, cloudové účty nebo botnety jako prostředníky. Tím kryjí původ operace a komplikují atribuci.
 
-Obranné trendy stojí na sdílení threat intelligence, společných atribucích, sankcích, trestním stíhání, rozbíjení infrastruktury, zero trust, ochraně identit, segmentaci, zálohách, cvičeních, odolnosti, obnově a veřejně-soukromé spolupráci.
+\aktualni{\textbf{APT28 a kompromitované routery TP-Link.} NÚKIB v dubnu 2026 informoval, že ruský státní aktér APT28 podle zpráv USA a FBI vybudoval globální síť kompromitovaných SOHO routerů. U zranitelného modelu TP-Link TL-WR841N měl zneužít známou zranitelnost, měnit DHCP/DNS nastavení a přes podvržené DNS odpovědi získávat hesla, tokeny a další citlivé informace. Příklad ukazuje, proč samotná IP adresa nestačí, proč jsou okrajová zařízení strategická a proč jsou výchozí hesla a EOL zařízení bezpečnostní problém.}
+
+\textbf{Hacktivismus a proxy aktéři.} DDoS se používá jako nástroj politického tlaku, mediální viditelnosti a swarmingového zahlcení. U proruských skupin je potřeba rozlišovat autentický hacktivismus, státní toleranci, státní koordinaci a právní přičitatelnost. To, že skupina tvrdí fyzický dopad, ještě neznamená, že se skutečně stal.
+
+\aktualni{\textbf{NoName057(16) a další proruské skupiny.} NÚKIB v prosinci 2025 upozornil spolu s partnery na proruské hacktivistické útoky proti kritické infrastruktuře. U NoName057(16) NÚKIB evidoval od roku 2023 desítky incidentů proti českým institucím a firmám, všechny jako DDoS. Upozornění zároveň řešilo i oportunistické útoky na špatně zabezpečená OT/ICS zařízení přes vzdálený přístup. Příklad se hodí pro hacktivismus, proxy aktéry, netwar a rozdíl mezi reálným dopadem a propagandistickým tvrzením.}
+
+\textbf{AI v kyberkonfliktu.} AI realisticky zvyšuje rychlost a kvalitu phishingu, překladů, jazykové lokalizace, deepfake audia a videa, analýzy odcizených dat, průzkumu a skriptování. Stejně tak pomáhá obraně: korelace logů, detekce anomálií, triage incidentů a tvorba pravidel. Není vhodné tvrdit, že už existuje běžná plně autonomní kyberválka bez lidské kontroly.
+
+\textbf{Dodavatelské řetězce a poskytovatelé.} Kompromitace jednoho důvěryhodného dodavatele, cloudu, telekomunikačního operátora, správního nástroje nebo aktualizačního mechanismu může otevřít cestu k mnoha obětem. Proto se útoky přesouvají od jednotlivých počítačů k identitám, tokenům, správním účtům, API, cloudovým oprávněním a třetím stranám.
+
+\textbf{Soukromý sektor jako aktér konfliktu.} Válka na Ukrajině ukazuje význam cloudových společností, satelitních poskytovatelů, threat-intelligence firem, výrobců technologií, dobrovolnických skupin a veřejně-soukromých partnerství. Soukromé firmy nejsou jen pasivní oběti; mohou poskytovat obrannou infrastrukturu, analýzu hrozeb, obnovu služeb i politicky citlivé služby dvojího užití.
 
 \subsection*{Aktéři}
 \begin{itemize}
@@ -341,17 +360,22 @@ U aktérů se vždy ptej na motivaci, zdroje, typické cíle a vztah ke státu. 
 \subsection*{Atribuce kyberútoků}
 Atribuce je proces, kterým se kybernetická operace přisuzuje konkrétnímu aktérovi. Není to jen otázka IP adresy. IP adresa ukazuje, odkud přišlo spojení, nikoli nutně kdo útok provedl.
 
-Atribuce má čtyři navazující roviny:
-\begin{itemize}
-  \item \textbf{technická} - malware, servery, účty, logy, indikátory kompromitace a další stopy,
-  \item \textbf{operační} - způsob práce, cíle, nástroje a opakující se techniky,
-  \item \textbf{strategická a zpravodajská} - motivace, geopolitický kontext a neveřejné informace,
-  \item \textbf{politická a právní} - zda stát útok veřejně přisoudí a zda lze jednání právně přičíst jinému státu.
-\end{itemize}
+\begin{longtable}{p{0.17\linewidth}p{0.43\linewidth}p{0.32\linewidth}}
+\toprule
+\textbf{Úroveň atribuce} & \textbf{Co se zkoumá} & \textbf{Příklad}\\
+\midrule
+Technická & Malware, infrastruktura, TTP, logy, účty, indikátory kompromitace. & APT28 a kompromitované routery TP-Link.\\
+Operační & Výběr cílů, pracovní rytmus, opakující se postupy skupiny. & Dlouhodobé kampaně APT aktérů.\\
+Strategická & Motiv, geopolitický kontext a komu operace prospívá. & APT31 proti MZV ČR.\\
+Zpravodajská & Neveřejné informace, zdroje a metody, které stát nemusí zveřejnit. & Veřejně se zveřejní jen část podkladů.\\
+Politická & Rozhodnutí státu útok veřejně přisoudit. & Česká veřejná atribuce APT31 v roce 2025.\\
+Právní & Přičitatelnost podle mezinárodního práva. & Vyšší práh než technická pravděpodobnost.\\
+\bottomrule
+\end{longtable}
 
-Hlavní problémy jsou VPN a proxy, botnety, kompromitovaná zařízení, infrastruktura třetích osob, sdílený nebo odcizený malware, falešné stopy, změněné časové údaje, false flag operace, rozdíl mezi pravděpodobností a jistotou a ochrana zpravodajských zdrojů. Výsledkem často není absolutní jistota, ale míra důvěry.
+Hlavní problémy jsou VPN a proxy, botnety, kompromitovaná zařízení, infrastruktura třetích osob, sdílený nebo odcizený malware, falešné stopy, změněné časové údaje, false flag operace, rozdíl mezi pravděpodobností a jistotou a ochrana zpravodajských zdrojů. Technické přiřazení není totéž jako právní přičitatelnost. Veřejná atribuce je politické rozhodnutí a stát často nezveřejní všechny důkazy, protože by prozradil zpravodajské zdroje a metody.
 
-\priklad{Česká veřejná atribuce APT31 proti MZV ČR ukazuje, že politická atribuce je až konečný krok. Předchází jí technická analýza, zpravodajské hodnocení a strategické rozhodnutí, co lze zveřejnit a jaký bude diplomatický dopad.}
+\aktualni{\textbf{APT31 a politická atribuce.} Česká atribuce APT31 je dobrý příklad konečné politické roviny. Student má říct: nejprve technická a zpravodajská práce, potom vyhodnocení strategického kontextu a nakonec politické rozhodnutí vlády, co veřejně říct a jaký diplomatický signál vyslat.}
 
 \subsection*{Odstrašení v kyberprostoru}
 Odstrašení znamená přesvědčit protivníka, že útok se mu nevyplatí, protože nebude úspěšný nebo za něj ponese nepřijatelnou cenu. V kyberprostoru je to složitější než u klasického vojenského odstrašení: atribuce je nejistá, útoky často zůstávají pod prahem války, aktéři jsou různí a náklady na útok mohou být nízké.
@@ -363,7 +387,9 @@ Rozlišují se tři základní logiky:
   \item \textbf{Odolnost} - i úspěšný útok nezpůsobí dlouhodobý strategický efekt, protože stát nebo organizace službu obnoví.
 \end{itemize}
 
-Praktické problémy odstrašení jsou přesně ty, které zdůrazňuje přednáška: dokážeme útok dostatečně spolehlivě přisoudit? Je hrozba reakce věrohodná? Je stanoven práh, kdy stát odpoví? Nezasáhneme nesprávný cíl? Nevyvolá reakce další eskalaci? Má protivník vůbec cíle, na které lze účinně působit? Jak se liší odstrašení státu, kriminální skupiny a hacktivistů? Může útočník nebo třetí strana znovu využít zveřejněnou zranitelnost? Lze stejnou kybernetickou schopnost použít opakovaně?
+K tomu přidej \textbf{kolektivní reakci}: společné atribuce, koordinované sankce, EU, NATO, sdílení informací a diplomatický tlak. Vedle toho existuje \textbf{rozbíjení infrastruktury útočníků}: policejní, zpravodajské nebo technické operace proti botnetům, malware infrastruktuře, serverům, doménám nebo kryptoměnovým tokům.
+
+\aktualni{\textbf{Jak spojit příklady s odstrašením.} Volt Typhoon se hodí hlavně k odstrašení odepřením a odolnosti: segmentace, hardening, detekce living off the land, ochrana identit a schopnost fungovat i při kompromitaci. APT31 se hodí k odstrašení trestem a kolektivní reakci: veřejná atribuce, diplomacie a politický tlak. DDoS kampaně NoName057(16) se hodí k otázce, zda rychlá obrana a obnova odeberou útočníkovi propagandistický efekt.}
 
 \pozor{Těžký kyberútok může vytvářet riziko eskalace, ale není přesné tvrdit, že téměř vždy přeroste do fyzického násilí. U zkoušky mluv o riziku eskalace, ne o automatickém následku.}
 
@@ -387,11 +413,25 @@ Síťové konflikty mohou mít různé organizační podoby. \textbf{Řetězová
 
 Netwar je dobré vysvětlit jako konflikt sítí proti hierarchii. Tradiční stát rozhoduje pomaleji, přes instituce, procedury a odpovědnosti. Síťově organizovaní aktéři mohou jednat rychle, decentralizovaně a často bez jasného velitele. To je výhoda u kampaní, kde se kombinuje únik dat, DDoS, memy, dezinformace, dobrovolnické skupiny, kriminální infrastruktura a mediální tlak. Obrana pak není jen technická, ale i komunikační a politická: stát musí chránit systémy, vysvětlovat situaci veřejnosti a nenechat si vnutit útočníkův narativ.
 
-\priklad{Proruská hacktivistická DDoS kampaň může být dobrý příklad swarmingu: mnoho menších útoků míří na instituce, firmy nebo veřejné služby, zatímco komunikační kanály útočníků zveřejňují cíle, výsledky a propagandistický narativ. Technicky jde často o dostupnost, politicky o reputační a informační tlak.}
+\aktualni{\textbf{Proruské hacktivistické kampaně jako netwar.} Skupiny typu NoName057(16) zveřejňují seznamy cílů, mobilizují dobrovolníky přes sociální sítě a komunikační platformy, provádějí DDoS a okamžitě publikují propagandistické výsledky. Technicky jde často "jen" o dostupnost, ale politicky o tlak na veřejné mínění a reputaci státu. To je swarming: více menších útoků a mediálních signálů působí současně na technické systémy i psychologii publika.}
 
-\zkouska{Kybernetická bezpečnost chrání systémy, data, služby a uživatele, kyberobrana je vojenská a státně-obranná dimenze, kyberkriminalita je trestná činnost a kybernetický konflikt je širší pojem pro špionáž, sabotáž, nátlak a informační působení. Kyberválka je užší: použití kybernetických operací státem nebo politickým aktérem jako součást ozbrojeného konfliktu nebo k dosažení účinků srovnatelných se závažným vojenským útokem. Většina kyberútoků není kyberválkou; záleží na aktérovi, účelu, rozsahu, účincích a vztahu k širšímu konfliktu. Kyberprostor má fyzickou, logickou, datovou a kognitivní vrstvu a operace mohou mít logické, fyzické nebo kognitivní účinky. Historicky je dobré uvést Morrisův červ, Estonsko, Gruzii, Stuxnet, ukrajinskou energetiku, NotPetya, SolarWinds a Ukrajinu po roce 2022 jako vývoj od zranitelnosti sítí přes DDoS, sabotáž a dodavatelské řetězce až po propojení kybernetických, informačních a konvenčních operací. Aktéry jsou státy, APT skupiny, proxy, kyberkriminálníci, hacktivisté, teroristické organizace využívající internet, firmy i dobrovolníci. Atribuce je proces přisouzení útoku, který má technickou, operační, strategicko-zpravodajskou a politicko-právní rovinu; IP adresa sama pachatele neprokazuje. Odstrašení znamená přesvědčit protivníka, že útok se nevyplatí, a funguje přes trest, odepření a odolnost. Mezinárodní právo platí i v kyberprostoru, ale sporná je aplikace na konkrétní situace; Tallinn Manual je nezávazná expertní studie. Netwar je síťově vedený konflikt, který může kyberkonflikt doprovázet přes decentralizaci, informační kampaně a swarming.}
+\subsection*{Banka příkladů ke zkoušce}
+\begin{itemize}
+  \item \textbf{Kyberšpionáž - APT31 proti MZV ČR.} Česká vláda v roce 2025 veřejně atribuovala kampaň skupině APT31 spojované s čínskou zpravodajskou službou. Význam: státní špionáž proti instituci státu, veřejná atribuce, diplomatický dopad, nikoli automatická kyberválka.
+  \item \textbf{Připravený přístup do KI - Volt Typhoon.} Čínský státem podporovaný aktér podle společných upozornění udržoval přístup v americké kritické infrastruktuře. Význam: pre-positioning, living off the land, legitimní účty a odstrašení odepřením/odolností.
+  \item \textbf{Telekomunikační špionáž - Salt Typhoon.} Operace označované jako Salt Typhoon ukazují hodnotu telekomunikačních sítí, routerů, provozních údajů a správních přístupů. Význam: přes jednoho poskytovatele lze získat informace o velkém počtu cílů.
+  \item \textbf{Zneužití cizích zařízení - APT28 a routery TP-Link.} Kompromitované SOHO routery sloužily jako infrastruktura operace a jako prostředek k DNS manipulaci. Význam: IP adresa není pachatel, okrajová zařízení jsou slabý článek a atribuce musí jít za technické spojení.
+  \item \textbf{Hacktivismus/netwar - NoName057(16).} Proruská skupina používá DDoS, propagandu, zveřejňování cílů a mobilizaci dobrovolníků. Význam: swarming, reputační tlak, proxy logika a rozdíl mezi mediálním tvrzením a skutečným dopadem.
+  \item \textbf{Kyberneticko-fyzická sabotáž - Stuxnet.} Operace cílila na průmyslový proces a poškodila fyzické zařízení. Význam: kyberoperace může způsobit fyzický efekt, když zasáhne OT/ICS.
+  \item \textbf{Výpadek energetiky - Ukrajina 2015/2016.} Útoky na distribuční energetické společnosti vedly k výpadkům elektřiny a nutnosti manuální obnovy. Význam: IT/OT propojení, kontinuita, obnova a kritická infrastruktura.
+  \item \textbf{Destruktivní operace - NotPetya.} Malware se šířil přes dodavatelský a softwarový kontext a způsobil globální ekonomické škody. Význam: wiper maskovaný jako ransomware a nekontrolované vedlejší dopady.
+  \item \textbf{Operace souběžná s válkou - Viasat 2022.} Útok na satelitní komunikační službu proběhl přibližně v době zahájení invaze proti Ukrajině a měl dopady i mimo Ukrajinu. Význam: koordinace s konvenční operací a civilně-vojenská závislost na komerční infrastruktuře.
+  \item \textbf{Dodavatelský řetězec a zdravotnictví - Synnovis 2024.} Ransomware proti dodavateli laboratorních služeb omezil péči v londýnských nemocnicích. Význam: útok na dodavatele může ohrozit základní službu, i když cíl není přímo nemocnice.
+\end{itemize}
 
-\zdroje{Přednáškový materiál \emph{3.) Kyberválka (LONG)}; přiložené PDF a BSS poznámky; Tallinn Manual jako akademický rámec; NATO a EU dokumenty k odpovědnému chování a kolektivní reakci; NÚKIB k APT31 a APT28; CISA k Volt Typhoon a Salt Typhoon; NATO CCDCOE k Ukrajině.}
+\zkouska{Nejdřív odliš incident, kriminalitu, špionáž, sabotáž, informační operaci, kyberkonflikt, kyberobranu a kyberválku. Kyberválka je úzký pojem: kyberoperace státu nebo politického aktéra jako součást ozbrojeného konfliktu nebo s účinky srovnatelnými se závažným vojenským útokem. Ne každý státní útok je kyberválka. Historii vysvětli přes příklady: Estonsko = DDoS a digitální stát, Gruzie = souběh s konvenčním konfliktem, Stuxnet = fyzická sabotáž, Ukrajina 2015/2016 = energetika, NotPetya = destruktivní vedlejší dopady, Viasat = operace při invazi, Ukrajina od 2022 = propojení wiperů, DDoS, špionáže, satelitů, cloudu a soukromých firem. Trendy ukaž na APT31, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), AI a dodavatelských řetězcích. Atribuce má technickou, operační, strategickou, zpravodajskou, politickou a právní rovinu; IP adresa sama pachatele neprokazuje. Odstrašení funguje přes trest, odepření, odolnost, kolektivní reakci a rozbíjení infrastruktury útočníků. Netwar je síťový konflikt podle Arquilly a Ronfeldta: decentralizace, propaganda, DDoS, mobilizace dobrovolníků a swarming.}
+
+\zdroje{Přednáškový materiál \emph{3.) Kyberválka (LONG)}; přiložené PDF a BSS poznámky; Tallinn Manual jako akademický rámec; NATO a EU dokumenty k odpovědnému chování a kolektivní reakci; NÚKIB k APT31, APT28/TP-Link, Salt Typhoon a NoName057(16); CISA k Volt Typhoon; Rada EU k Viasat; NATO CCDCOE k Ukrajině.}
 
 \newpage
 
@@ -400,7 +440,8 @@ Netwar je dobré vysvětlit jako konflikt sítí proti hierarchii. Tradiční st
 \subsection*{Kostra odpovědi}
 \begin{enumerate}
   \item Vymezit kritickou infrastrukturu a kritické subjekty: služby nezbytné pro fungování státu a společnosti.
-  \item Dát aktuální právní kontext: CER a zákon o odolnosti subjektů kritické infrastruktury řeší odolnost kritických subjektů; zákon o kybernetické bezpečnosti řeší kybernetickou bezpečnost regulovaných služeb.
+  \item Dát aktuální právní kontext: směrnice CER, zákon o odolnosti subjektů kritické infrastruktury a prováděcí nařízení o základních službách a kritériích významnosti.
+  \item Vysvětlit přechod mezi starým objektovým systémem a novým service/entity-centric systémem.
   \item Vysvětlit sektory, interdependence a rozdíl IT/OT/ICS/SCADA.
   \item Popsat typické kyberútoky na KI a konkrétní příklady.
   \item Vyložit ochranu: prevence, detekce, reakce, obnova, kontinuita, fyzická bezpečnost, dodavatelé a cvičení.
@@ -412,23 +453,49 @@ Kritická infrastruktura zahrnuje prvky, systémy a služby, jejichž narušení
 
 Základní myšlenka je jednoduchá: nejde jen o to, že existuje důležitá budova, kabel nebo server. Důležité je, jaká \emph{základní služba} na nich závisí. Výpadek nemocničního informačního systému není problém proto, že "nejde počítač", ale proto, že se zpozdí péče, nejdou plánovat operace, laboratoře neposílají výsledky a pacienti se mohou dostat do reálného ohrožení.
 
-\pravobox{Aktuálně je potřeba rozlišovat dvě vrstvy. \textbf{CER} - směrnice 2022/2557 - je v ČR transponována zákonem o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.), účinným od 19. 8. 2025. Ten mění důraz ze starého modelu "stát určí prvky kritické infrastruktury" na model "určí se subjekty poskytující základní služby a ty samy určují svou kritickou infrastrukturu, rizika, dodavatele a plán odolnosti". \textbf{ZKB/NIS2} - zákon o kybernetické bezpečnosti (č. 264/2025 Sb.) a vyhlášky - řeší kybernetickou rovinu regulovaných služeb, vyšší/nižší režim, bezpečnostní opatření a hlášení incidentů. Tyto režimy se překrývají, ale nejsou totožné: CER je all-hazards odolnost, ZKB je kybernetická bezpečnost.}
+\pravobox{Aktuálně rozliš tři úrovně. \textbf{Směrnice CER} je směrnice EU 2022/2557 o odolnosti kritických subjektů; není sama českým zákonem ani "nařízením CER". \textbf{Zákon č. 266/2025 Sb.} je český zákon o odolnosti subjektů kritické infrastruktury, který směrnici CER transponuje a je účinný od 19. 8. 2025. \textbf{Nařízení vlády o základních službách a kritériích významnosti} je prováděcí předpis, který má určit konkrétní základní služby a prahová nebo jiná kritéria významnosti. Bez jeho účinnosti nelze nový určovací mechanismus v plném rozsahu prakticky použít. Vedle toho \textbf{ZKB/NIS2} řeší kybernetickou bezpečnost regulovaných služeb; CER/ZKI řeší all-hazards odolnost kritických subjektů.}
 
-\subsection*{Režim CER/ZKI v praxi}
-Nová úprava kritické infrastruktury se dá vysvětlit jako řetězec:
-\begin{enumerate}
-  \item \textbf{Stát posoudí rizika} - nejprve se na národní úrovni hodnotí, které základní služby jsou pro stát a společnost kritické a jaké hrozby je mohou narušit.
-  \item \textbf{Stát určí kritické subjekty} - podle odvětví, základní služby a významových kritérií se rozhoduje, kdo spadá do režimu kritického subjektu.
-  \item \textbf{Subjekt posoudí vlastní rizika} - kritický subjekt si musí vyhodnotit, co jeho základní službu ohrožuje: kyberútok, fyzická sabotáž, výpadek energie, dodavatel, povodeň, personální nedostatek nebo kombinace.
-  \item \textbf{Subjekt zavede opatření} - organizační, technická, fyzická a personální opatření k prevenci, detekci, reakci a obnově.
-  \item \textbf{Subjekt připraví plán odolnosti} - popíše kritickou infrastrukturu, závislosti, odpovědnosti, krizové scénáře, komunikaci a obnovu služby.
-  \item \textbf{Incident se řeší a hlásí} - subjekt musí umět incident zvládnout, dokumentovat a komunikovat s příslušnými orgány.
-  \item \textbf{Stát dohlíží a koordinuje} - kontroluje plnění povinností, sdílí metodiku a propojuje sektorové gestory.
-\end{enumerate}
+\subsection*{Aktuální stav přechodu mezi starým a novým režimem}
+Ověřeno k 18. 6. 2026 z dostupných oficiálních zdrojů MV, GŘ HZS ČR a e-Sbírky: zákon č. 266/2025 Sb. je účinný, ale v dostupných oficiálních podkladech nebylo potvrzeno účinné nařízení vlády o základních službách a kritériích významnosti ani zveřejněné rozhodnutí o prvních nově zařazených subjektech. Proto je potřeba odpověď formulovat opatrně.
+
+Původní informační povinnost měla být poprvé splněna do 1. března 2026. Ministerstvo vnitra a GŘ HZS ČR ale uvedly, že splnění této povinnosti je fakticky podmíněno účinností nařízení vlády, protože bez něj nelze spolehlivě určit okruh základních služeb, kritéria významnosti ani rozsah povinných informací. Dotčené subjekty proto mají informace předat bez zbytečného odkladu po nabytí účinnosti nařízení vlády. Pracovní návrh nařízení lze použít jen orientačně; sám nezakládá postavení subjektu kritické infrastruktury ani plné povinnosti podle nového systému.
+
+Ministerstvo vnitra mělo podle původního přechodného harmonogramu poprvé rozhodnout o zařazení poskytovatelů základní služby na seznam subjektů kritické infrastruktury do 17. července 2026. Tento harmonogram ale předpokládal, že poskytovatelé předají údaje do 1. března 2026. Pokud nařízení vlády stále není účinné, harmonogram je narušený. Bez výslovné novely nebo jiného právního řešení však neříkej, že zákonný termín byl automaticky posunut.
+
+\pozor{Dosavadní subjekty kritické infrastruktury podle dřívějšího krizového zákona plní staré povinnosti podle § 30 odst. 6 zákona č. 266/2025 Sb. do 17. července 2026. Zákon ale výslovně nestanoví, že starý režim automaticky pokračuje neomezeně dlouho až do účinnosti nařízení vlády. Pokud bude dosavadní subjekt následně zařazen i podle zákona č. 266/2025 Sb., podle § 30 odst. 7 pokračuje v plnění starých povinností ještě deset měsíců ode dne doručení nového rozhodnutí. Jestliže by do 17. července 2026 nebyla kvůli chybějícímu nařízení vydána nová rozhodnutí, jde o problém přechodného harmonogramu; před státnicí znovu ověř novelu, oficiální stanovisko nebo jiné právní řešení.}
+
+\subsection*{Starý a nový systém v jedné tabulce}
+\begin{longtable}{p{0.18\linewidth}p{0.38\linewidth}p{0.38\linewidth}}
+\toprule
+\textbf{Oblast} & \textbf{Starý systém} & \textbf{Nový systém podle CER/ZKI}\\
+\midrule
+Právní základ & Krizový zákon č. 240/2000 Sb. a nařízení vlády č. 432/2010 Sb. & Zákon č. 266/2025 Sb. a nařízení vlády o základních službách a kritériích významnosti.\\
+Hlavní předmět ochrany & Konkrétní prvek kritické infrastruktury. & Kontinuita základní služby a odolnost jejího poskytovatele.\\
+Základní logika & Asset-centric, objektový přístup. & Service-centric a entity-centric přístup.\\
+Co se určovalo & Konkrétní stavba, zařízení, prostředek nebo veřejná infrastruktura. & Nejprve poskytovatel základní služby jako subjekt KI; konkrétní KI si následně identifikuje subjekt.\\
+Kritéria & Odvětvová kritéria a průřezová kritéria závažného dopadu. & Konkrétní základní služba a její kritérium významnosti.\\
+První aktivita & Stát a věcně příslušný úřad vytipovaly a posoudily konkrétní prvek. & Poskytovatel nejprve sám posoudí, zda poskytuje základní službu a splňuje kritérium.\\
+Formální určení & Stát určil konkrétní prvek; u prvků provozovaných organizační složkou státu rozhodovala vláda. & Gestor ověří údaje a podá podnět; Ministerstvo vnitra individuálně rozhodne o zařazení poskytovatele na seznam.\\
+Role provozovatele & Součinnost se státem a ochrana již určeného prvku. & Aktivní sebehodnocení, předání údajů, vlastní posouzení rizik a určení vlastní KI.\\
+Hlavní dokumentace & Plán krizové připravenosti subjektu KI. & Posouzení rizik a plán odolnosti.\\
+Rozsah rizik & Ochrana konkrétních prvků a krizová připravenost. & All-hazards odolnost: fyzická, kybernetická, přírodní, personální a dodavatelská rizika.\\
+Další povinnosti & Ochrana prvku, součinnost a krizové plánování. & Manažer KI, kritičtí pracovníci a dodavatelé, opatření, hlášení incidentů, cvičení a kontinuita.\\
+Aktuální přechod & Staré subjekty dočasně pokračují ve starých povinnostech. & Nový systém se plně rozběhne po účinnosti nařízení a individuálních rozhodnutích MV.\\
+\bottomrule
+\end{longtable}
+
+\subsection*{Kdo co dělá v novém systému}
+\textbf{A. Fáze obecné regulace - stát.} Zákon stanoví odvětví, institucionální systém a obecný proces. Vláda nařízením vymezí základní služby a kritéria významnosti. Stát zpracuje národní posouzení rizik a pro jednotlivá odvětví určí gestory.
+
+\textbf{B. Fáze předběžného posouzení - poskytovatel.} Organizace posoudí, zda poskytuje některou z vymezených základních služeb a zda splňuje příslušné kritérium významnosti. Při pozitivním výsledku předá informace věcnému gestorovi a Ministerstvu vnitra. Pokud zůstane nečinná, může proces iniciovat gestor nebo Ministerstvo vnitra. Poskytovatel se tímto vlastním posouzením ještě sám nestává subjektem kritické infrastruktury. Pouze poznává, že může splňovat obecná kritéria a musí poskytnout informace. Nemůže se závazně "sám vyřadit", pokud stát na základě vlastních informací dospěje k opačnému závěru.
+
+\textbf{C. Fáze formálního určení - gestor a Ministerstvo vnitra.} Odvětvový gestor informace ověří. Při splnění podmínek podá Ministerstvu vnitra podnět. Ministerstvo vnitra individuálním správním rozhodnutím zařadí poskytovatele na seznam subjektů kritické infrastruktury. Až doručením rozhodnutí se poskytovatel stává subjektem kritické infrastruktury.
+
+\textbf{D. Fáze plnění povinností - subjekt kritické infrastruktury.} Po doručení rozhodnutí subjekt zpracuje do devíti měsíců vlastní posouzení rizik, identifikuje svou konkrétní kritickou infrastrukturu, identifikuje kritické dodavatele a závislosti, přijímá technická, bezpečnostní, organizační, fyzická, personální a dodavatelská opatření, do deseti měsíců zpracuje plán odolnosti, do deseti měsíců určí manažera kritické infrastruktury, po uplynutí zákonné desetiměsíční lhůty začne hlásit incidenty, provádí cvičení, aktualizuje dokumentaci a umožňuje kontrolu. Není správné říct, že všechny nové povinnosti vznikají až za deset měsíců. Základní postavení subjektu a část povinností vznikají doručením rozhodnutí; jen některé konkrétní povinnosti mají devíti- nebo desetiměsíční lhůtu.
 
 Klíčové slovo je \textbf{all-hazards}. CER/ZKI neřeší jen hackery. Stejný plán odolnosti má dávat smysl pro ransomware, požár, povodeň, blackout, sabotáž, pandemii, selhání dodavatele i kombinovaný hybridní scénář. Proto se liší od čistě kybernetické regulace: ZKB se ptá na bezpečnost informačních a komunikačních systémů regulované služby, zatímco ZKI se ptá, zda základní služba přežije široké spektrum narušení.
 
-\pozor{K 18. 6. 2026 je potřeba mluvit opatrně o přechodném období. Zákon o odolnosti subjektů kritické infrastruktury je účinný od 19. 8. 2025, ale praktické určování kritických subjektů je navázané na prováděcí úpravu základních služeb a významových kritérií. Staré prvky kritické infrastruktury proto nelze jednoduše prohlásit za okamžitě nahrazené plně fungujícím novým systémem. Před zkouškou ověř, zda už je účinné příslušné nařízení vlády, jaké běží lhůty a které subjekty byly nově určeny.}
+\zkouska{Starý systém byl objektový: stát podle odvětvových a průřezových kritérií určoval konkrétní prvky, například elektrárnu, dispečink nebo zařízení. Nový systém podle CER je orientován na službu a odolnost jejího poskytovatele. Stát obecně vymezí základní služby a kritéria, poskytovatel se předběžně sám posoudí a předá informace, gestor je ověří a Ministerstvo vnitra teprve individuálním rozhodnutím poskytovatele zařadí na seznam. Potom si subjekt sám určí infrastrukturu nezbytnou pro poskytování služby a zpracuje posouzení rizik a plán odolnosti. K 18. 6. 2026 je nutné ověřit přechodný stav, protože zákon č. 266/2025 Sb. je účinný, ale prováděcí nařízení o základních službách a kritériích významnosti nebylo v dostupných oficiálních zdrojích potvrzeno jako účinné.}
 
 Starší poznámky často pracují s pojmy \textbf{kritická komunikační infrastruktura} a \textbf{kritická informační infrastruktura}. U zkoušky je můžeš použít jako vysvětlující zkratky, ale s aktuální korekcí. Komunikační infrastruktura znamená sítě a služby elektronických komunikací, které umožňují přenos informací: pevné a mobilní sítě, páteřní internet, datová centra, satelitní komunikace nebo veřejné radiokomunikační sítě. Informační infrastruktura znamená informační systémy a data, bez nichž nemůže fungovat veřejná správa, zdravotnictví, energetika, finance nebo doprava. Nový ZKB už odpověď staví hlavně přes regulovanou službu a jejího poskytovatele, ale věcně pořád chráníme totéž: systémy, sítě, data a služby, jejichž výpadek má společenský dopad.
 
@@ -467,24 +534,37 @@ Proto se ochrana OT nedá kopírovat z kancelářského IT. V běžném IT je č
   \item \textbf{Špionáž} - dlouhodobé mapování infrastruktury pro budoucí krizi.
 \end{itemize}
 
-\subsection*{Příklady, které se dobře říkají u zkoušky}
-\begin{itemize}
-  \item \textbf{Stuxnet / Natanz 2010} - škodlivý kód zasáhl průmyslové řídicí systémy íránského jaderného programu. Je důležitý jako příklad prolomení "kybernetické bariéry": digitální operace způsobila fyzický efekt na centrifugách a vyžadovala znalost konkrétní technologie.
-  \item \textbf{Ukrajinská energetika 2015} - útok spojený s malwarem BlackEnergy vedl k výpadkům elektřiny pro statisíce odběratelů. Důležité je, že útočníci neútočili jen na techniku, ale i na schopnost reakce, například zatížením call center.
-  \item \textbf{Colonial Pipeline 2021} - ransomware proti podnikové IT části vedl k preventivnímu zastavení provozu palivového potrubí. Ukazuje, že i když není přímo kompromitované OT, rozhodnutí z bezpečnostních a provozních důvodů může zastavit fyzickou službu.
-  \item \textbf{České nemocnice 2020} - útoky na zdravotnická zařízení během pandemie ukázaly, že zdravotnictví je bezpečnostní téma, ne jen lokální IT problém. Ransomware ve zdravotnictví má přímý dopad na lidskou bezpečnost.
-  \item \textbf{Bangladesh Bank 2016} - útok na finanční infrastrukturu a SWIFT ukazuje, že KI není jen elektrárna nebo nemocnice; finanční systém je kritický kvůli důvěře, platbám a přeshraničním vazbám.
-\end{itemize}
+\subsection*{Příklady skutečných útoků na kritickou infrastrukturu}
+\aktualni{\textbf{Synnovis / NHS, 2024, Spojené království.} Napadeným sektorem bylo zdravotnictví, přesněji dodavatel laboratorních a patologických služeb pro několik londýnských nemocnic. Šlo o ransomware kriminální skupiny; pro účely státnic je podstatné, že nejde o útok na "nemocnici jako budovu", ale na kritického dodavatele. Dopad: odkládání vyšetření a operací, narušení krevních testů, transfuzních služeb a přechod na náhradní postupy. Pojem: dodavatelský řetězec, kontinuita zdravotní péče, kritická závislost. Poučení: alternativní postupy, smluvní a technická bezpečnost dodavatelů, testovaná obnova a krizová komunikace.}
 
-\priklad{Aktuální příklad z praxe - Synnovis a zdravotnictví: v červnu 2024 zasáhl ransomware poskytovatele laboratorních služeb Synnovis, který zpracovával krevní testy a patologické služby pro části NHS v jihovýchodním Londýně. Cílem tedy nebyla přímo "státní nemocniční síť", ale významný dodavatel, na němž nemocnice závisely. Dopad byl fyzický a společenský: odkládání vyšetření a operací, omezení laboratorních výsledků, problémy s transfuzními službami a přechod na náhradní postupy. NHS a Synnovis zároveň řešily data, komunikaci s pacienty, obnovu služeb a spolupráci s NCSC a policií. Ke zkoušce: u kritické infrastruktury nejde jen o ztrátu dat, ale o ztrátu schopnosti poskytovat péči; dodavatelský řetězec může být stejně kritický jako vlastní nemocniční systém.}
+\aktualni{\textbf{Volt Typhoon, zveřejněno 2024 a dále sledováno.} Cílem byla americká kritická infrastruktura ve více odvětvích, například komunikace, energetika, voda a doprava. CISA a partneři popsali čínského státem podporovaného aktéra s dlouhodobou perzistencí, living off the land technikami a zneužíváním legitimních účtů. Dopad není prokázaná destrukce, ale připravený přístup pro případ budoucí krize nebo konfliktu. Pojem: pre-positioning. Poučení: hardening identit, detekce nenápadného chování, segmentace, odstrašení odepřením a odolnost.}
 
-\priklad{Aktuální příklad z praxe - Volt Typhoon jako připravený přístup: společná upozornění CISA a partnerů popsala čínským státem podporovaného aktéra Volt Typhoon, který si udržoval přístup v prostředích kritické infrastruktury a používal living-off-the-land techniky. Pointa pro KI je, že útočník nemusí infrastrukturu hned sabotovat. Může mapovat energetiku, vodu, dopravu nebo komunikace a držet možnost budoucí aktivace v politické nebo vojenské krizi. Ke zkoušce: ochrana KI musí řešit i tichou perzistenci a přípravu bojiště, ne jen viditelné výpadky.}
+\aktualni{\textbf{Viasat KA-SAT, 2022, Ukrajina a Evropa.} Útok na satelitní komunikační síť proběhl přibližně hodinu před ruskou invazí na Ukrajinu; EU jej veřejně spojila s Ruskou federací. Způsobem byla destruktivní operace proti komunikační infrastruktuře a zákaznickým modemům. Dopad byl přeshraniční: narušení komunikace na Ukrajině a výpadky u civilních uživatelů mimo Ukrajinu. Pojem: souběh kybernetické a konvenční vojenské operace, civilně-vojenská závislost na komerční infrastruktuře, kaskádové dopady. Poučení: záložní komunikace, odolnost satelitních služeb a mezinárodní atribuce.}
 
-\priklad{Aktuální příklad z praxe - satelitní infrastruktura: útok na službu Viasat v době zahájení ruské invaze proti Ukrajině ukázal, že komerční satelitní služby mohou mít vojenský i civilní význam. ENISA Space Threat Landscape 2025 upozorňuje, že komerční satelity čelí hrozbám v celém životním cyklu, včetně dodavatelských rizik, slabé konfigurace, omezené viditelnosti, lidské chyby a sofistikovaných útoků. Doprava, navigace, energetika, komunikace i armáda mohou záviset na satelitních službách, takže narušení může mít přeshraniční kaskádové dopady. Ke zkoušce: kritická infrastruktura dnes nekončí na území státu; může sahat do cloudu, satelitů a globálních dodavatelů.}
+\aktualni{\textbf{Ukrajinská energetika, 2015/2016, Ukrajina.} Napadeným sektorem byla distribuce elektřiny. Bezpečnostní komunita útoky spojuje s ruskými aktéry; přesná právní přičitatelnost je samostatná otázka. Způsobem byla kompromitace IT prostředí energetických společností, zásah do provozních a řídicích procesů, zneužití vzdáleného přístupu a narušení obnovy. Dopad: výpadky elektřiny a nutnost manuální obnovy provozu. Pojem: IT/OT propojení, fyzický dopad, kontinuita. Poučení: segmentace, řízení vzdáleného přístupu, manuální režimy a plán obnovy.}
 
-\priklad{Útok na energetickou distribuční společnost nemusí okamžitě vypnout elektřinu. Může nejdřív mapovat síť, ukrást přístupy, narušit dohledové systémy a připravit možnost škody v době politické nebo vojenské krize. U KI proto není špionáž "méně důležitá" jen proto, že zatím nic nespadlo; může jít o přípravu budoucí sabotáže.}
+\aktualni{\textbf{Colonial Pipeline, 2021, USA.} Ransomware DarkSide zasáhl podnikovou IT síť provozovatele palivového potrubí. Potrubní provoz byl preventivně nebo provozně nutně odstaven kvůli nejistotě a riziku pro bezpečný provoz. Nešlo o klasický prokázaný přímý zásah do OT, ale o situaci, kdy kompromitace IT vedla k zastavení fyzické služby. Dopad: přerušení dodávek paliv, ekonomické a společenské dopady a krizová reakce státu. Pojem: vazba IT/OT, kontinuita základní služby, ransomware. Poučení: oddělení IT a OT, MFA, obnova, krizová komunikace.}
 
-\priklad{Modelový příklad - vodárenská společnost: útočník získá přístup přes vzdáleně dostupné zařízení dodavatele, z kancelářského IT se pokusí proniknout do OT a změní nastavení řídicího systému. Provozovatel automatizaci raději odstaví a přejde na ruční provoz, aby zajistil bezpečnost vody. Současně informuje veřejnost, obnovuje konfigurace, hlásí incident NÚKIB, předává podklady policii a posuzuje, zda došlo i k porušení zabezpečení osobních údajů. Po incidentu řeší dodavatele, segmentaci IT/OT, zálohy konfigurací a plán kontinuity. Tento scénář není popis jednoho českého případu; slouží k vysvětlení, jak digitální incident přechází do fyzického provozu a právních povinností.}
+\aktualni{\textbf{Proruské hacktivistické skupiny, 2025-2026.} NÚKIB a mezinárodní partneři upozornili na skupiny jako NoName057(16), Cyber Army of Russia Reborn, Z-Pentest nebo Sector16. Typicky jde o DDoS kampaně proti institucím a firmám, ale upozornění zmiňují i oportunistické útoky na špatně zabezpečená OT/ICS zařízení přes vzdálený přístup. Dopad bývá často nižší a více mediální, ale četnost a propaganda zvyšují tlak. Pojem: hacktivismus, proxy aktéři, netwar, swarming. Poučení: ochrana dostupnosti, vypnutí veřejně dostupné vzdálené správy, silné ověřování, monitoring OT a opatrnost vůči propagandistickým tvrzením útočníků.}
+
+\textbf{Doplňkové historické příklady.} \textbf{Stuxnet} ukazuje kyberneticko-fyzickou sabotáž průmyslového procesu. \textbf{NotPetya} ukazuje destruktivní wiper s globálními vedlejšími dopady. \textbf{HSE Irsko 2021} ukazuje ransomware ve zdravotnictví, rozsáhlé omezení péče a dlouhou obnovu. \textbf{Triton/Trisis} ukazuje cílení na bezpečnostní instrumentované systémy v průmyslu, tedy na vrstvu, která má chránit fyzický provoz.
+
+\begin{longtable}{p{0.20\linewidth}p{0.09\linewidth}p{0.18\linewidth}p{0.20\linewidth}p{0.15\linewidth}p{0.15\linewidth}}
+\toprule
+\textbf{Případ} & \textbf{Rok} & \textbf{Sektor} & \textbf{Typ operace} & \textbf{Dopad} & \textbf{Co demonstruje}\\
+\midrule
+Ukrajinská energetika & 2015/2016 & Energetika & Zásah do provozu/OT & Výpadky elektřiny & IT/OT a fyzický dopad\\
+Stuxnet & cca 2010 & Jaderný průmysl & Cílená sabotáž ICS & Fyzické poškození zařízení & Kyberneticko-fyzická operace\\
+NotPetya & 2017 & Více sektorů & Destruktivní wiper & Globální ekonomické škody & Nekontrolované vedlejší dopady\\
+Colonial Pipeline & 2021 & Energie & Ransomware & Přerušení dodávek & Kontinuita a vazba IT/OT\\
+Viasat & 2022 & Satelitní komunikace & Destruktivní operace & Přeshraniční výpadky & Integrace s válkou\\
+Synnovis & 2024 & Zdravotnictví & Ransomware dodavatele & Omezení péče & Dodavatelský řetězec\\
+Volt Typhoon & 2024- & Více sektorů KI & Pre-positioning & Připravený přístup & Dlouhodobá státní hrozba\\
+NoName057(16) a další & 2025-2026 & Veřejná správa a KI & DDoS/opportunistické OT & Narušení dostupnosti & Hacktivismus a netwar\\
+\bottomrule
+\end{longtable}
+
+\modelovy{\textbf{Vodárenská společnost.} Útočník získá přístup přes vzdáleně dostupné zařízení dodavatele, z kancelářského IT se pokusí proniknout do OT a změní nastavení řídicího systému. Provozovatel automatizaci raději odstaví a přejde na ruční provoz, aby zajistil bezpečnost vody. Současně informuje veřejnost, obnovuje konfigurace, hlásí incident NÚKIB, předává podklady policii a posuzuje, zda došlo i k porušení zabezpečení osobních údajů. Po incidentu řeší dodavatele, segmentaci IT/OT, zálohy konfigurací a plán kontinuity. Tento scénář není popis jednoho českého případu; slouží k vysvětlení, jak digitální incident přechází do fyzického provozu a právních povinností.}
 
 \subsection*{Ochrana kritické infrastruktury}
 Ochrana KI je kombinace prevence, detekce, reakce a obnovy. Nestačí koupit bezpečnostní nástroj; cílem je odolnost služby.
@@ -521,9 +601,9 @@ Starší debata o odstrašení klade dobré otázky: Kde je práh reakce? Je to 
 
 \pozor{Kyberterorismus u KI zmiň opatrně. Terorismus potřebuje politický cíl, zastrašení, publicitu a symbolický efekt. Mnoho útoků na infrastrukturu je závažných, ale právně a analyticky půjde spíš o kriminalitu, špionáž, sabotáž nebo státní/proxy operaci než o terorismus.}
 
-\zkouska{U KI vždy řekni "nejde jen o data, ale o kontinuitu základní služby a fyzické dopady". Potom přidej právní rozlišení: CER/ZKI = odolnost kritických subjektů vůči všem hrozbám, ZKB/NIS2 = kybernetická bezpečnost regulovaných služeb.}
+\zkouska{U KI vždy řekni: nejde jen o data, ale o kontinuitu základní služby a fyzické dopady. Právně rozliš směrnici CER, český zákon č. 266/2025 Sb. a prováděcí nařízení o základních službách a kritériích významnosti. Starý systém byl objektový, nový systém je orientovaný na službu a poskytovatele. Poskytovatel se sám předběžně posoudí a předá informace, ale subjektem KI se stává až doručením rozhodnutí Ministerstva vnitra. K 18. 6. 2026 je přechodový stav citlivý: zákon je účinný, ale účinné prováděcí nařízení nebylo v dostupných oficiálních zdrojích potvrzeno, takže harmonogram je narušený a před státnicí je nutné ověřit novelu, stanovisko nebo první rozhodnutí. U útoků použij Synnovis pro dodavatele, Volt Typhoon pro pre-positioning, Viasat pro souběh s válkou, Ukrajinu 2015/2016 pro IT/OT, Colonial Pipeline pro IT dopad na fyzickou službu a NoName057(16) pro hacktivismus/netwar.}
 
-\zdroje{Přiložené PDF; starší výpisky k otázce 4; směrnice CER 2022/2557; zákon o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.); zákon o kybernetické bezpečnosti (č. 264/2025 Sb.); HZS ČR k nové úpravě kritické infrastruktury; NÚKIB metodiky k regulovaným službám.}
+\zdroje{Přiložené PDF; starší výpisky k otázce 4; směrnice CER 2022/2557; zákon o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.); MV a GŘ HZS ČR ke stanovení informací a přechodnému období; metodika GŘ HZS ČR k zařazení poskytovatele základní služby; zákon o kybernetické bezpečnosti (č. 264/2025 Sb.); CISA k Volt Typhoon a Colonial Pipeline; NHS England k Synnovis; Rada EU k Viasat; NÚKIB k proruským hacktivistům a APT28/TP-Link.}
 
 \newpage
 
@@ -1254,8 +1334,11 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
   \item Hrozba není riziko. Hrozba je zdroj škody, riziko je míra ohrožení konkrétního objektu.
   \item Kyberbezpečnost stírá hranici vnitřní a vnější bezpečnosti.
   \item Strategie není zákon. Strategie určuje cíle, zákon ukládá povinnosti, akční plán rozepisuje úkoly.
-  \item Ne každý kyberútok je kyberválka. Většina operací je pod prahem ozbrojeného konfliktu.
+  \item Ne každý kyberútok je kyberválka. Kyberválku říkej jen u operací v ozbrojeném konfliktu nebo s účinky srovnatelnými se závažným vojenským útokem.
+  \item U kyberválky měj připravené příklady: APT31 = špionáž a politická atribuce, Volt Typhoon = pre-positioning, Salt Typhoon = telekomunikace, APT28/TP-Link = cizí infrastruktura, NoName057(16) = hacktivismus/netwar, Viasat = souběh s invazí.
   \item U kritické infrastruktury nejde jen o data, ale o kontinuitu základní služby a fyzické dopady.
+  \item CER není český zákon ani "nařízení CER"; směrnice CER je v ČR transponována hlavně zákonem č. 266/2025 Sb. a praktické určení subjektů závisí na účinném nařízení vlády o základních službách a kritériích významnosti.
+  \item Starý systém KI byl objektový, nový systém je orientovaný na základní službu a poskytovatele; subjekt KI vzniká až doručením rozhodnutí Ministerstva vnitra.
   \item NIS2 se v ČR učí přes zákon o kybernetické bezpečnosti a prováděcí vyhlášky.
   \item U kyberkriminality převáděj technický popis na skutkové podstaty.
   \item U elektronických důkazů hlídej volatilitu, integritu, hash a chain of custody.
@@ -1268,8 +1351,8 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
 \begin{itemize}
   \item \textbf{15}: APT31 proti infrastruktuře Ministerstva zahraničních věcí ČR jako průřezový příklad referenčního objektu, hrozby, rizika, vnitřní/vnější bezpečnosti, sektorů a aktérů bezpečnostní politiky.
   \item \textbf{16}: APT31 jako řetězec od technického zjištění po veřejnou atribuci vlády; DDoS vlna v Q1 2026 jako příklad rozdílu mezi provozním incidentem a strategickou reakcí státu.
-  \item \textbf{17}: APT31, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), Ukrajina a AI jako trendy kyberkonfliktu pod prahem ozbrojeného konfliktu.
-  \item \textbf{18}: Synnovis/NHS, Volt Typhoon, satelitní infrastruktura podle ENISA a modelový příklad vodárenské společnosti.
+  \item \textbf{17}: APT31, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), Viasat, Ukrajina, AI, dodavatelské řetězce a soukromý sektor jako konkrétní příklady kyberkonfliktu pod prahem i během ozbrojeného konfliktu.
+  \item \textbf{18}: přechod starý/nový systém KI; Synnovis/NHS, Volt Typhoon, Viasat, ukrajinská energetika 2015/2016, Colonial Pipeline a NoName057(16) jako sada příkladů pro základní službu, IT/OT, dodavatele, kontinuitu a netwar.
   \item \textbf{19}: modelové situace nemocnice, banky, cloudového dodavatele, výrobce routeru podle CRA a použití Cyber Solidarity Act.
   \item \textbf{20}: Operation Endgame, First VPN, Cryptomixer/AudiA6 a modelové kvalifikace pro infostealery, deepfake podvod, initial access brokera, DDoS-for-hire a kryptoměnové praní.
   \item \textbf{21}: praktické použití § 78, § 79, § 82, § 7b, § 88a, § 88, znaleckého zkoumání, přeshraničního scénáře a forenzní osy u ransomwaru.
@@ -1280,7 +1363,7 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
 \section*{Skutečné a modelové příklady}
 \addcontentsline{toc}{section}{Skutečné a modelové příklady}
 \begin{itemize}
-  \item \textbf{Skutečné případy z oficiálních zdrojů}: APT31/MZV ČR, DDoS vlna Q1 2026, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), ukrajinská kybernetická obrana podle CCDCOE, Synnovis/NHS, Operation Endgame, First VPN, Cryptomixer/AudiA6, ÚOOÚ kontroly biometrické docházky a realitně-investičního zpracování údajů, Avast/Jumpshot a stanovisko EDPB k AI modelům.
+  \item \textbf{Skutečné případy z oficiálních zdrojů}: APT31/MZV ČR, DDoS vlna Q1 2026, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), Viasat, Colonial Pipeline, ukrajinská kybernetická obrana podle CCDCOE, Synnovis/NHS, Operation Endgame, First VPN, Cryptomixer/AudiA6, ÚOOÚ kontroly biometrické docházky a realitně-investičního zpracování údajů, Avast/Jumpshot a stanovisko EDPB k AI modelům.
   \item \textbf{Modelové příklady pro vysvětlení práva}: vodárenská společnost, nemocnice a ransomware podle ZKB/NIS2, banka a cloud, výrobce routeru podle CRA, e-evidence scénář, použití procesních institutů trestního řádu, phishing/cloud přes hranice, GDPR e-shop/kamerový systém/HR screening/AI profilování, QES smlouva, pečeť univerzity, časové razítko a datové schránky.
   \item \textbf{Atribuce}: u státních aktérů rozlišuj veřejnou politickou atribuci státu, technické přiřazení bezpečnostní komunitou, pravděpodobné spojení se státem a právní přičitatelnost. Ne každý případ kyberšpionáže je kyberválka a ne každá zdrojová IP adresa identifikuje pachatele.
 \end{itemize}
@@ -1291,7 +1374,7 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
   \item \textbf{E-evidence}: od 18. 8. 2026 se začne používat EPOC/EPOC-PR; před zkouškou ověř, zda už je režim použitelný, jak je nastaven český příjem a validace příkazů a zda se změnila praxe poskytovatelů.
   \item \textbf{2. dodatkový protokol k Budapešťské úmluvě}: ověř počet ratifikací a zda už vstoupil v platnost; k 18. 6. 2026 mu chyběla pátá ratifikace.
   \item \textbf{Úmluva OSN proti kyberkriminalitě}: ověř počet signatářů, ratifikací a vstup v platnost; k 18. 6. 2026 nebyla v platnosti a UNTC uváděl 77 signatářů a 3 strany.
-  \item \textbf{CER/ZKI}: ověř prováděcí nařízení k základním službám a významovým kritériím, přechodné lhůty a to, zda už byly určeny nové kritické subjekty.
+  \item \textbf{CER/ZKI}: k 18. 6. 2026 nebylo v dostupných oficiálních zdrojích potvrzeno účinné nařízení vlády o základních službách a kritériích významnosti ani první individuální rozhodnutí MV o zařazení nových subjektů. Těsně před státnicí ověř e-Sbírku, MV a GŘ HZS ČR: zda už je nařízení účinné, zda byla vydána rozhodnutí, zda se změnil termín 17. 7. 2026 a zda existuje novela nebo nové stanovisko k přechodu.
   \item \textbf{ZKB/NIS2}: ověř aktuální prováděcí předpisy NÚKIB, metodiky, režim strategicky významných služeb a pravidla bezpečnosti dodavatelského řetězce.
   \item \textbf{eIDAS 2.0 a EUDI Wallet}: ověř prováděcí akty, český projekt DIA, povinnosti přijímat peněženku a přesné lhůty pro zpřístupnění.
   \item \textbf{Předávání osobních údajů do USA}: ověř stav EU-US Data Privacy Framework a případná rozhodnutí Soudního dvora EU navazující na věc Latombe.
@@ -1307,11 +1390,14 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
   \item NÚKIB - čtvrtletní přehled hrozeb Q1 2026: \url{https://nukib.gov.cz/cs/infoservis/aktuality/2399-vydali-jsme-ctvrtletni-prehled-hrozeb-nukib-q1-2026/}
   \item NÚKIB - Zpráva o stavu kybernetické bezpečnosti ČR za rok 2024: \url{https://nukib.gov.cz/download/publikace/zpravy_o_stavu/Zpr%C3%A1va_o_stavu_kyberneticke_bezpecnosti_CR_za_rok_2024.pdf}
   \item NÚKIB - routery TP-Link kompromitované aktérem APT28: \url{https://nukib.gov.cz/cs/infoservis/aktuality/2394-routery-tp-link-kompromitovany-ruskym-statnim-akterem-apt28/}
+  \item NÚKIB - proruské hacktivistické skupiny proti kritické infrastruktuře: \url{https://nukib.gov.cz/cs/infoservis/aktuality/2356-nukib-se-pripojil-k-mezinarodnimu-upozorneni-na-proruske-hacktivisticke-skupiny-utocici-na-subjekty-kriticke-infrastruktury/}
+  \item NÚKIB - Salt Typhoon a kompromitace sítí: \url{https://nukib.gov.cz/cs/infoservis/aktuality/2292-nukib-spolu-s-nsa-a-dalsimi-americkymi-urady-upozornuje-na-cinskeho-aktera-salt-typhoon-ktery-kompromituje-site-po-celem-svete/}
   \item Portál NÚKIB k novému zákonu o kybernetické bezpečnosti: \url{https://portal.nukib.gov.cz/}
   \item e-Sbírka - zákon o kybernetické bezpečnosti (č. 264/2025 Sb.): \url{https://e-sbirka.gov.cz/sb/2025/264}
   \item e-Sbírka - zákon o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.): \url{https://e-sbirka.gov.cz/sb/2025/266}
   \item HZS ČR - kritická infrastruktura po nové úpravě: \url{https://hzscr.gov.cz/clanek/web-informacni-servis-zpravodajstvi-2026-unor-kriticka-infrastruktura.aspx}
   \item HZS ČR - představení zákona o kritické infrastruktuře: \url{https://hzscr.gov.cz/clanek/predstaveni-zakona-o-kriticke-infrastrukture.aspx}
+  \item GŘ HZS ČR - metodika k zařazení poskytovatele základní služby mezi subjekty KI: \url{https://hzscr.gov.cz/soubor/2026-02-25-metodika-procesu-urceni-subjektu-ki-pro-subjekty-pdf.aspx}
   \item Ministerstvo vnitra - poskytování informací podle zákona o kritické infrastruktuře: \url{https://mv.gov.cz/npo/clanek/sdeleni-ministerstva-vnitra-k-poskytovani-informaci-podle-zakona-o-kriticke-infrastrukture.aspx}
   \item Vláda ČR - Bezpečnostní rada státu: \url{https://vlada.gov.cz/cz/pracovni-a-poradni-organy-vlady/brs/brs-uvod-3851/}
   \item EUR-Lex - NIS2: \url{https://eur-lex.europa.eu/eli/dir/2022/2555/oj}
@@ -1330,6 +1416,9 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
   \item CISA - Volt Typhoon a kritická infrastruktura: \url{https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a}
   \item CISA - Volt Typhoon kompromitace SOHO zařízení: \url{https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a}
   \item CISA - Salt Typhoon / čínští státní aktéři proti telekomunikacím: \url{https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a}
+  \item CISA - Colonial Pipeline: \url{https://www.cisa.gov/news-events/news/attack-colonial-pipeline-what-weve-learned-what-weve-done-over-past-two-years}
+  \item U.S. Department of Energy - Colonial Pipeline Cyber Incident: \url{https://www.energy.gov/ceser/colonial-pipeline-cyber-incident}
+  \item Rada EU - ruské kybernetické operace proti Ukrajině a KA-SAT: \url{https://www.consilium.europa.eu/en/press/press-releases/2022/05/10/russian-cyber-operations-against-ukraine-declaration-by-the-high-representative-on-behalf-of-the-european-union/}
   \item UK NCSC - APT28 a zneužití routerů k DNS hijackingu: \url{https://www.ncsc.gov.uk/news/apt28-exploit-routers-to-enable-dns-hijacking-operations}
   \item NATO CCDCOE - ukrajinská kybernetická obrana a role nestátních aktérů: \url{https://ccdcoe.org/library/publications/policy-brief-ukraines-cyber-defence-evolution-the-role-of-non-state-actors-and-public-private-partnerships/}
   \item ENISA - Space Threat Landscape 2025: \url{https://www.enisa.europa.eu/publications/enisa-space-threat-landscape-2025}
