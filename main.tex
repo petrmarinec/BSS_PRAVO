@@ -1093,6 +1093,21 @@ Je zvláštní tím, že se snadno mění, rychle mizí, bývá šifrovaný, ča
 
 \pravobox{Podle zákona o elektronických komunikacích musí osoba zajišťující veřejnou komunikační síť nebo poskytující veřejně dostupnou službu elektronických komunikací uchovávat \textbf{6 měsíců provozní a lokalizační údaje}. Jde o metadata, ne o obsah zpráv. Zákon o elektronických komunikacích sám nedává policii odposlech; procesní oprávnění musí přijít z trestního řádu, typicky § 88a pro metadata nebo § 88 pro budoucí obsah.}
 
+\subsection*{Pohádka: phishing přes Bazoš}
+\modelovy{Představ si jednoduchý český případ. Poškozený prodává telefon na Bazoši. Ozve se mu "kupující", pošle odkaz na falešnou platební bránu a poškozený zadá údaje ke kartě. Z účtu zmizí peníze a poškozený jde na policii.
+
+Policie nejdřív nechce, aby zmizely stopy. Proto může použít \textbf{§ 7b TŘ - uchování dat}: požádá Bazoš nebo poskytovatele falešné stránky, aby uchoval existující údaje k inzerátu, účtu, zprávám, přihlášením a IP adresám. To je jen "zmrazení" dat, ne jejich automatické přečtení. Cílem je, aby se logy nesmazaly dřív, než se získá další procesní titul.
+
+Pak policie potřebuje zjistit, kdo za IP adresou byl. Tady nejde o obsah zpráv, ale o metadata. Použije se \textbf{§ 88a TŘ - provozní a lokalizační údaje}: policie se přes příslušný postup ptá operátora, komu v daný čas patřila IP adresa nebo odkud se připojovalo. Do toho zapadá zákon o elektronických komunikacích: operátor veřejné sítě nebo veřejně dostupné služby uchovává provozní a lokalizační údaje \textbf{6 měsíců}. Pořád ale platí, že operátor nedrží obsah zpráv, jen metadata.
+
+Když metadata ukážou na konkrétní osobu v ČR, policie může jít pro věci a zařízení. Pokud podezřelý dobrovolně vydá telefon, notebook nebo přístupové údaje, je to \textbf{§ 78 TŘ - vydání věci nebo dat}. Pokud odmítne, může přijít \textbf{§ 79 TŘ - odnětí věci nebo kopie dat}. Když je potřeba věci teprve najít v bytě, kanceláři nebo garáži, použije se \textbf{§ 82 a násl. TŘ - domovní prohlídka nebo prohlídka jiných prostor}. Tam se hledá telefon, notebook, SIM karty, poznámky s hesly, kryptopeněženka nebo zařízení, ze kterého se pachatel přihlašoval.
+
+Samotné zabavení telefonu ještě neznamená, že policie může jen tak číst všechno uvnitř. Pokud se má prohlížet obsah zpráv, aplikací nebo uložených dat v zajištěném telefonu či v kopii dat, řeší se \textbf{§ 113a TŘ - ohledání obsahu zařízení}. To je situace "telefon už máme, teď potřebujeme zákonně a forenzně pracovat s jeho obsahem".
+
+Pokud policie řeší staré zprávy mezi pachatelem a obětí uložené v telefonu, aplikaci nebo u poskytovatele, nejde o odposlech. Je to uložený obsah a řeší se přes vydání, odnětí, ohledání zařízení nebo přes poskytovatele. \textbf{§ 88 TŘ - odposlech a záznam telekomunikačního provozu} by přišel na řadu až tehdy, kdyby policie potřebovala zachycovat \textbf{budoucí obsah komunikace}, například když je zjištěná organizovaná skupina a je potřeba sledovat další domlouvání nových podvodů. § 88 tedy není "chci starý chat"; § 88 je "za přísných podmínek chci zachytávat budoucí komunikaci".
+
+Nakonec se všechno musí forenzně udržet: zařízení se zdokumentují, data se kopírují pokud možno forenzně, počítá se hash, vede se chain of custody a znalec nebo specialista vysvětlí, co logy, telefon, IP adresy, platební stopa a komunikace dohromady dokazují.}
+
 \subsection*{Forenzní zásady}
 U elektronických důkazů musíš vždy říct, jak se udrží důkazní hodnota:
 \begin{itemize}
