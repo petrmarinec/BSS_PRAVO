@@ -1422,16 +1422,25 @@ Předávání mimo EHP je možné hlavně přes rozhodnutí o odpovídající oc
 \end{enumerate}
 
 \subsection*{Právní rámec}
-\begin{itemize}
-  \item \textbf{eIDAS} - evropské nařízení pro elektronickou identifikaci a služby vytvářející důvěru.
-  \item \textbf{eIDAS 2.0} - rozšiřuje rámec hlavně o evropskou peněženku digitální identity (EUDI Wallet).
-  \item \textbf{Zákon o službách vytvářejících důvěru pro elektronické transakce} - česká úprava k eIDAS.
-  \item \textbf{Zákon o elektronické identifikaci} - český rámec elektronické identity.
-  \item \textbf{Zákon o elektronických úkonech a autorizované konverzi dokumentů} - datové schránky a autorizovaná konverze.
-  \item \textbf{DIA} - dohled v oblasti služeb vytvářejících důvěru, důvěryhodné seznamy, elektronická identifikace, datové schránky.
-\end{itemize}
+\begin{longtable}{p{0.28\linewidth}p{0.34\linewidth}p{0.30\linewidth}}
+\toprule
+\textbf{Předpis / instituce} & \textbf{Co z toho prakticky plyne} & \textbf{Příklad}\\
+\midrule
+\textbf{eIDAS} & Evropské pravidlo pro elektronickou identifikaci a služby vytvářející důvěru: podpisy, pečetě, časová razítka, certifikáty, doporučené doručování a důvěryhodné seznamy. Elektronickému podpisu se nesmí upřít účinky jen proto, že je elektronický. & Kvalifikovaný elektronický podpis českého občana musí být uznáván i v jiném státě EU a má účinky vlastnoručního podpisu.\\
+\addlinespace
+\textbf{eIDAS 2.0} & Přidává evropskou peněženku digitální identity (EUDI Wallet), atributy identity a větší přeshraniční použitelnost digitální identity. Nejde jen o podpis, ale i o prokazování údajů o osobě. & Člověk může v budoucnu prokázat věk, identitu nebo oprávnění jednat za firmu a případně podepsat dokument z peněženky.\\
+\addlinespace
+\textbf{Zákon o službách vytvářejících důvěru} & Český doplněk k eIDAS: říká, jak se v ČR používají a dohlížejí důvěryhodné služby. Prakticky řeší uznávaný elektronický podpis a požadavky vůči veřejné moci. & Když posílám podání českému úřadu e-mailem, řeším, zda potřebuji uznávaný elektronický podpis.\\
+\addlinespace
+\textbf{Zákon o elektronické identifikaci} & Upravuje prokazování totožnosti online přes kvalifikovaný systém elektronické identifikace a Národní bod. Prakticky jde o Identitu občana a prostředky jako NIA ID, Mobilní klíč eGovernmentu, bankovní identitu nebo eObčanku. & Přihlášení do Portálu občana nebo datové schránky přes Identitu občana není elektronický podpis; je to ověření totožnosti pro přístup ke službě.\\
+\addlinespace
+\textbf{Zákon o elektronických úkonech a autorizované konverzi dokumentů} & Upravuje datové schránky, doručování, podání vůči veřejné moci a autorizovanou konverzi mezi papírem a elektronickou podobou. & Podání poslané datovou schránkou může mít účinky podepsaného podání, i když PDF uvnitř nemá kryptografický podpis.\\
+\addlinespace
+\textbf{DIA} & Prakticky drží českou digitální infrastrukturu: zveřejňuje důvěryhodné seznamy kvalifikovaných poskytovatelů a služeb, řeší oblast elektronické identifikace, Národní bod/Identitu občana, datové schránky a agendu dohledu nad službami vytvářejícími důvěru. & Když chci vědět, zda je poskytovatel certifikátu nebo časového razítka kvalifikovaný, ověřuji ho v důvěryhodném seznamu zveřejněném DIA.\\
+\bottomrule
+\end{longtable}
 
-Základní pravidlo eIDAS: elektronickému podpisu se nesmí upřít právní účinky jen proto, že je elektronický. \textbf{Kvalifikovaný elektronický podpis} má účinky vlastnoručního podpisu v celé EU.
+\pozor{Nepleť tři věci: elektronická identifikace znamená "prokázal jsem online, kdo jsem"; elektronický podpis znamená "podepsal jsem konkrétní dokument"; datová schránka znamená "poslal jsem dokument důvěryhodným doručovacím kanálem".}
 
 \subsection*{Druhy elektronického podpisu}
 \begin{longtable}{p{0.22\linewidth}p{0.34\linewidth}p{0.34\linewidth}}
