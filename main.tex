@@ -438,6 +438,166 @@ Tuhle část ber jako rychlé karty. U každého případu si zkus říct: \emph
 
 \subsection*{Kostra odpovědi}
 \begin{enumerate}
+  \item Nejdřív vysvětlit, co je kritická infrastruktura: služby, systémy a prvky, jejichž výpadek zasáhne bezpečnost státu, ekonomiku, veřejnou správu, zdraví nebo základní životní potřeby.
+  \item Ukázat starší určování prvků KI: kombinace \textbf{odvětvových kritérií} a \textbf{průřezových kritérií}.
+  \item Dát velký aktuální právní kontext: \textbf{CER} a nový zákon o odolnosti subjektů kritické infrastruktury.
+  \item Vysvětlit specifika KI v kyberbezpečnosti: provázanost sektorů, OT/IT, staré systémy, fyzické dopady a dodavatelé.
+  \item Uvést známé útoky: Stuxnet, Ukrajina 2015/2016, Colonial Pipeline, Viasat, zdravotnictví, hacktivisté.
+  \item Nakonec říct přisouzení a odstrašování: proč je atribuce těžká a proč je u KI klíčová odolnost a obnova.
+\end{enumerate}
+
+\subsection*{Co je kritická infrastruktura}
+Kritická infrastruktura je taková infrastruktura, jejíž narušení nebo nefunkčnost by měly závažný dopad na fungování státu a společnosti. Nejde jen o “důležité počítače”. Jde o služby a systémy, bez kterých se stát a obyvatelstvo rychle dostávají do problémů: elektřina, voda, zdravotnictví, doprava, telekomunikace, finance, veřejná správa, zásobování, krizová komunikace nebo digitální služby státu.
+
+Když vypadne běžný e-shop, je to hlavně obchodní škoda. Když vypadne nemocniční informační systém, dispečink elektrické sítě nebo satelitní komunikace používaná pro krizové řízení, dopad může být bezpečnostní, zdravotní, ekonomický a politický. Proto se u KI neřeší jen důvěrnost dat, ale hlavně \textbf{dostupnost služby}, \textbf{integrita řízení} a \textbf{schopnost obnovy}.
+
+\subsection*{Sektory kritické infrastruktury}
+Kritická infrastruktura je průřezová. Jednotlivé sektory nejsou izolované:
+\begin{itemize}
+  \item \textbf{Energetika} - elektrárny, rozvodné sítě, plyn, ropa, paliva, dispečinky.
+  \item \textbf{Vodohospodářství} - úpravny vody, čerpací stanice, kanalizace, vodní zdroje.
+  \item \textbf{Doprava} - železnice, letiště, přístavy, silniční uzly, řízení provozu.
+  \item \textbf{Telekomunikace a digitální infrastruktura} - mobilní a pevné sítě, datová centra, DNS, páteřní konektivita, satelitní komunikace.
+  \item \textbf{Zdravotnictví} - nemocnice, laboratoře, krevní banky, zdravotnické systémy.
+  \item \textbf{Finance} - banky, platební systémy, burzy, clearing, elektronické platby.
+  \item \textbf{Základní životní služby} - IZS, zásobování, potraviny, zemědělství, krizové informační systémy.
+\end{itemize}
+Energetika a komunikace často podpírají ostatní sektory. Výpadek elektřiny zasáhne telekomunikace, nemocnice i dopravu. Výpadek telekomunikací komplikuje obnovu elektřiny. Útok na dodavatele laboratorních služeb může zastavit nemocnice, i když samotná nemocniční budova napadena nebyla.
+
+\subsection*{Starší určování prvků KI: odvětvová a průřezová kritéria}
+Starší český systém vycházel z krizového zákona a nařízení vlády o kritériích pro určení prvku kritické infrastruktury. Logika byla \textbf{objektová}: stát určoval konkrétní prvek, například zařízení, stavbu, systém, síť nebo veřejnou infrastrukturu. Aby byl prvek KI určen, pracovalo se s \textbf{odvětvovými kritérii} a \textbf{průřezovými kritérii}. Zjednodušeně: odvětvové kritérium říká, \emph{jaký typ infrastruktury} se posuzuje, a průřezové kritérium říká, \emph{jak závažný dopad} by mělo její narušení.
+
+\subsubsection*{Příklad odvětvových kritérií}
+Odvětvová kritéria se liší podle sektoru. Typicky se ptáme, jestli jde o infrastrukturu, která svým druhem a významem patří mezi kritické služby.
+
+\textbf{Technologické prvky pro satelitní komunikaci} mohou být například:
+\begin{itemize}
+  \item hlavní pozemní satelitní přijímací a vysílací stanice,
+  \item Evropský globální navigační družicový systém,
+  \item pozemní řídící a komunikační středisko,
+  \item pozemní propojovací síť.
+\end{itemize}
+Na tom se dá dobře vysvětlit, že nejde jen o družici na oběžné dráze. Kritická může být i pozemní stanice, řídicí středisko nebo síť, která zajišťuje spojení mezi nimi. Útok na pozemní segment může vyřadit nebo omezit službu, aniž by útočník fyzicky zasáhl družici.
+
+Jiný typ odvětvového kritéria je informační systém. Příkladem je \textbf{informační systém spravovaný orgánem veřejné moci obsahující osobní údaje o více než 300000 osobách}. Tady je dobré říct: nejde o obyčejnou databázi kontaktů, ale o systém veřejné moci, jehož narušení by mělo dopad na velkou část obyvatel, výkon veřejné správy a důvěru ve stát.
+
+\subsubsection*{Příklad průřezových kritérií}
+Průřezová kritéria sledují závažnost dopadu bez ohledu na odvětví. Typicky jde o:
+\begin{itemize}
+  \item \textbf{oběti} - více než 250 mrtvých nebo více než 2500 osob s následnou hospitalizací po dobu delší než 24 hodin,
+  \item \textbf{ekonomický dopad} - hospodářská ztráta státu vyšší než 0,5 \% HDP,
+  \item \textbf{dopad na veřejnost} - rozsáhlé omezení poskytování nezbytných služeb nebo jiný závažný zásah do každodenního života postihující více než 125000 osob.
+\end{itemize}
+
+\modelovy{\textbf{Jak se to vybírá ve starém modelu:} Máme pozemní řídicí středisko satelitní komunikace. Nejprve se ptám, zda splňuje odvětvové kritérium pro technologické prvky satelitní komunikace. Pokud ano, ptám se na dopad: kdyby středisko vypadlo, způsobí to rozsáhlé omezení nezbytných služeb pro více než 125000 osob, významnou ekonomickou škodu nebo ohrožení životů? Pokud je odpověď ano, dává smysl uvažovat o prvku kritické infrastruktury. U informačního systému veřejné moci s osobními údaji více než 300000 osob je odvětvové kritérium splněno samotnou povahou a rozsahem systému; potom se hodnotí dopad na veřejnou správu, obyvatele, bezpečnost a ekonomiku.}
+
+\pravobox{\textbf{Co mění CER a nový zákon o kritické infrastruktuře:} Směrnice CER, tedy směrnice EU 2022/2557 o odolnosti kritických subjektů, posouvá logiku ochrany od samotných “prvků” k \textbf{odolnosti subjektů poskytujících základní služby}. Českou transpozicí je zákon č. 266/2025 Sb., o odolnosti subjektů kritické infrastruktury, účinný od 19. 8. 2025. Zatímco starý model se ptal hlavně “který konkrétní prvek je kritický?”, nový model se ptá “kdo poskytuje základní službu, bez které stát a společnost nemohou fungovat, a jak zajistí její odolnost?”. Subjekt kritické infrastruktury má řešit posouzení rizik, plán odolnosti, kritické pracovníky, kritické dodavatele, incidenty, cvičení a kontinuitu služby. CER/ZKI je \textbf{all-hazards} režim: nezajímá ho jen kyberútok, ale i sabotáž, výpadek dodavatele, povodeň, požár, pandemie, selhání techniky nebo kombinovaný hybridní scénář. Vedle toho zákon o kybernetické bezpečnosti řeší kybernetickou bezpečnost regulovaných služeb. Prakticky se oba režimy překrývají: kyberincident může současně ohrozit základní službu. K 21. 6. 2026 je potřeba před zkouškou ověřit aktuální stav prováděcího nařízení o základních službách a kritériích významnosti, protože zařazování podle nového modelu je na něm prakticky závislé.}
+
+\subsection*{Kritická komunikační a informační infrastruktura}
+Starší poznámky často rozlišují \textbf{kritickou komunikační infrastrukturu} a \textbf{kritickou informační infrastrukturu}. Komunikační infrastruktura jsou sítě a služby elektronických komunikací: pevné a mobilní sítě, satelitní komunikace, datová centra, páteřní internet, veřejné radiokomunikační sítě nebo spojení mezi státními institucemi, bankami a dalšími klíčovými subjekty. Informační infrastruktura jsou informační systémy a data, bez kterých nefunguje veřejná správa, zdravotnictví, energetika, finance, doprava nebo krizové řízení. U zkoušky je dobré říct, že moderní úprava se posouvá k základním službám a subjektům, ale věcně pořád chráníme sítě, systémy, data, technologie a lidi, na kterých služba stojí.
+
+\subsection*{Specifika kyberbezpečnosti u KI}
+Kritická infrastruktura má několik zvláštností:
+\begin{itemize}
+  \item \textbf{velký dopad} - výpadek se může projevit na obyvatelstvu, zdraví, ekonomice nebo bezpečnosti státu,
+  \item \textbf{kaskádové dopady} - problém v jednom sektoru se přelévá do jiných sektorů,
+  \item \textbf{starší systémy} - v energetice, dopravě nebo vodárenství běží technologie s dlouhou životností,
+  \item \textbf{obtížné patchování} - systém nejde snadno vypnout kvůli aktualizaci, protože řídí fyzický provoz,
+  \item \textbf{propojení IT a OT} - kancelářské IT může být vstupem k provozním systémům,
+  \item \textbf{dodavatelé a vzdálená správa} - mnoho provozů závisí na externích firmách,
+  \item \textbf{fyzické důsledky} - útok nemusí skončit jen ztrátou dat, ale může změnit fyzický proces.
+\end{itemize}
+
+\textbf{IT} je klasické informační prostředí: servery, stanice, aplikace, databáze a účty. \textbf{OT} je provozní technologie, která řídí fyzický proces: ventily, čerpadla, rozvodny, turbíny, tlak, průtok nebo signalizaci. \textbf{ICS} jsou průmyslové řídicí systémy a \textbf{SCADA} je dohledové a řídicí prostředí pro distribuované provozy. V IT často řešíme hlavně důvěrnost a integritu dat; v OT je často první dostupnost a bezpečný fyzický provoz. Proto nestačí říct “nasadíme antivirus”. Je potřeba segmentace, řízení vzdáleného přístupu, monitoring průmyslových protokolů, manuální režimy, zálohy konfigurací a cvičená obnova.
+
+\subsection*{Typické kyberútoky na KI}
+\begin{itemize}
+  \item \textbf{Ransomware} - zašifruje IT a může zastavit nemocnici, potrubí, logistiku nebo úřad.
+  \item \textbf{Destruktivní malware} - cílem je zničení nebo chaos, ne výkupné.
+  \item \textbf{Útok na OT/ICS} - manipulace s řídicími systémy, senzory nebo provozní logikou.
+  \item \textbf{DDoS} - nedostupnost služeb veřejnosti, státních webů nebo bankovnictví.
+  \item \textbf{Dodavatelský řetězec} - kompromitace dodavatele, aktualizace nebo vzdálené správy.
+  \item \textbf{Pre-positioning} - tichý dlouhodobý přístup do KI pro budoucí krizi.
+  \item \textbf{Hacktivismus} - DDoS, publicita a propaganda, někdy oportunistické útoky na špatně zabezpečené OT.
+\end{itemize}
+
+\subsection*{Známé útoky na kritickou infrastrukturu}
+\aktualni{\textbf{Stuxnet, cca 2010, Írán.} Malware cílil na průmyslové řídicí systémy v jaderném zařízení Natanz a manipuloval provoz centrifug. Význam: ukazuje kyberneticko-fyzickou sabotáž, kdy kód zasáhne fyzický proces. Pro zkoušku: Stuxnet není obyčejný virus; vyžadoval znalost průmyslového softwaru, procesů a cílového prostředí.}
+
+\aktualni{\textbf{Ukrajinská energetika 2015/2016.} Útoky na distribuční energetické společnosti vedly k výpadkům elektřiny. Útočníci se dostali do prostředí přes IT, využili vzdálený přístup, zasahovali do provozu, mazali systémy a komplikovali komunikaci se zákazníky. Význam: jasný příklad přechodu z IT do OT a fyzického dopadu na základní službu.}
+
+\aktualni{\textbf{Colonial Pipeline, 2021, USA.} Ransomware skupiny DarkSide zasáhl podnikovou IT síť provozovatele palivového potrubí. Potrubí bylo odstaveno, což způsobilo výpadky dodávek paliv, paniku a růst cen v části USA. Důležité: nejde o čistý OT útok, ale o ukázku, že kompromitace IT může zastavit fyzickou službu, pokud organizace nemá jistotu bezpečného provozu.}
+
+\aktualni{\textbf{Viasat KA-SAT, 2022.} Útok na satelitní komunikační službu proběhl v den ruské invaze na Ukrajinu. Dopady byly na Ukrajině i v dalších evropských zemích. Význam: komerční satelitní infrastruktura může mít civilně-vojenskou hodnotu a přeshraniční dopady.}
+
+\aktualni{\textbf{Zdravotnictví - FN Brno 2020, HSE Irsko 2021, Synnovis/NHS 2024.} Zdravotnické incidenty ukazují, že ransomware nebo výpadek dodavatele neohrožuje jen data, ale i péči: odklady operací, omezení laboratorních služeb, manuální režimy a krizová komunikace. Synnovis je dobrý příklad dodavatelského řetězce: napaden nebyl jen koncový nemocniční systém, ale poskytovatel laboratorních služeb, na kterém nemocnice závisely.}
+
+\aktualni{\textbf{NoName057(16) a proruský hacktivismus.} DDoS kampaně proti státním institucím, firmám a kritickým subjektům ukazují netwar: útok má technickou část, ale také mediální a propagandistickou rovinu. Dopad bývá často krátkodobá nedostupnost webu, ale smyslem je tlak, publicita a dojem, že stát není schopen chránit služby. U špatně zabezpečených OT/ICS zařízení může být riziko vážnější než u běžného DDoS.}
+
+\begin{longtable}{p{0.18\linewidth}p{0.09\linewidth}p{0.18\linewidth}p{0.22\linewidth}p{0.28\linewidth}}
+\toprule
+\textbf{Případ} & \textbf{Rok} & \textbf{Sektor} & \textbf{Typ útoku} & \textbf{Co si z toho pamatovat}\\
+\midrule
+Stuxnet & 2010 & Jaderný průmysl & Sabotáž ICS & Kyberútok může poškodit fyzické zařízení.\\
+Ukrajinská energetika & 2015/2016 & Elektřina & IT/OT zásah & Spear phishing, vzdálený přístup, výpadek elektřiny, ruční obnova.\\
+Colonial Pipeline & 2021 & Paliva & Ransomware & Kompromitace IT může zastavit fyzickou službu.\\
+Viasat & 2022 & Satelitní komunikace & Destruktivní operace & Přeshraniční dopad a souběh s konvenční válkou.\\
+Synnovis/NHS & 2024 & Zdravotnictví & Ransomware dodavatele & Kritický dodavatel může zastavit péči.\\
+NoName057(16) & 2023-2026 & Veřejná správa/KI & DDoS, hacktivismus & Technický útok + propaganda + politický tlak.\\
+\bottomrule
+\end{longtable}
+
+\subsection*{Ochrana kritické infrastruktury}
+Ochrana KI je kombinace prevence, detekce, reakce a obnovy:
+\begin{itemize}
+  \item \textbf{řízení rizik} - znát kritické služby, závislosti a dopady,
+  \item \textbf{segmentace IT/OT} - oddělit kancelářské sítě od provozních systémů,
+  \item \textbf{MFA a správa přístupů} - hlavně u VPN, administrátorů a dodavatelů,
+  \item \textbf{patch management a kompenzační opatření} - u starých systémů aspoň izolace, monitoring a omezení přístupu,
+  \item \textbf{zálohy a obnova} - offline/immutable zálohy a test obnovy,
+  \item \textbf{monitoring} - SIEM, EDR, OT monitoring, logování vzdálených přístupů,
+  \item \textbf{dodavatelská bezpečnost} - smluvní požadavky, kontrola přístupů, povinnost hlášení incidentů,
+  \item \textbf{fyzická bezpečnost} - ochrana objektů, napájení, přístupových míst a datových center,
+  \item \textbf{BCM a krizové řízení} - ruční režimy, náhradní komunikace, záložní postupy,
+  \item \textbf{cvičení} - table-top, red teaming, technická cvičení a kybernetické polygony.
+\end{itemize}
+
+\subsection*{Přisouzení kyberútoků na KI}
+Atribuce je u KI mimořádně citlivá. Technické stopy často nestačí, protože útočník může použít VPN, proxy, botnet, kompromitované routery, infrastrukturu třetích osob, ukradený malware nebo falešné stopy. U KI navíc veřejné obvinění státu může eskalovat mezinárodní konflikt. Proto se přisouzení skládá z technické analýzy, zpravodajských informací, geopolitického kontextu, motivu a politického rozhodnutí, co veřejně říct.
+
+Důležité je rozlišit:
+\begin{itemize}
+  \item \textbf{technickou atribuci} - malware, infrastruktura, logy, TTP,
+  \item \textbf{zpravodajské hodnocení} - neveřejné zdroje a metody,
+  \item \textbf{politickou atribuci} - stát se rozhodne útok veřejně připsat,
+  \item \textbf{právní přičitatelnost} - zda lze útok přičíst státu podle mezinárodního práva.
+\end{itemize}
+Odveta proti špatnému cíli neodstraší a může vytvořit dalšího nepřítele. Proto je často racionální investovat do obrany, odolnosti a schopnosti obnovy, protože ty snižují dopad i bez dokonalé atribuce.
+
+\subsection*{Odstrašování v kyberprostoru}
+Odstrašení u KI nefunguje jednoduše jako v jaderném odstrašení. Problémy jsou anonymita, nejasný práh reakce, asymetrie a rozdíl mezi státními a nestátními aktéry. Kriminální ransomware motivují peníze, státní aktér může sledovat strategické informace nebo přípravu bojiště a hacktivista publicitu.
+
+Formy odstrašení:
+\begin{itemize}
+  \item \textbf{odstrašení trestem} - sankce, trestní stíhání, veřejná atribuce, diplomatická reakce,
+  \item \textbf{odstrašení odepřením} - útok se nevyplatí, protože obrana, segmentace a obnova zmenší dopad,
+  \item \textbf{odolnost} - služba pokračuje nebo se rychle obnoví, takže útočník nedosáhne strategického efektu,
+  \item \textbf{kolektivní reakce} - EU, NATO, společná atribuce, sdílení informací,
+  \item \textbf{rozbití útočné infrastruktury} - zásahy proti botnetům, serverům, doménám a finančním tokům.
+\end{itemize}
+
+Dobré zkouškové otázky k odstrašení: Kde je práh reakce? Je to počet obětí, rozsah výpadku, hospodářská škoda, útok na zdravotnictví nebo zásah během války? Umíme reagovat opakovaně, nebo jednorázová reakce odhalí naše schopnosti? Co když útočník nemá citlivou infrastrukturu, na kterou lze působit? Co když se do konfliktu připojí třetí strany? U KI proto nejlépe funguje kombinace: silná obrana, rychlá obnova, důvěryhodná atribuce, promyšlená komunikace a škála reakcí.
+
+\pozor{Kyberterorismus zmiň opatrně. Terorismus vyžaduje politický cíl, zastrašení a publicitu. Mnoho útoků na infrastrukturu je závažných, ale analyticky půjde spíš o kriminalitu, špionáž, sabotáž, hacktivismus nebo státní/proxy operaci.}
+
+\zkouska{Souvisle bych otázku řekl takto: kritická infrastruktura jsou služby, systémy a prvky, jejichž narušení by vážně zasáhlo bezpečnost státu, ekonomiku, veřejnou správu, zdraví nebo základní životní potřeby obyvatel. Starší český systém určoval konkrétní prvky podle odvětvových a průřezových kritérií. Odvětvově může jít třeba o hlavní pozemní satelitní stanice, řídicí střediska, propojovací síť nebo informační systém orgánu veřejné moci s údaji o více než 300000 osobách. Průřezově se řeší závažnost dopadu: oběti, ekonomická škoda přes 0,5 \% HDP nebo zásah do života více než 125000 osob. Nový zákon č. 266/2025 Sb. navazuje na CER a posouvá logiku od prvků k subjektům poskytujícím základní služby a k jejich odolnosti. U kyberútoků na KI je zásadní IT/OT propojení, starší průmyslové systémy, dodavatelé, vzdálená správa a fyzické dopady. Příklady: Stuxnet, Ukrajina 2015/2016, Colonial Pipeline, Viasat, ransomware ve zdravotnictví a proruské DDoS kampaně. Přisouzení je těžké kvůli proxy, botnetům a falešným stopám; odstrašení stojí hlavně na odolnosti, obnově, atribuci, sankcích a kolektivní reakci.}
+
+\zdroje{Přiložený text \emph{4.) Ochrana Kritické Infrastruktury (LONG)}; zákon č. 266/2025 Sb. o odolnosti subjektů kritické infrastruktury; směrnice CER 2022/2557; HZS ČR k nové kritické infrastruktuře; Ministerstvo vnitra k ochraně KI; starší krizový zákon a nařízení vlády č. 432/2010 Sb.; CISA k Volt Typhoon a ukrajinské energetice; veřejné materiály k Colonial Pipeline, Viasat a ransomware útokům ve zdravotnictví.}
+
+\iffalse
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
   \item Vymezit kritickou infrastrukturu a kritické subjekty: služby nezbytné pro fungování státu a společnosti.
   \item Dát aktuální právní kontext: směrnice CER, zákon o odolnosti subjektů kritické infrastruktury a prováděcí nařízení o základních službách a kritériích významnosti.
   \item Vysvětlit přechod mezi starým objektovým systémem a novým service/entity-centric systémem.
@@ -603,6 +763,8 @@ Starší debata o odstrašení klade dobré otázky: Kde je práh reakce? Je to 
 \zkouska{U KI vždy řekni: nejde jen o data, ale o kontinuitu základní služby a fyzické dopady. Právně rozliš směrnici CER, český zákon č. 266/2025 Sb. a prováděcí nařízení o základních službách a kritériích významnosti. Starý systém byl objektový, nový systém je orientovaný na službu a poskytovatele. Poskytovatel se sám předběžně posoudí a předá informace, ale subjektem KI se stává až doručením rozhodnutí Ministerstva vnitra. K 18. 6. 2026 je přechodový stav citlivý: zákon je účinný, ale účinné prováděcí nařízení nebylo v dostupných oficiálních zdrojích potvrzeno, takže harmonogram je narušený a před státnicí je nutné ověřit novelu, stanovisko nebo první rozhodnutí. U útoků použij Synnovis pro dodavatele, Volt Typhoon pro pre-positioning, Viasat pro souběh s válkou, Ukrajinu 2015/2016 pro IT/OT, Colonial Pipeline pro IT dopad na fyzickou službu a NoName057(16) pro hacktivismus/netwar.}
 
 \zdroje{Přiložené PDF; starší výpisky k otázce 4; směrnice CER 2022/2557; zákon o odolnosti subjektů kritické infrastruktury (č. 266/2025 Sb.); MV a GŘ HZS ČR ke stanovení informací a přechodnému období; metodika GŘ HZS ČR k zařazení poskytovatele základní služby; zákon o kybernetické bezpečnosti (č. 264/2025 Sb.); CISA k Volt Typhoon a Colonial Pipeline; NHS England k Synnovis; Rada EU k Viasat; NÚKIB k proruským hacktivistům a APT28/TP-Link.}
+
+\fi
 
 \newpage
 
