@@ -898,180 +898,142 @@ Prakticky se dá systém popsat jako vícevrstvý. NÚKIB a GovCERT řeší civi
 
 \subsection*{Kostra odpovědi}
 \begin{enumerate}
-  \item Vymezit kyberkriminalitu a odlišit ji od kyberbezpečnosti a kyberobrany.
-  \item Vysvětlit tři významy "klasifikace": právní třídění podle skutkových podstat, technická/incidentní taxonomie a právní kvalifikace konkrétního skutku.
-  \item Popsat prameny práva: národní, evropské a mezinárodní.
-  \item Rozebrat typickou trestnou činnost: cyber-dependent, cyber-enabled a podpůrně cyber-supported.
-  \item Ukázat právní kvalifikaci: skutková podstata, objekt, objektivní stránka, subjekt, subjektivní stránka, škoda, souběh, stadia.
-  \item Doplnit související postupy: detekce, prověřování, elektronické místo činu, fyzická prohlídka, důkazy, znalec, soud.
-  \item Popsat mezinárodní spolupráci: MLA, EVP, Budapešť 24/7, Europol/EC3, Eurojust, EPOC/EPOC-PR.
+  \item Definovat kyberkriminalitu.
+  \item Projít prameny práva: národní, evropské, mezinárodní.
+  \item Vyjmenovat typickou trestnou činnost.
+  \item Vysvětlit klasifikaci: cyber-dependent, cyber-enabled, cyber-supported a právní třídění podle skutkových podstat.
+  \item Ukázat právní kvalifikaci na konkrétních příkladech.
+  \item Popsat související postupy a kritéria dokazování.
+  \item Uzavřít mezinárodní spoluprací.
 \end{enumerate}
 
-\subsection*{Vymezení a vztah ke kyberbezpečnosti}
-Kyberkriminalita je trestná činnost páchaná v kyberprostoru, prostřednictvím informačních a komunikačních technologií nebo přímo proti počítačovým systémům, sítím a datům. Má ji na starosti hlavně trestní justice: Policie ČR, státní zastupitelství a soudy. U závažné a organizované kriminality vstupuje Národní centrála proti organizovanému zločinu, u technických úkonů specialisté, znalci a poskytovatelé služeb.
+\subsection*{Vymezení}
+Kyberkriminalita je trestná činnost, u které je informační technologie buď \textbf{cílem}, \textbf{nástrojem}, nebo \textbf{prostředím}. Cílem je například databáze, server, účet, e-mailová schránka nebo platební systém. Nástrojem je technologie tehdy, když pachatel přes phishing, malware, falešný e-shop nebo deepfake páchá klasickou kriminalitu. Prostředím je internet, cloud, sociální sítě, kryptoměnové služby nebo anonymizační infrastruktura.
 
-Je dobré hned odlišit tři blízké pojmy. \textbf{Kyberbezpečnost} chrání systémy, data a služby a řeší ji hlavně NÚKIB, regulované subjekty, CERT/CSIRT týmy a správci systémů. \textbf{Kyberobrana} je obranná a vojenská dimenze, typicky Ministerstvo obrany, Vojenské zpravodajství, NCKO a kybernetické síly. \textbf{Kyberkriminalita} řeší trestní odpovědnost pachatele a procesní zajištění důkazů.
+Odlišuj tři roviny. \textbf{Kyberbezpečnost} řeší ochranu systémů a služeb, typicky NÚKIB, správci a CSIRT/CERT. \textbf{Kyberobrana} je vojenská a státně-obranná rovina. \textbf{Kyberkriminalita} je trestní odpovědnost pachatele: policie, státní zastupitelství, soud, znalci a mezinárodní spolupráce.
 
 \priklad{Ransomware v nemocnici může být současně trestný čin pachatele, kybernetický bezpečnostní incident nemocnice podle ZKB, porušení zabezpečení osobních údajů podle GDPR a krizový problém zdravotnictví. U zkoušky proto vždy řekni, který režim právě řešíš.}
 
-\subsection*{Tři významy klasifikace}
-Jednotná klasifikace kyberkriminality neexistuje, takže je dobré ukázat, že slovo "klasifikace" může znamenat tři různé věci:
-\begin{itemize}
-  \item \textbf{právní klasifikace} - třídění podle skutkových podstat trestního zákoníku; je méně technicky detailní, ale rozhoduje o trestnosti,
-  \item \textbf{technická nebo incidentní taxonomie} - popisuje typ útoku nebo incidentu: malware, phishing, DDoS, sběr informací, zranitelnost, únik dat,
-  \item \textbf{právní kvalifikace} - přiřazení konkrétního skutkového děje ke konkrétnímu paragrafu, odstavci a kvalifikačnímu znaku.
-\end{itemize}
-Jeden útok se proto popíše různě. Technicky řeknu "ransomware", incidentně "škodlivý kód + narušení dostupnosti + únik dat" a právně budu řešit neoprávněný přístup, zásah do dat, vydírání, případně podvod, porušení tajemství zpráv a neoprávněné nakládání s osobními údaji.
-
-\subsection*{Cyber-dependent, cyber-enabled, cyber-supported}
-Základní rozlišení podle role technologie:
-\begin{itemize}
-  \item \textbf{cyber-dependent} - bez počítače nebo sítě by trestný čin nedával smysl: neoprávněný přístup, malware, DDoS, poškození dat,
-  \item \textbf{cyber-enabled} - klasická kriminalita, kterou technologie usnadňuje nebo škáluje: podvod, vydírání, stalking, krádež identity, šíření obsahu, porušení autorských práv,
-  \item \textbf{cyber-supported} - technologie je podpůrný prostředek: komunikace pachatelů přes šifrované aplikace, ukládání dokumentů v cloudu, vyhledávání informací o cíli.
-\end{itemize}
-Toto dělení není samo o sobě právní kvalifikací, ale pomáhá ve zkouškové odpovědi. Ransomware je cyber-dependent v části průniku a zašifrování dat, ale cyber-enabled v části vydírání a vymáhání výkupného.
-
-\subsection*{Současné trendy kyberkriminality}
-Europol v IOCTA 2026 popisuje kyberkriminalitu jako stále průmyslovější ekosystém služeb. Ransomware zůstává trvající hrozbou, ale často nejde o jednu skupinu, která udělá vše sama. Jeden aktér získá prvotní přístup, jiný provozuje infostealer, jiný prodává přístupy jako initial access broker, affiliate nasadí ransomware, vyjednavač komunikuje s obětí a další služba pere kryptoměny. Ransomware-as-a-service proto není jen "program k pronájmu", ale obchodní model s rozdělením rolí.
-
-Silně roste význam \textbf{infostealerů} a obchodu s přihlašovacími údaji. Ukradené cookies, tokeny a hesla umožňují obejít část klasické obrany, protože útočník nevypadá jako hacker, ale jako přihlášený uživatel. Útočníci také zneužívají legální i nelegální VPN, proxy, hosting a bulletproof služby, DDoS-as-a-service, anonymizační infrastrukturu a profesionální praní kryptoměn. Vydírání je často dvojité nebo vícenásobné: zašifrování dat, hrozba zveřejněním, tlak na zákazníky, DDoS a reputační kampaň.
-
-Vedle technických útoků zůstávají významné BEC podvody, podvody s vydáváním se za vedení firmy, krádeže účtů, SIM swapping a sociální inženýrství. AI se používá hlavně jako zesilovač: přesvědčivější phishing, překlady, falešný hlas nebo obraz, rychlé vytváření textů a personalizace podvodů. Po policejních zásazích se skupiny fragmentují, přejmenovávají nebo obnovují pod jinou značkou; proto je důležitější chápat ekosystém než memorovat jeden název skupiny.
-
 \subsection*{Prameny práva}
-\subsubsection*{Národní prameny}
-Národně je základem \textbf{trestní zákoník} a \textbf{trestní řád}. Trestní zákoník obsahuje skutkové podstaty, trestní řád dává procesní postupy pro dokazování, zajištění věcí, dat, prohlídky, odposlechy a mezinárodní součinnost.
+Jdi přesně v pořadí: národní právo, evropské právo, mezinárodní právo.
 
-Trojice typicky "počítačových" skutkových podstat:
+\textbf{Národní prameny:} základ je \textbf{trestní zákoník} a \textbf{trestní řád}. Trestní zákoník říká, co je trestné. Trestní řád říká, jak se to vyšetřuje a dokazují elektronické stopy.
 \begin{itemize}
-  \item \textbf{§ 230 TZ - neoprávněný přístup k počítačovému systému a nosiči informací}. Odst. 1 míří na překonání bezpečnostního opatření a získání přístupu. Odst. 2 míří na neoprávněné užití dat, poškození, změnu, vymazání, potlačení dat nebo zásah do vybavení.
-  \item \textbf{§ 231 TZ - opatření a přechovávání přístupového zařízení a hesla}. Postihuje přípravné jednání: opatření, držení, zpřístupnění nebo výrobu nástroje, hesla či kódu s úmyslem spáchat trestný čin podle § 230. Není trestné samotné držení administrátorského nebo penetračního nástroje bez trestního úmyslu.
-  \item \textbf{§ 232 TZ - poškození záznamu v počítačovém systému a na nosiči informací z nedbalosti}. Je důležitý jako nedbalostní podstata; typicky se řeší hrubá nedbalost a zákonem požadovaný následek.
+  \item \textbf{§ 230 TZ} - neoprávněný přístup k počítačovému systému a nosiči informací; odst. 1 typicky průnik po překonání zabezpečení, odst. 2 užití, změna, smazání nebo poškození dat.
+  \item \textbf{§ 231 TZ} - opatření a přechovávání přístupového zařízení a hesla; typicky prodej hesel, exploitů nebo nástrojů s úmyslem spáchat útok podle § 230.
+  \item \textbf{§ 232 TZ} - poškození záznamu v počítačovém systému z nedbalosti; použitelné jen při zákonném následku a nedbalosti, ne na každý omyl v IT.
+  \item \textbf{§ 209 TZ} - podvod; phishing, falešný e-shop, investiční podvod, BEC.
+  \item \textbf{§ 175 TZ} - vydírání; ransomware, sextortion, hrozba zveřejněním dat.
+  \item \textbf{§ 234 TZ} - neoprávněné opatření, padělání a pozměnění platebního prostředku; platební karty, internetbanking, platební údaje.
+  \item \textbf{§ 182 TZ} - porušení tajemství dopravovaných zpráv; neoprávněné zachycení komunikace.
 \end{itemize}
 
-Další časté skutkové podstaty u cyber-enabled jednání:
+\textbf{Evropské prameny:}
 \begin{itemize}
-  \item \textbf{§ 209 TZ - podvod}: phishing, BEC, falešné investice, romantické podvody,
-  \item \textbf{§ 175 TZ - vydírání}: ransomware a hrozba zveřejněním dat,
-  \item \textbf{§ 234 TZ - neoprávněné opatření, padělání a pozměnění platebního prostředku}: platební karty, internetbanking, platební údaje,
-  \item \textbf{§ 182 TZ - porušení tajemství dopravovaných zpráv}: neoprávněné zachycení komunikace,
-  \item \textbf{§ 192 a § 193 TZ}: materiály zachycující sexuální zneužívání dětí,
-  \item \textbf{§ 270 TZ}: porušování autorských práv,
-  \item \textbf{§ 355 a § 356 TZ}: nenávistné projevy a podněcování nenávisti.
+  \item \textbf{směrnice o útocích na informační systémy} - harmonizuje nezákonný přístup, zásah do systému, zásah do dat, zachycování a nástroje k útokům,
+  \item \textbf{směrnice o bezhotovostních platebních podvodech} - důležitá pro karty, elektronické peníze a internetbanking,
+  \item \textbf{evropský vyšetřovací příkaz} - orgán jednoho státu EU žádá orgán jiného členského státu o vyšetřovací úkon,
+  \item \textbf{e-evidence} - od 18. 8. 2026 EPOC a EPOC-PR pro vydání nebo uchování uložených elektronických důkazů u poskytovatelů v EU.
 \end{itemize}
 
-\pozor{U § 230 odst. 1 nestačí říct "někdo se podíval na data". Česká úprava vyžaduje překonání bezpečnostního opatření. Pokud někdo data přímo změní, smaže nebo poškodí, řeší se zejména § 230 odst. 2, kde je logika jiná.}
-
-\subsubsection*{Evropské prameny}
-Na úrovni EU je důležitá směrnice 2013/40/EU o útocích na informační systémy. Harmonizuje nezákonný přístup, zásahy do systému a dat, nezákonné zachycování a nástroje k páchání útoků. Neříká českému soudu přímo, koho odsoudit; zavazuje státy, aby měly odpovídající skutkové podstaty.
-
-U platebních podvodů je důležitá směrnice (EU) 2019/713 o potírání podvodů v oblasti bezhotovostních platebních prostředků. V ČR se promítla mimo jiné do změn kolem § 234 TZ. Typicky se hodí u phishingu na karty, internetbanking, platební údaje a elektronické peníze.
-
-Procesně jsou důležité evropský vyšetřovací příkaz podle směrnice 2014/41/EU, Eurojust, Europol/EC3 a e-evidence balíček: nařízení 2023/1543 a směrnice 2023/1544. E-evidence zavede od 18. 8. 2026 EPOC a EPOC-PR pro přeshraniční získávání uložených elektronických důkazů přímo od poskytovatelů. K 18. 6. 2026 je tedy přesné říct, že jde o platný, ale teprve budoucí použitelný režim.
-
-\subsubsection*{Mezinárodní prameny}
-Základ je \textbf{Budapešťská úmluva o kyberkriminalitě}. Je to nejdůležitější funkční mezinárodní rámec: harmonizuje hmotné trestní právo, stanoví procesní nástroje pro elektronické důkazy a vytváří pravidla spolupráce. U hmotného práva přibližně odpovídá: nezákonný přístup - § 230 odst. 1, zásah do dat a systému - § 230 odst. 2, zneužití zařízení a hesel - § 231, zachycování komunikace - ochrana tajemství dopravovaných zpráv.
-
-Druhý dodatkový protokol k Budapešťské úmluvě má posílit přímější přeshraniční získávání údajů, spolupráci s poskytovateli, registrátory domén, nouzovou spolupráci, videokonference a společná vyšetřování. K 18. 6. 2026 má podle Rady Evropy desítky signatářů, ale jen čtyři ratifikace; protože je potřeba pět ratifikací, není ještě v platnosti.
-
-Úmluva OSN proti kyberkriminalitě také zatím není v platnosti; UNTC uvádí 77 signatářů a 3 strany, zatímco vstup vyžaduje 40 ratifikací. U zkoušky stačí říct: Budapešť je funkční rámec, 2. protokol a OSN úmluva jsou zatím neúčinné, podpis není ratifikace.
+\textbf{Mezinárodní prameny:} základ je \textbf{Budapešťská úmluva o kyberkriminalitě}. Je prakticky nejdůležitější, protože spojuje hmotněprávní skutky, procesní nástroje a spolupráci včetně sítě 24/7. Druhý dodatkový protokol má posílit přímější přeshraniční spolupráci, ale k 21. 6. 2026 ještě není v platnosti. Úmluva OSN proti kyberkriminalitě také ještě není v platnosti; podpis neznamená ratifikaci.
 
 \subsection*{Typická trestná činnost}
 \begin{itemize}
-  \item \textbf{Hacking} - neoprávněný přístup do systému; často navazuje zneužití dat.
-  \item \textbf{Malware a ransomware} - vytvoření, šíření nebo použití škodlivého kódu; poškození dat; vydírání; dvojí vydírání při exfiltraci a hrozbě zveřejněním.
-  \item \textbf{Phishing} - podvodné získání údajů; často podvod, neoprávněné opatření platebního prostředku, zneužití identity.
-  \item \textbf{DDoS} - omezení dostupnosti služby; podle okolností poškození systému, vydírání, útok na službu.
-  \item \textbf{Krádež a prodej databáze} - neoprávněný přístup, nakládání s daty, osobní údaje, obchodní tajemství.
-  \item \textbf{Online vydírání a sextortion} - vydírání, případně trestné činy proti důstojnosti a soukromí.
-  \item \textbf{Nenávistné a extremistické projevy online} - podle obsahu podpora a propagace hnutí, podněcování nenávisti atd.
-  \item \textbf{Nelegální tržiště a kryptoměny} - prodej přístupů, malware, drogy, legalizace výnosů, platební infrastruktura pachatelů.
-  \item \textbf{Autorskoprávní kriminalita} - P2P, nelegální streamy, warez, prodej licenčních klíčů.
+  \item \textbf{neoprávněný přístup} - prolomení účtu, zneužití zranitelnosti, průnik do serveru,
+  \item \textbf{malware a ransomware} - zašifrování dat, krádež dat, vydírání, dvojí vydírání při hrozbě zveřejněním,
+  \item \textbf{phishing a BEC} - vylákání hesel, platebních údajů nebo převodu peněz přes falešnou autoritu,
+  \item \textbf{DDoS} - zahlcení služby, často jako vydírání nebo politicky motivovaný útok,
+  \item \textbf{krádež a prodej dat} - databáze zákazníků, přístupové údaje, cookies, tokeny, obchodní tajemství,
+  \item \textbf{infostealery a initial access brokering} - krádež přístupů a jejich prodej dalším pachatelům,
+  \item \textbf{platební a investiční podvody} - karty, internetbanking, kryptoměny, falešné platformy,
+  \item \textbf{online vydírání, stalking a sextortion} - klasické útoky zesílené digitálními kanály,
+  \item \textbf{nelegální tržiště a praní výnosů} - prodej malwaru, přístupů, drog, dokladů a kryptoměnové praní.
 \end{itemize}
+
+\subsection*{Klasifikace trestných činů}
+Nejpraktičtější je klasifikovat podle role technologie:
+\begin{longtable}{p{0.23\linewidth}p{0.35\linewidth}p{0.34\linewidth}}
+\toprule
+\textbf{Typ} & \textbf{Co to znamená} & \textbf{Příklad}\\
+\midrule
+\textbf{Cyber-dependent} & Bez počítače, sítě nebo dat by trestný čin nedával smysl. & Neoprávněný přístup, malware, DDoS, smazání databáze.\\
+\addlinespace
+\textbf{Cyber-enabled} & Klasická kriminalita, kterou internet usnadní, zrychlí nebo zvětší. & Phishingový podvod, ransomware jako vydírání, falešné investice, sextortion.\\
+\addlinespace
+\textbf{Cyber-supported} & Technologie je jen podpůrný prostředek. & Komunikace pachatelů přes šifrovanou aplikaci, cloudové úložiště dokumentů, vyhledávání obětí.\\
+\bottomrule
+\end{longtable}
+
+Vedle toho vždy existuje \textbf{právní klasifikace}: konkrétní skutková podstata v trestním zákoníku. Jeden technický útok může právně spadat pod více trestných činů. Ransomware je technicky malware, ale právně může být současně § 230, § 175 vydírání, případně § 209 podvod nebo další skutky.
 
 \subsection*{Právní kvalifikace}
-Právní kvalifikace znamená převést skutkový děj do právního jazyka: určit, zda jednání naplňuje znaky konkrétního trestného činu. Nestačí říct "je to hacking" nebo "je to phishing". Musím rozebrat:
+Právní kvalifikace znamená převést skutkový děj na konkrétní paragraf. Nestačí říct "hacking" nebo "phishing". Postup:
 \begin{itemize}
-  \item \textbf{objekt} - chráněný zájem, například integrita dat, důvěrnost komunikace, majetek,
-  \item \textbf{objektivní stránku} - jednání, následek a příčinnou souvislost,
-  \item \textbf{subjekt} - pachatel a jeho případné zvláštní vlastnosti,
-  \item \textbf{subjektivní stránku} - zavinění, tedy úmysl nebo nedbalost.
+  \item co pachatel udělal a vůči jakému systému, účtu, datům nebo penězům,
+  \item jestli překonal zabezpečení, data jen získal, nebo je změnil/smazal/zašifroval,
+  \item jaký měl úmysl: průnik, krádež, vydírání, podvod, prodej přístupů,
+  \item jaký vznikl následek: škoda, výpadek, únik dat, zásah do komunikace, počet poškozených,
+  \item zda jde o souběh více skutkových podstat.
 \end{itemize}
 
-U kyberkriminality je běžný \textbf{souběh} více trestných činů. Jeden ransomware může být § 230 odst. 1, § 230 odst. 2, § 175 vydírání, případně § 209 podvod, § 182 porušení tajemství dopravovaných zpráv a další podstaty. Důležitá jsou i stadia: příprava, pokus a dokonání. U § 231 se trestá už přípravná logika nástrojů a přístupů, ale jen s účelovým úmyslem.
+\begin{longtable}{p{0.24\linewidth}p{0.37\linewidth}p{0.31\linewidth}}
+\toprule
+\textbf{Skutek} & \textbf{Typická kvalifikace} & \textbf{Co zdůraznit}\\
+\midrule
+\textbf{Průnik do účtu/serveru} & § 230 odst. 1, případně § 230 odst. 2. & U odst. 1 se řeší překonání bezpečnostního opatření; u odst. 2 zásah do dat nebo jejich neoprávněné užití.\\
+\addlinespace
+\textbf{Ransomware} & § 230 odst. 1 a 2, § 175 vydírání, někdy § 209 podvod nebo § 182. & Typický souběh: průnik, zašifrování, exfiltrace, výhrůžka a výkupné.\\
+\addlinespace
+\textbf{Phishing na banku} & § 209 podvod, § 234 platební prostředek, případně § 230 při přihlášení do účtu. & Dokaž omyl oběti, dispozici s penězi, škodu a použití přístupů.\\
+\addlinespace
+\textbf{Prodej hesel/exploitu} & § 231, pokud je dán úmysl spáchat § 230. & Samotný nástroj není automaticky trestný; rozhoduje účel a kontext.\\
+\addlinespace
+\textbf{DDoS} & Podle dopadu § 230 odst. 2, případně vydírání. & Jde hlavně o dostupnost služby, rozsah a škodu.\\
+\bottomrule
+\end{longtable}
 
-Kvalifikační znaky zvyšují sazbu: škoda, rozsah, organizovaná skupina, získaný prospěch, zvlášť chráněný systém, větší počet poškozených nebo závažný dopad. Hranice škody podle § 138 TZ: větší škoda alespoň 100 tis. Kč, značná škoda alespoň 1 mil. Kč, škoda velkého rozsahu alespoň 10 mil. Kč.
-
-\priklad{Phishing na internetbanking: vytvoření falešné stránky je příprava nebo prostředek, zaslání e-mailů je sociální inženýrství, zadání údajů obětí vede ke zneužití platebního prostředku a převod peněz je typicky podvod nebo související majetková kriminalita.}
+\pozor{U § 230 odst. 1 nestačí říct "někdo se dostal k datům". Musí jít o neoprávněný přístup po překonání bezpečnostního opatření. Když pachatel data mění, maže, zašifruje nebo neoprávněně užije, řeší se hlavně § 230 odst. 2.}
 
 \subsection*{Související postupy a kritéria}
-Postup u kyberkriminality je prakticky důležitý, protože elektronické důkazy rychle mizí a často leží u poskytovatelů v zahraničí.
-
-\subsubsection*{Typická procesní osa}
+U kyberkriminality nestačí znát paragraf. Musíš ukázat, jak se skutek prokáže. Typická osa:
 \begin{enumerate}
-  \item \textbf{Podnět a prvotní informace} - trestní oznámení, oznámení incidentu, poznatek policie, banky, CSIRT týmu nebo zahraničního partnera.
-  \item \textbf{Prověřování} - policie zjišťuje, zda došlo k trestnému činu, kdo je poškozený, jaký je vektor útoku, jaká data chybí a co je třeba okamžitě zajistit.
-  \item \textbf{Elektronické místo činu} - logy, účty, cloud, servery, domény, kryptopeněženky, komunikace, IoC. Často se nejdřív řeší uchování dat, aby nezmizela.
-  \item \textbf{Fyzické místo činu} - domovní prohlídka, prohlídka jiných prostor, zajištění počítačů, telefonů, disků, seed frází, hardwarových peněženek a poznámek.
-  \item \textbf{Zpracování důkazů} - forenzní kopie, hash, analýza, znalecký posudek, rekonstrukce časové osy.
-  \item \textbf{Právní kvalifikace a stíhání} - státní zástupce a policie posuzují skutkové podstaty, škodu, zavinění, souběh a mezinárodní prvky.
-  \item \textbf{Dokazování před soudem} - soud hodnotí zákonnost, věrohodnost, integritu a význam důkazů.
+  \item \textbf{Zjištění skutku} - trestní oznámení, incident report, banka, CSIRT, poskytovatel, zahraniční partner.
+  \item \textbf{Rychlé uchování stop} - logy, účty, IP adresy, e-maily, cloud, domény, kryptopeněženky; data rychle mizí.
+  \item \textbf{Zajištění zařízení a dat} - vydání/odnětí věci, prohlídky, forenzní kopie, hash, chain of custody.
+  \item \textbf{Vyžádání údajů} - metadata, provozní a lokalizační údaje, data od poskytovatelů, případně obsah uložené komunikace.
+  \item \textbf{Analýza} - časová osa, malware, účty, peněžní toky, IP adresy, přihlášení, vazba mezi online identitou a osobou.
+  \item \textbf{Kvalifikace a důkazní hodnocení} - skutková podstata, škoda, úmysl, souběh, použitelnost důkazu.
 \end{enumerate}
 
-\subsubsection*{Procesní nástroje}
-OČTŘ pracují hlavně s vydáním a odnětím věci, domovní prohlídkou, prohlídkou jiných prostor, uchováním dat, vyžádáním dat od držitele, provozními a lokalizačními údaji, odposlechem budoucí komunikace, znaleckým zkoumáním a mezinárodními žádostmi. Detailněji je to v otázce 21, ale u otázky 20 je nutné ukázat, že kvalifikace a proces spolu souvisejí: bez správně zajištěných důkazů nelze skutkový děj právně prokázat.
-
-Důležitá kritéria:
+Hlavní kritéria:
 \begin{itemize}
-  \item \textbf{zákonnost} - existuje právní titul a správný procesní postup,
-  \item \textbf{nezbytnost a proporcionalita} - zásah do soukromí odpovídá závažnosti věci,
-  \item \textbf{rychlost} - logy a data se mažou, účty se ruší, kryptoměny se přesouvají,
-  \item \textbf{integrita} - důkaz se nesmí nekontrolovaně měnit,
-  \item \textbf{chain of custody} - kdo, kdy a proč s důkazem nakládal,
-  \item \textbf{jurisdikce} - kde jsou data, poskytovatel, pachatel, oběť a dopad,
-  \item \textbf{použitelnost důkazu} - i technicky dobrý důkaz může být procesně problematický, pokud byl získán nezákonně.
+  \item \textbf{zákonnost} - správný procesní titul,
+  \item \textbf{proporcionalita} - zásah odpovídá závažnosti,
+  \item \textbf{rychlost} - logy rotují, cloudová data se mažou, kryptoměny se přesouvají,
+  \item \textbf{integrita} - hash, forenzní kopie, dokumentace,
+  \item \textbf{chain of custody} - kdo s důkazem nakládal,
+  \item \textbf{jurisdikce} - kde je pachatel, oběť, server, poskytovatel a dopad.
 \end{itemize}
 
 \subsection*{Mezinárodní spolupráce}
-Kyberkriminalita je typicky přeshraniční: oběť je v ČR, server v Irsku, pachatel jinde, doména registrovaná přes další stát, platba v kryptoměnách a komunikace přes globální platformu. Problémem je jurisdikce, rychlost, rozdílná trestnost, lokalizace dat, ochrana práv a použitelnost důkazů.
+Kyberkriminalita je skoro vždy přeshraniční. Oběť může být v ČR, server v Irsku, poskytovatel v USA, doména přes anonymního registrátora a peníze v kryptoměně. Proto je nejprve potřeba určit, \textbf{kdo drží data}, \textbf{v jakém státě jsou}, \textbf{o jaký typ dat jde} a \textbf{jak rychle mohou zmizet}.
 
 Používají se:
 \begin{itemize}
-  \item \textbf{vzájemná právní pomoc (MLA)} - formální žádost jednoho státu druhému, pomalejší, ale klasická,
-  \item \textbf{evropský vyšetřovací příkaz (EVP/EIO)} - v EU orgán žádá orgán jiného členského státu o vyšetřovací úkon; funguje na principu vzájemného uznávání,
-  \item \textbf{Europol/EC3, J-CAT a Eurojust} - operativní koordinace, analytická podpora, společné akce, koordinace státních zástupců,
-  \item \textbf{síť 24/7 podle Budapešťské úmluvy} - rychlý kontakt pro uchování a směrování žádostí,
-  \item \textbf{EPOC a EPOC-PR} - od 18. 8. 2026 přímější režim vůči poskytovatelům v EU,
-  \item \textbf{dobrovolná spolupráce poskytovatelů} - možná v mezích práva, pravidel poskytovatele a typu dat; nenahrazuje procesní titul tam, kde je povinný.
+  \item \textbf{MLA} - klasická vzájemná právní pomoc mezi státy; pomalejší, ale použitelná i mimo EU,
+  \item \textbf{EVP/EIO} - evropský vyšetřovací příkaz; v EU orgán žádá orgán jiného členského státu,
+  \item \textbf{Budapešťská síť 24/7} - rychlé uchování dat a kontakt mezi státy,
+  \item \textbf{Europol/EC3 a Eurojust} - koordinace operací, analytická podpora a koordinace státních zástupců,
+  \item \textbf{EPOC/EPOC-PR} - od 18. 8. 2026 přímější příkaz k vydání nebo uchování uložených elektronických důkazů u poskytovatelů v EU,
+  \item \textbf{dobrovolná spolupráce poskytovatelů} - jen v mezích práva a pravidel poskytovatele; nenahrazuje soudní nebo jiný povinný titul, pokud je potřeba.
 \end{itemize}
 
-\pravobox{E-evidence v otázce 20: k 18. 6. 2026 jde o budoucí režim použitelný od 18. 8. 2026. EPOC je evropský příkaz k vydání uložených elektronických důkazů; standardní lhůta je 10 dnů, v naléhavém případě 8 hodin. EPOC-PR je evropský příkaz k uchování dat; data se uchovají 60 dnů s možností prodloužení o 30 dnů. Režim pracuje se čtyřmi kategoriemi: údaje o účastníkovi/službě, údaje sloužící výlučně k identifikaci uživatele, provozní údaje a obsahová data. Příkazy vydává nebo validuje soud, státní zástupce či jiný příslušný orgán podle typu dat; u provozních a obsahových dat jsou požadavky přísnější. Existují důvody odmítnutí a přezkumu, například základní práva, imunity a výsady, profesní tajemství nebo zjevné porušení Listiny EU. EPOC není živý odposlech, neprolamuje end-to-end šifrování a nevytvoří data, která poskytovatel nemá. Dánsko režimem není vázáno.}
+\pravobox{EPOC není živý odposlech a neprolamuje šifrování. EPOC slouží k vydání uložených elektronických důkazů, EPOC-PR k jejich uchování. U otázky 20 stačí říct, že jde o evropský nástroj pro rychlejší přeshraniční důkazy u poskytovatelů; detail patří hlavně do otázky 21.}
 
-\priklad{Aktuální příklad z praxe - Operation Endgame 2024-2025: Europol a Eurojust koordinovaly zásahy proti malware infrastruktuře, která umožňovala další kriminalitu včetně ransomwaru. V listopadu 2025 bylo podle Europolu odstaveno nebo narušeno 1025 serverů, zabaveno 20 domén a cílem byly mimo jiné infostealer Rhadamanthys, RAT VenomRAT a botnet Elysium. Příklad ukazuje cybercrime-as-a-service: oddělené role vývojářů, provozovatelů infrastruktury, brokerů prvotního přístupu, affiliate útočníků a osob peroucích výnosy. Důkazně jsou významné servery, domény, databáze, přihlašovací údaje, kryptopeněženky a propojení online přezdívky s konkrétní osobou. Ke zkoušce: moderní kyberkriminalita se vyšetřuje jako ekosystém služeb, ne jen jeden pachatel u jednoho počítače.}
+\zkouska{Souvisle: kyberkriminalita je trestná činnost, kde jsou technologie cílem, nástrojem nebo prostředím. Prameny jsou národní trestní zákoník a trestní řád, evropské směrnice a procesní nástroje a mezinárodně hlavně Budapešťská úmluva. Typicky řeším hacking, malware, ransomware, phishing, DDoS, krádež dat, platební podvody, vydírání a praní výnosů. Klasifikuji cyber-dependent, cyber-enabled a cyber-supported. Potom technický popis převedu na paragrafy: § 230, § 231, § 232, § 209, § 175, § 234, § 182. U kvalifikace řeším jednání, úmysl, škodu, následek a souběh. Procesně je klíčové rychle uchovat elektronické důkazy, zajistit zařízení a data, udržet integritu a řešit jurisdikci. Mezinárodně použiji MLA, EVP, Budapešť 24/7, Europol/Eurojust a nově e-evidence.}
 
-\priklad{Aktuální příklad z praxe - First VPN 2026: Eurojust a Europol v květnu 2026 podpořily francouzské a nizozemské orgány při odstavení služby First VPN, která byla nabízena kyberzločincům jako anonymizační infrastruktura pro hacking, ransomware a další trestnou činnost. Úřady uvedly, že bylo demontováno více než 33 serverů, zajištěny domény včetně onion domén a provedena akce vůči podezřelému na Ukrajině; nizozemská policie zároveň popsala, že před odstavením měla k provozu služby přístup. Ke zkoušce: VPN není sama o sobě nelegální, ale služba cíleně navržená a propagovaná pro trestnou činnost se stává podpůrnou infrastrukturou kyberkriminality a zdrojem provozních důkazů.}
-
-\priklad{Aktuální příklad z praxe - kryptoměnové praní: v roce 2025 Europol a Eurojust podpořily zásah proti službě Cryptomixer, při němž byly podle Eurojustu zajištěny tři servery, doména, více než 12 TB dat a kryptoměny za více než 25 mil. eur. V červnu 2026 Europol oznámil také zásah proti službě AudiA6, podezřelé z praní více než 336 mil. eur pro ransomware a další kyberkriminalitu. Příklad ukazuje, že blockchain je pseudonymní, ne nutně anonymní: vyšetřování kombinuje blockchainovou analýzu, účty, IP adresy, zařízení, privátní klíče a zajištění kryptoměn. Ke zkoušce: legalizace výnosů je samostatná rovina vedle původního útoku.}
-
-\subsection*{Modelové situace}
-\begin{enumerate}
-  \item \textbf{Hacking a krádež databáze}: § 230 odst. 1 za přístup po překonání zabezpečení, § 230 odst. 2 za užití nebo exfiltraci dat; podle rozsahu škoda, osobní údaje, obchodní tajemství, GDPR breach a případně ZKB incident.
-  \item \textbf{Ransomware s výkupným}: průnik, zašifrování dat, zásah do dostupnosti, vydírání; při exfiltraci dvojí vydírání; typicky organizovaná a přeshraniční skupina.
-  \item \textbf{Phishing na internetbanking}: podvod, platební prostředek, případně neoprávněný přístup, pokud se pachatel přihlásí do účtu oběti.
-  \item \textbf{Prodej přístupových údajů na fóru}: § 231, pokud je dán účelový úmysl spáchat § 230; není nutné, aby už došlo k průniku.
-  \item \textbf{Admin z hrubé nedbalosti smaže produkční databázi}: může jít o § 232, ale jen při naplnění hrubé nedbalosti a zákonného následku; jinak spíš civilní, pracovní nebo správní rovina.
-  \item \textbf{Důkazy u poskytovatele v Irsku}: podle času a režimu MLA/EVP, od 18. 8. 2026 e-evidence EPOC/EPOC-PR přímo vůči poskytovateli nebo jeho určenému adresátovi.
-  \item \textbf{Infostealer ukradne cookies a hesla a pachatel je prodá}: technicky jde o krádež přístupových údajů; právně se může řešit neoprávněný přístup, opatření a přechovávání přístupového zařízení nebo hesla, podvod či příprava dalšího útoku. Přesná kvalifikace závisí na úmyslu, použití údajů, škodě a tom, zda už došlo k přihlášení do cizího systému.
-  \item \textbf{Deepfake hlas ředitele přesvědčí účetní k převodu}: modelově půjde hlavně o podvod, případně o souběh s neoprávněným zásahem do účtu, zneužitím identity nebo paděláním relevantních dat. Nutné je dokazovat omyl, dispozici s majetkem, škodu a vztah pachatele k vytvoření nebo použití deepfaku.
-  \item \textbf{Initial access broker prodá přístup do nemocnice ransomwarové skupině}: může jít o neoprávněný přístup, zneužití přístupových údajů, účastenství nebo přípravu navazujícího vydírání a poškození dat. Nestačí ale říct "prodával přístup"; je nutné prokázat, co věděl o účelu a jaký měl úmysl.
-  \item \textbf{Provozovatel DDoS-for-hire služby pronajímá botnet}: podle okolností se řeší útoky na dostupnost služby, poškození nebo narušení systému, účastenství zákazníků a výnosy z trestné činnosti. U zákazníka se posuzuje objednaný útok, cíl, rozsah a způsobený dopad.
-  \item \textbf{Provozovatel kryptoměnového mixeru zaměřeného na ransomware výnosy}: může jít o legalizaci výnosů z trestné činnosti, účastenství a další finanční trestnou činnost; klíčové je, zda služba vědomě sloužila k zastření původu prostředků a jaké důkazy to prokazují.
-\end{enumerate}
-
-\zkouska{U kvalifikace vždy postupuj od faktů: co pachatel udělal, k jakému systému nebo datům, s jakým úmyslem, jaká škoda a jaký následek. Nepiš "je to hacking", ale převeď hacking na skutkové podstaty a řekni, jakými procesními kroky to lze prokázat.}
-
-\zdroje{Trestní zákoník; trestní řád; směrnice 2013/40/EU; směrnice 2019/713; směrnice 2014/41/EU o EVP; Budapešťská úmluva; e-evidence nařízení 2023/1543 a směrnice 2023/1544; UNTC status Úmluvy OSN proti kyberkriminalitě; referenční text z přiloženého PDF a starší výpisky.}
+\zdroje{Trestní zákoník; trestní řád; směrnice o útocích na informační systémy; směrnice o bezhotovostních platebních podvodech; směrnice o evropském vyšetřovacím příkazu; Budapešťská úmluva; e-evidence nařízení a směrnice; referenční PDF a starší výpisky.}
 
 \newpage
 
