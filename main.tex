@@ -1184,6 +1184,209 @@ U dokumentu jako důkazu řeším tři otázky: \textbf{autenticita} - od koho d
 
 \subsection*{Kostra odpovědi}
 \begin{enumerate}
+  \item Říct právní rámec: GDPR, zákon o zpracování osobních údajů, zvláštní předpisy.
+  \item Vymezit základní pojmy: osobní údaj, subjekt údajů, správce, zpracovatel, zpracování.
+  \item Vyjmenovat zásady čl. 5 GDPR.
+  \item Vysvětlit účel a právní titul: účel je proč, titul je proč to smím.
+  \item Vyjmenovat právní tituly čl. 6 a zvláštní kategorie čl. 9.
+  \item Popsat riziko, DPIA, test proporcionality a DPO.
+  \item Zmínit práva subjektů, porušení zabezpečení, ÚOOÚ a předávání mimo EHP.
+\end{enumerate}
+
+\subsection*{Právní úprava}
+\begin{itemize}
+  \item \textbf{GDPR} - hlavní přímo použitelné nařízení EU pro ochranu osobních údajů.
+  \item \textbf{Zákon o zpracování osobních údajů} - český adaptační zákon; doplňuje GDPR, řeší ÚOOÚ, některé výjimky a zvláštní režimy.
+  \item \textbf{Zvláštní předpisy} - zdravotnictví, pracovní právo, školství, banky, elektronické komunikace, obchodní sdělení, policie.
+  \item \textbf{EDPB} - Evropský sbor pro ochranu osobních údajů sjednocuje výklad v EU.
+\end{itemize}
+
+\subsection*{Základní pojmy}
+\begin{itemize}
+  \item \textbf{Osobní údaj} - informace o identifikované nebo identifikovatelné fyzické osobě: jméno, e-mail, rodné číslo, IP adresa, cookie, poloha, fotka, hlas, kombinace údajů.
+  \item \textbf{Subjekt údajů} - člověk, kterého se údaje týkají.
+  \item \textbf{Správce} - určuje, proč a jak se údaje zpracovávají.
+  \item \textbf{Zpracovatel} - zpracovává údaje pro správce podle jeho pokynů, například cloud, účetní, mailingový nástroj.
+  \item \textbf{Zpracování} - sběr, uložení, použití, předání, změna, zveřejnění, výmaz.
+  \item \textbf{Pseudonymizace} - vazba na osobu stále existuje, GDPR platí.
+  \item \textbf{Anonymizace} - osobu už nelze rozumně znovu identifikovat, GDPR se neuplatní.
+\end{itemize}
+
+\subsection*{Zásady zpracování}
+\begin{longtable}{p{0.30\linewidth}p{0.62\linewidth}}
+\toprule
+\textbf{Zásada} & \textbf{Co říct}\\
+\midrule
+Zákonnost, korektnost, transparentnost & Musím mít právní titul a člověk má vědět, co s údaji dělám.\\
+Účelové omezení & Údaje sbírám pro jasný účel a nepoužiji je libovolně jinak.\\
+Minimalizace & Sbírám jen údaje, které opravdu potřebuji.\\
+Přesnost & Údaje mají být správné a aktualizované.\\
+Omezení uložení & Nedržím údaje déle, než je potřeba.\\
+Integrita a důvěrnost & Musím zajistit bezpečnost: přístupy, šifrování, logy, zálohy.\\
+Odpovědnost & Správce musí soulad nejen dodržet, ale i doložit.\\
+\bottomrule
+\end{longtable}
+
+\subsection*{Účely a právní tituly}
+\pozor{Účel je skutečně to, \textbf{proč} údaje sbírám. Musí být jasný, konkrétní a stanovený předem. Právní titul je až zákonný \textbf{důvod}, který dovoluje tento účel uskutečnit.}
+
+\begin{longtable}{p{0.28\linewidth}p{0.62\linewidth}}
+\toprule
+\textbf{Právní titul čl. 6} & \textbf{Příklad}\\
+\midrule
+Souhlas & Newsletter pro nového zájemce; musí být svobodný, konkrétní, informovaný a odvolatelný.\\
+Plnění smlouvy & Jméno a adresa pro doručení objednávky.\\
+Právní povinnost & Uchování faktur podle účetních a daňových pravidel.\\
+Životně důležitý zájem & Zpracování údajů pacienta v akutní nouzi.\\
+Veřejný zájem / veřejná moc & Matrika, úřad, výkon veřejné správy.\\
+Oprávněný zájem & Bezpečnostní logy, vymáhání pohledávky, ochrana majetku, některý přímý marketing.\\
+\bottomrule
+\end{longtable}
+
+\subsection*{Oprávněný zájem}
+Oprávněný zájem není kouzelné zaklínadlo. Správce má udělat \textbf{LIA / balancing test}:
+\begin{enumerate}
+  \item \textbf{Účel} - mám konkrétní a legitimní zájem?
+  \item \textbf{Nezbytnost} - nejde toho dosáhnout méně invazivně?
+  \item \textbf{Vyvážení} - nepřevažují práva a rozumná očekávání člověka?
+\end{enumerate}
+
+\priklad{Kamera u vstupu do skladu kvůli krádežím může obstát: jasný účel, krátká retence, záběr jen na vstup, informování osob. Kamera se zvukem nad celým pracovištěm kvůli kontrole výkonu zaměstnanců už pravděpodobně neobstojí.}
+
+\subsection*{Zvláštní kategorie údajů}
+Zvláštní kategorie podle čl. 9 GDPR jsou citlivé údaje: zdraví, genetické údaje, biometrika pro jedinečnou identifikaci, sexuální orientace, politické názory, náboženství, členství v odborech, rasový nebo etnický původ.
+
+U těchto údajů nestačí běžný titul. Potřebuji:
+\begin{itemize}
+  \item \textbf{čl. 6} - obecný právní titul,
+  \item \textbf{čl. 9} - výjimku ze zákazu zpracování.
+\end{itemize}
+
+Typické výjimky podle čl. 9: výslovný souhlas, pracovní právo a sociální zabezpečení, životně důležité zájmy, zdravotní péče, veřejné zdraví, významný veřejný zájem, právní nároky, výzkum a archivace. Údaje o trestních odsouzeních a trestných činech mají zvláštní režim podle čl. 10.
+
+\subsection*{Riziko, DPIA a proporcionalita}
+GDPR je postavené na riziku. Čím vyšší riziko pro člověka, tím silnější opatření. \textbf{DPIA} se dělá před zahájením zpracování, pokud zpracování pravděpodobně povede k vysokému riziku.
+
+DPIA typicky řeším u:
+\begin{itemize}
+  \item rozsáhlého profilování s významnými účinky,
+  \item rozsáhlého zpracování zvláštních kategorií údajů,
+  \item rozsáhlého kamerového sledování veřejně přístupných prostor,
+  \item biometriky, AI, nových technologií nebo spojování velkých datových sad.
+\end{itemize}
+
+Test proporcionality řekni čtyřmi kroky: legitimní cíl, vhodnost, nezbytnost, přiměřenost v užším smyslu.
+
+\subsection*{DPO, práva a incidenty}
+\textbf{DPO / pověřenec} radí, kontroluje, školí, komunikuje s ÚOOÚ a je kontaktním místem. Není to osoba, která přebírá odpovědnost správce. Povinný je hlavně u veřejné moci, rozsáhlého systematického monitorování a rozsáhlého zpracování citlivých údajů.
+
+Subjekt údajů má práva: informace, přístup, oprava, výmaz, omezení, přenositelnost, námitka, nebýt předmětem čistě automatizovaného rozhodování s významnými účinky.
+
+\textbf{Námitka} je důležitá hlavně u oprávněného zájmu a veřejného zájmu. U přímého marketingu platí: když člověk vznese námitku, marketing musí skončit. \textbf{Výmaz} není absolutní: faktury nebo údaje nutné pro právní nároky se nemažou jen proto, že si to někdo přeje.
+
+Porušení zabezpečení se hlásí ÚOOÚ zpravidla do 72 hodin, pokud hrozí riziko pro práva a svobody. Subjektům údajů se oznamuje při vysokém riziku.
+
+\subsection*{ÚOOÚ a předávání mimo EHP}
+ÚOOÚ je nezávislý dozorový úřad: řeší stížnosti, kontroly, opatření, pokuty, metodiku a spolupráci v EDPB. Sankce mohou u nejzávažnějších porušení dosáhnout až 20 mil. eur nebo 4 \% celosvětového obratu.
+
+Předávání mimo EHP je možné hlavně přes rozhodnutí o odpovídající ochraně, standardní smluvní doložky, závazná podniková pravidla nebo výjimky. U standardních doložek je potřeba myslet i na rizika práva cílové země.
+
+\zkouska{Souvisle: u GDPR nejdřív řeknu právní rámec, potom pojmy, zásady, účel a právní titul. Nikdy nezačínám automaticky souhlasem. U citlivých údajů potřebuji čl. 6 i čl. 9. U oprávněného zájmu udělám balancing test. U rizikového zpracování udělám DPIA před spuštěním. Správce musí umět soulad doložit a ÚOOÚ nad tím vykonává dohled.}
+
+\zdroje{GDPR 2016/679; zákon o zpracování osobních údajů; zákon o některých službách informační společnosti; metodiky ÚOOÚ a EDPB; přiložené PDF a starší výpisky.}
+
+\newpage
+
+\otazka{23. Elektronický podpis a elektronická pečeť}{Právní úprava a druhy. Datové schránky - právní úprava a praxe používání.}{BI301K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
+  \item Právní rámec: eIDAS, eIDAS 2.0, český zákon o službách vytvářejících důvěru, datové schránky.
+  \item Druhy podpisů: prostý, zaručený, uznávaný, kvalifikovaný.
+  \item Rozdíl podpis, pečeť, časové razítko.
+  \item Datové schránky: dodání, doručení, fikce, účinky podání.
+  \item Autorizovaná konverze.
+\end{enumerate}
+
+\subsection*{Právní rámec}
+\begin{itemize}
+  \item \textbf{eIDAS} - evropské nařízení pro elektronickou identifikaci a služby vytvářející důvěru.
+  \item \textbf{eIDAS 2.0} - rozšiřuje rámec hlavně o evropskou peněženku digitální identity (EUDI Wallet).
+  \item \textbf{Zákon o službách vytvářejících důvěru pro elektronické transakce} - česká úprava k eIDAS.
+  \item \textbf{Zákon o elektronické identifikaci} - český rámec elektronické identity.
+  \item \textbf{Zákon o elektronických úkonech a autorizované konverzi dokumentů} - datové schránky a autorizovaná konverze.
+  \item \textbf{DIA} - dohled v oblasti služeb vytvářejících důvěru, důvěryhodné seznamy, elektronická identifikace, datové schránky.
+\end{itemize}
+
+Základní pravidlo eIDAS: elektronickému podpisu se nesmí upřít právní účinky jen proto, že je elektronický. \textbf{Kvalifikovaný elektronický podpis} má účinky vlastnoručního podpisu v celé EU.
+
+\subsection*{Druhy elektronického podpisu}
+\begin{longtable}{p{0.22\linewidth}p{0.34\linewidth}p{0.34\linewidth}}
+\toprule
+\textbf{Typ} & \textbf{Co to je} & \textbf{Kdy ho zmínit}\\
+\midrule
+\textbf{Prostý elektronický podpis} & Jméno v e-mailu, kliknutí na "Souhlasím", sken podpisu, podpis prstem na tabletu. & Má právní účinky, ale slabou důkazní jistotu. Ve sporu se dokazují okolnosti.\\
+\addlinespace
+\textbf{Zaručený elektronický podpis} & Kryptografický podpis svázaný s podepisujícím, umožní detekovat změnu dokumentu. Certifikát nemusí být kvalifikovaný. & Dobře chrání integritu, ale identita se může dokazovat dalším kontextem.\\
+\addlinespace
+\textbf{Uznávaný elektronický podpis} & Český pojem: kvalifikovaný podpis nebo zaručený podpis založený na kvalifikovaném certifikátu. & Důležitý pro komunikaci s českou veřejnou mocí. Není vždy totéž co QES.\\
+\addlinespace
+\textbf{Kvalifikovaný elektronický podpis (QES)} & Zaručený podpis s kvalifikovaným certifikátem vytvořený kvalifikovaným prostředkem. & Nejvyšší úroveň; má účinky vlastnoručního podpisu v celé EU.\\
+\bottomrule
+\end{longtable}
+
+\pravobox{Certifikát si technicky můžeš vytvořit sám, ale nebude kvalifikovaný. Kvalifikovaný certifikát musí vydat kvalifikovaný poskytovatel služeb vytvářejících důvěru po ověření identity. Pro QES navíc nestačí kvalifikovaný certifikát; podpis musí vzniknout kvalifikovaným prostředkem, například certifikovaným tokenem, kartou nebo vzdálenou kvalifikovanou službou.}
+
+\pozor{Uznávaný podpis není automaticky QES. Každý QES je uznávaný podpis, ale zaručený podpis založený na kvalifikovaném certifikátu může být uznávaný, aniž by byl kvalifikovaný podpis, pokud nebyl vytvořen kvalifikovaným prostředkem.}
+
+\subsection*{Pečeť a časové razítko}
+\begin{itemize}
+  \item \textbf{Elektronický podpis} patří fyzické osobě a zachycuje její jednání.
+  \item \textbf{Elektronická pečeť} patří právnické osobě a dokládá původ a integritu dokumentu od organizace.
+  \item \textbf{Časové razítko} prokazuje, že dokument nebo data existovala v určitém čase.
+\end{itemize}
+
+Pečeť není podpis konkrétního člověka. Hodí se třeba pro automaticky vydané potvrzení univerzity nebo úřadu. Podpis, pečeť ani razítko nedokazují pravdivost obsahu; dokazují původ, integritu a čas.
+
+\subsection*{Datové schránky}
+Datové schránky upravuje zákon o elektronických úkonech a autorizované konverzi dokumentů. Jsou důvěryhodný kanál pro doručování a podání, ne elektronický podpis.
+
+Nejdůležitější:
+\begin{itemize}
+  \item \textbf{dodání} - zpráva technicky dorazí do datové schránky,
+  \item \textbf{doručení} - adresát se přihlásí, případně nastane fikce doručení,
+  \item \textbf{fikce doručení} - typicky po 10 dnech u doručování orgánem veřejné moci,
+  \item \textbf{podání vůči veřejné moci} - odeslání z datové schránky může mít účinky podepsaného podání,
+  \item \textbf{datová schránka není archiv} - zprávy je potřeba ukládat včetně obálky a doručenky.
+\end{itemize}
+
+\pozor{Datová schránka nevytvoří podpis uvnitř PDF. Jen zákon může říct, že úkon odeslaný datovou schránkou má účinky podepsaného úkonu. Proto nepleť podepsaný dokument a dokument odeslaný datovou schránkou.}
+
+\subsection*{Autorizovaná konverze}
+Autorizovaná konverze převádí dokument mezi listinnou a elektronickou podobou se zachováním právních účinků formy. Není to obyčejný sken a nepotvrzuje pravdivost obsahu. Potvrzuje shodu podoby vstupu a výstupu a obsahuje konverzní doložku.
+
+\subsection*{Jak to říct u zkoušky}
+\begin{itemize}
+  \item Prostý podpis: právně možný, důkazně slabší.
+  \item Zaručený podpis: kryptografie, vazba na osobu, detekce změn.
+  \item Uznávaný podpis: český pojem důležitý pro veřejnou moc.
+  \item QES: nejvyšší úroveň, vlastnoruční podpis v celé EU.
+  \item Pečeť: právnická osoba, původ a integrita.
+  \item Razítko: důkaz času.
+  \item Datovka: doručovací kanál, ne podpis.
+  \item Konverze: převod listina/elektronicky, ne ověření pravdivosti.
+\end{itemize}
+
+\zkouska{Souvisle: elektronický podpis řeší identitu podepisujícího a integritu dokumentu, pečeť řeší původ dokumentu od právnické osoby, časové razítko řeší existenci v čase, datová schránka řeší doručovací kanál a autorizovaná konverze řeší převod formy dokumentu. Nejvyšší úroveň podpisu je QES, který má účinky vlastnoručního podpisu v celé EU.}
+
+\zdroje{eIDAS 910/2014; eIDAS 2.0 - nařízení 2024/1183; zákon o službách vytvářejících důvěru pro elektronické transakce; zákon o elektronické identifikaci; zákon o elektronických úkonech a autorizované konverzi dokumentů; DIA; přiložené PDF.}
+
+\iffalse
+
+\otazka{22. Ochrana osobních údajů}{Právní úprava. Principy a zásady zpracování osobních údajů - definice, základní zásady, posouzení rizik, test proporcionality. Účely zpracování. Právní tituly. Zákon o zpracování osobních údajů - ÚOOÚ a jeho úloha a postavení v České republice.}{BI301K}
+
+\subsection*{Kostra odpovědi}
+\begin{enumerate}
   \item Právní rámec: GDPR jako přímo použitelné nařízení, zákon o zpracování osobních údajů, zvláštní předpisy a ePrivacy/obchodní sdělení.
   \item Pojmy: osobní údaj a identifikovatelnost, subjekt údajů, správce, zpracovatel, příjemce, pseudonymizace vs anonymizace.
   \item Zvláštní kategorie údajů: čl. 6 a čl. 9 zároveň, čl. 10 pro trestní údaje.
@@ -1481,6 +1684,8 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
 
 \zdroje{eIDAS 910/2014 a eIDAS 2.0 - nařízení 2024/1183; zákon o službách vytvářejících důvěru pro elektronické transakce (č. 297/2016 Sb.); zákon o elektronické identifikaci (č. 250/2017 Sb.); zákon o elektronických úkonech a autorizované konverzi dokumentů (č. 300/2008 Sb.); důvěryhodné seznamy a informace DIA ke kvalifikovaným poskytovatelům, certifikátům a prostředkům; přiložené PDF.}
 
+\fi
+
 \newpage
 \section*{Rychlé opakování před zkouškou}
 \addcontentsline{toc}{section}{Rychlé opakování před zkouškou}
@@ -1510,15 +1715,15 @@ Výstup konverze obsahuje konverzní doložku. Ta říká, kdo, kdy a z čeho do
   \item \textbf{19}: modelové situace nemocnice, banky, cloudového dodavatele, výrobce routeru podle CRA a použití Cyber Solidarity Act.
   \item \textbf{20}: Operation Endgame, First VPN, Cryptomixer/AudiA6 a modelové kvalifikace pro infostealery, deepfake podvod, initial access brokera, DDoS-for-hire a kryptoměnové praní.
   \item \textbf{21}: praktické použití § 78, § 79, § 82, § 7b, § 88a, § 88, znaleckého zkoumání, přeshraničního scénáře a forenzní osy u ransomwaru.
-  \item \textbf{22}: biometrická docházka, realitně-investiční předávání údajů, AI modely a GDPR, plus rozšíření oprávněného zájmu, DPIA a DPO.
-  \item \textbf{23}: praktické použití EUDI Wallet, QES, pečetě, časového razítka, datových schránek a autorizované konverze.
+  \item \textbf{22}: GDPR přes účel, právní titul, zásady, zvláštní kategorie, oprávněný zájem, DPIA, DPO, práva subjektů a ÚOOÚ.
+  \item \textbf{23}: elektronický podpis, uznávaný podpis, QES, pečeť, časové razítko, datové schránky a autorizovaná konverze.
 \end{itemize}
 
 \section*{Skutečné a modelové příklady}
 \addcontentsline{toc}{section}{Skutečné a modelové příklady}
 \begin{itemize}
-  \item \textbf{Skutečné případy z oficiálních zdrojů}: APT31/MZV ČR, DDoS vlna Q1 2026, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), Viasat, Colonial Pipeline, ukrajinská kybernetická obrana podle CCDCOE, Synnovis/NHS, Operation Endgame, First VPN, Cryptomixer/AudiA6, ÚOOÚ kontroly biometrické docházky a realitně-investičního zpracování údajů, Avast/Jumpshot a stanovisko EDPB k AI modelům.
-  \item \textbf{Modelové příklady pro vysvětlení práva}: vodárenská společnost, nemocnice a ransomware podle ZKB/NIS2, banka a cloud, výrobce routeru podle CRA, e-evidence scénář, použití procesních institutů trestního řádu, phishing/cloud přes hranice, GDPR e-shop/kamerový systém/HR screening/AI profilování, QES smlouva, pečeť univerzity, časové razítko a datové schránky.
+  \item \textbf{Skutečné případy z oficiálních zdrojů}: APT31/MZV ČR, DDoS vlna Q1 2026, Volt Typhoon, Salt Typhoon, APT28/TP-Link, NoName057(16), Viasat, Colonial Pipeline, ukrajinská kybernetická obrana podle CCDCOE, Synnovis/NHS, Operation Endgame, First VPN a Cryptomixer/AudiA6.
+  \item \textbf{Modelové příklady pro vysvětlení práva}: vodárenská společnost, nemocnice a ransomware podle ZKB/NIS2, banka a cloud, výrobce routeru podle CRA, e-evidence scénář, použití procesních institutů trestního řádu, phishing/cloud přes hranice, GDPR kamera/sklad, QES, pečeť, časové razítko a datové schránky.
   \item \textbf{Atribuce}: u státních aktérů rozlišuj veřejnou politickou atribuci státu, technické přiřazení bezpečnostní komunitou, pravděpodobné spojení se státem a právní přičitatelnost. Ne každý případ kyberšpionáže je kyberválka a ne každá zdrojová IP adresa identifikuje pachatele.
 \end{itemize}
 
