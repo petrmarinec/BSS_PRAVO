@@ -800,41 +800,68 @@ Vedle těchto předpisů je dobré zmínit i institucionální vrstvu EU. \textb
 \textbf{Cyber Solidarity Act} - nařízení 2025/38 - posiluje unijní schopnosti detekce, připravenosti a reakce na velké kybernetické hrozby a incidenty. Staví na třech pilířích: \textbf{Evropský systém kybernetického varování}, \textbf{mechanismus kybernetické nouze} a \textbf{mechanismus přezkumu kybernetických incidentů}. Evropský systém kybernetického varování tvoří \textbf{národní kybernetická centra} (National Cyber Hubs) a \textbf{přeshraniční kybernetická centra} (Cross-Border Cyber Hubs). Tato centra mohou využívat funkce a schopnosti podobné bezpečnostním operačním centrům, například pokročilou detekci, sdílení informací a analýzu hrozeb, ale právní předpis je označuje jako cyber hubs, ne jako běžná SOC. Mechanismus kybernetické nouze zahrnuje mimo jiné \textbf{Evropskou kybernetickou rezervu}. Nejde o náhradu NIS2, ale o operační a krizovou nadstavbu pro společnou detekci, podporu a poučení z rozsáhlých incidentů.
 
 \subsection*{Český zákon o kybernetické bezpečnosti}
-Zákon o kybernetické bezpečnosti (č. 264/2025 Sb.) je nový základ české kyberbezpečnostní regulace. Upravuje práva a povinnosti osob a orgánů veřejné moci v oblasti zajišťování kybernetické bezpečnosti, působnost NÚKIB a systém spolupráce.
+Zákon o kybernetické bezpečnosti (č. 264/2025 Sb.) je česká transpozice NIS2. Neptá se obecně, jestli má firma "nějaké IT", ale jestli \textbf{poskytuje regulovanou službu}. Praktický postup je:
+\begin{enumerate}
+  \item Najdu službu ve \textbf{vyhlášce o regulovaných službách}. Typická odvětví jsou veřejná správa, energetika, doprava, zdravotnictví, digitální infrastruktura, finanční trh, voda, potraviny, chemie, výzkum a další.
+  \item Ověřím \textbf{velikost a význam}. Typicky platí: \textbf{střední podnik} ve vybraném odvětví spadne do nižšího režimu, \textbf{velký podnik} nebo služba s vysokým dopadem do vyššího režimu. Vždy ale rozhoduje konkrétní služba a kritéria ve vyhlášce.
+  \item Pokud podmínky sedí, subjekt službu \textbf{ohlásí NÚKIB}. Nečeká pasivně, až ho stát najde.
+  \item Po registraci doplní kontaktní a další údaje, vymezí aktiva související s regulovanou službou a zavede bezpečnostní opatření podle svého režimu.
+\end{enumerate}
 
-Prováděcí rámec tvoří zejména \textbf{vyhláška č. 408/2025 Sb. o regulovaných službách}, \textbf{vyhláška č. 409/2025 Sb. o bezpečnostních opatřeních pro vyšší režim} a \textbf{vyhláška č. 410/2025 Sb. o bezpečnostních opatřeních pro nižší režim}. Prakticky je dobré znát jejich funkci, ne jen čísla: první pomáhá určit, kdo spadá do regulace a v jakém režimu; druhá a třetí říkají, jaká organizační a technická opatření se mají zavést. Pro veřejnou správu a cloud jsou navíc relevantní předpisy k bezpečnostním úrovním informačních systémů veřejné správy a bezpečnostním pravidlům pro cloud computing.
+\priklad{Střední výrobce v regulovaném výrobním odvětví si ověří službu ve vyhlášce a typicky řeší nižší režim. Velká nemocnice, významný provozovatel energetiky nebo zásadní digitální infrastruktura typicky řeší vyšší režim. Neříkej ale automaticky "každá firma od 50 lidí je NIS2"; vždy musí jít o regulovanou službu a splněná kritéria.}
 
-Praktické jádro je v určení regulovaných služeb a režimů:
+\subsection*{Nižší a vyšší režim prakticky}
+\begin{longtable}{p{0.18\linewidth}p{0.34\linewidth}p{0.40\linewidth}}
+\toprule
+\textbf{Režim} & \textbf{Kdo typicky} & \textbf{Co musí prakticky zavést}\\
+\midrule
+\textbf{Nižší povinnosti} &
+Typicky střední podnik v regulovaném odvětví nebo méně významný poskytovatel regulované služby. &
+Určí osobu pověřenou kybernetickou bezpečností, proškolí vedení a uživatele, sepíše přehled opatření, eviduje aktiva, vede jednoduché hodnocení rizik, nastaví pravidla přístupů a identit, řeší logování/detekci událostí, incidentní postup, kontinuitu a obnovu, základní síťovou a aplikační bezpečnost a používání kryptografie.\\
+\addlinespace
+\textbf{Vyšší povinnosti} &
+Typicky velký nebo výrazně významný poskytovatel: podle velikosti, počtu uživatelů, geografického rozsahu, dopadu na odvětví, dopadu na jinou regulovanou službu nebo rizikovosti provozu. Do vyššího režimu spadne i služba registrovaná z moci úřední pro zvláštní význam. &
+Zavede plnější ISMS: bezpečnostní politiku, role, řízení aktiv a rizik, řízení dodavatelů, HR bezpečnost, řízení změn, bezpečný vývoj a nákupy, řízení přístupů, zvládání incidentů, kontinuitu, audit. Technicky řeší fyzickou bezpečnost, segmentaci a bezpečnost sítí, správu identit, oprávnění, detekci, logování, vyhodnocování událostí, aplikační bezpečnost, kryptografii, dostupnost služby a OT/řídicí systémy, pokud je má.\\
+\bottomrule
+\end{longtable}
+
+\textbf{Střední podnik} si pro zkoušku představ jako organizaci, která už není malá: zjednodušeně má méně než 250 zaměstnanců a zároveň roční obrat nejvýše 50 mil. EUR nebo bilanční sumu nejvýše 43 mil. EUR. \textbf{Velký podnik} už do této definice nespadá, typicky má 250 a více zaměstnanců nebo překročí finanční hranice. ZKB používá evropskou logiku velikosti podniku, ale u některých služeb a subjektů jsou zvláštní pravidla; proto je správná odpověď vždy: \emph{nejdřív služba a vyhláška, potom velikost a význam}.
+
+\subsection*{Konkrétní opatření, která říct u zkoušky}
+U \textbf{nižšího režimu} řekni hlavně toto:
 \begin{itemize}
-  \item subjekt musí posoudit, zda poskytuje regulovanou službu v regulovaném odvětví,
-  \item pokud ano, řeší se velikost, význam služby a další kritéria podle vyhlášky o regulovaných službách,
-  \item výsledek vede k režimu vyšších nebo nižších povinností,
-  \item subjekt provádí sebeidentifikaci a ohlašuje regulovanou službu NÚKIB,
-  \item po zápisu plní organizační a technická opatření, hlásí incidenty a udržuje kontaktní údaje.
+  \item vedení určí odpovědnou osobu pro kyberbezpečnost a pravidelně se seznamuje se stavem bezpečnosti,
+  \item organizace ví, jaké služby, data, systémy, účty, dodavatelé a zařízení regulovanou službu drží nad vodou,
+  \item existuje seznam hlavních rizik: ransomware, výpadek dodavatele, kompromitace admin účtu, ztráta záloh, zranitelná aplikace,
+  \item přístupy se dávají podle potřeby, administrátorské účty jsou oddělené a důležité účty se silně ověřují,
+  \item události se zaznamenávají a někdo je vyhodnocuje; incident má předem daný postup, kontakty a eskalační cestu,
+  \item existují zálohy, pořadí obnovy služeb a nacvičený postup, co dělat při výpadku,
+  \item zaměstnanci a administrátoři jsou školeni; dodavatelské smlouvy obsahují bezpečnostní požadavky.
 \end{itemize}
 
-Vyšší režim je přísnější: detailnější bezpečnostní opatření, audity a vyšší nároky na řízení. Nižší režim je jednodušší, ale stále vyžaduje základní řízení bezpečnosti, odpovědnosti, opatření a hlášení.
+U \textbf{vyššího režimu} přidej navíc:
+\begin{itemize}
+  \item plnohodnotný systém řízení bezpečnosti informací: politika, dokumentace, cíle, pravidelné přezkoumání,
+  \item bezpečnostní role: manažer kybernetické bezpečnosti, architekt kybernetické bezpečnosti, garant aktiva a auditor kybernetické bezpečnosti,
+  \item formální hodnocení rizik a plán zvládání rizik s termíny, odpovědnostmi a kontrolou účinnosti opatření,
+  \item řízení významných dodavatelů: evidence, hodnocení rizik, bezpečnostní požadavky ve smlouvách, právo kontroly, řešení subdodavatelů,
+  \item audit kybernetické bezpečnosti a pravidelné informování vedení,
+  \item technické pokrytí od fyzické bezpečnosti přes sítě, IAM, logování, detekci a aplikační bezpečnost až po dostupnost služby a zabezpečení OT/ICS.
+\end{itemize}
 
-Nová česká úprava je postavená na principu sebeidentifikace. Subjekt si nemá jen pasivně čekat na dopis od státu, ale musí vyhodnotit, zda poskytuje regulovanou službu a zda spadá do vyššího nebo nižšího režimu. Prakticky se řeší zejména odvětví, velikost subjektu, význam poskytované služby, dopad jejího výpadku a zvláštní kritéria podle prováděcí vyhlášky. Po ohlášení a zápisu se rozbíhá sada povinností: kontaktní údaje, bezpečnostní role, řízení rizik, dokumentace, školení, řízení dodavatelů, evidence aktiv, technická opatření a hlášení incidentů.
+\subsection*{NÚKIB, protiopatření a dodavatelé}
+NÚKIB je hlavní regulátor. V praxi vede registraci regulovaných služeb, kontroluje plnění povinností, přijímá hlášení ve vyšším režimu, vydává metodiky a může ukládat opatření. Vedle běžných bezpečnostních opatření existují přesné druhy protiopatření: \textbf{výstraha}, \textbf{varování} a \textbf{reaktivní protiopatření}. Výstraha upozorňuje na nebezpečí, varování na hrozbu, kterou mají dotčené subjekty zohlednit v řízení rizik, a reaktivní protiopatření už ukládá konkrétní technický nebo organizační krok.
 
-\subsection*{Strategicky významné služby a dodavatelský řetězec}
-Nový ZKB řeší i bezpečnost dodavatelského řetězce. Neznamená to, že stát plošně prověřuje každého dodavatele každé regulované organizace. Speciální mechanismus bezpečnosti dodavatelského řetězce se váže hlavně na \textbf{strategicky významné služby} a na dodavatele, kteří mohou mít zásadní vliv na jejich bezpečnost. Smyslem je řešit nejen technickou zranitelnost produktu, ale i strategické riziko: vazby dodavatele na rizikový stát, možnost nátlaku, právní prostředí, vlastnickou strukturu, důvěryhodnost a schopnost dlouhodobé podpory.
+Dodavatelský řetězec vysvětli jednoduše: regulovaný subjekt nemůže říct "to je problém našeho dodavatele". Pokud dodavatel spravuje nemocniční systém, cloud, síť, vzdálený přístup nebo OT technologii, jeho selhání může shodit regulovanou službu. Proto se řeší bezpečnostní požadavky ve smlouvě, přístupy dodavatele, subdodavatelé, auditovatelnost, reakce na incident a ukončení spolupráce.
 
-Stát přitom nemá jednat libovolně. Opatření musí být opřená o posouzení rizik, zákonný postup, proporcionalitu a možnost přezkumu. V praxi může jít o omezení nebo zákaz použití určitého dodavatele u strategicky významné služby, ale až po posouzení konkrétního rizika a dopadu. U zkoušky je dobré říct: dodavatelský řetězec není jen "software má chybu"; je to kombinace technického, právního, ekonomického a geopolitického rizika.
+\subsection*{Hlášení incidentů prakticky}
+Vyšší a nižší režim se liší i hlášením. \textbf{Vyšší režim} hlásí širší okruh incidentů postihujících regulovanou službu, pokud mají původ v kyberprostoru a nelze rychle vyloučit úmyslné zavinění. \textbf{Nižší režim} hlásí užší okruh: incident musí mít významný dopad na poskytování regulované služby. Zkouškově stačí říct logiku: nejdřív rychlá informace, potom doplnění detailů, průběžné aktualizace podle potřeby a závěrečná zpráva.
 
-\subsection*{Bezpečnostní opatření a nástroje NÚKIB}
-Bezpečnostní opatření se tradičně dělí na \textbf{organizační} a \textbf{technická}. Organizační opatření jsou například bezpečnostní politika, řízení rizik, odpovědnosti, klasifikace aktiv, řízení dodavatelů, plán kontinuity, školení, audit a dokumentace. Technická opatření jsou například řízení přístupů, vícefaktorové ověřování, logování, monitoring, zálohování, segmentace, šifrování, ochrana koncových zařízení, detekce incidentů a testování obnovy.
+Hlášení podle ZKB neznamená, že odpadá GDPR nebo trestní rovina. Ransomware v nemocnici může být současně kybernetický incident, trestný čin, porušení zabezpečení osobních údajů a problém kontinuity zdravotní péče.
 
-NÚKIB má vedle běžného dohledu i mimořádné nástroje. Zákon o kybernetické bezpečnosti pracuje s přesnými druhy protiopatření: \textbf{výstraha}, \textbf{varování} a \textbf{reaktivní protiopatření}. \textbf{Výstraha} upozorňuje na existující nebo hrozící nebezpečí v oblasti kybernetické bezpečnosti. \textbf{Varování} upozorňuje na hrozbu, kterou musí dotčení poskytovatelé regulovaných služeb zohlednit v řízení rizik. \textbf{Reaktivní protiopatření} ukládá konkrétní technická nebo organizační opatření k odvrácení, omezení nebo zvládnutí incidentu či hrozby. Tato protiopatření je potřeba odlišit od běžných bezpečnostních opatření, která regulovaný subjekt zavádí průběžně podle svého režimu, a od nápravných opatření ukládaných při dohledu, která slouží k odstranění zjištěného nesouladu. \textbf{Stav kybernetického nebezpečí} je mimořádný režim pro závažné ohrožení kybernetické bezpečnosti; vyhlašuje jej Národní úřad pro kybernetickou a informační bezpečnost, tedy Úřad ve smyslu zákona č. 264/2025 Sb., na své úřední desce, a to na nezbytně nutnou dobu, nejvýše na 30 dnů. Lze jej prodloužit tak, aby celková doba nepřekročila 60 dnů.
+\textbf{Stav kybernetického nebezpečí} je mimořádný režim pro závažné ohrožení kybernetické bezpečnosti; vyhlašuje jej Národní úřad pro kybernetickou a informační bezpečnost, tedy Úřad ve smyslu zákona č. 264/2025 Sb., na své úřední desce, a to na nezbytně nutnou dobu, nejvýše na 30 dnů. Lze jej prodloužit tak, aby celková doba nepřekročila 60 dnů.
 
 \pravobox{Principy regulace: \textbf{technologická neutralita} znamená, že právo nemá být navázané na jednu konkrétní technologii. \textbf{Proporcionalita} znamená, že povinnosti a zásahy musí odpovídat riziku a dopadu. \textbf{Risk-based approach} znamená, že organizace má řídit skutečná rizika, ne jen formálně plnit seznam. \textbf{Odpovědnost vedení} znamená, že kyberbezpečnost není jen problém IT oddělení. \textbf{Autonomie regulovaného subjektu} znamená, že stát stanoví rámec, ale subjekt si musí prakticky nastavit vlastní řízení bezpečnosti.}
-
-\subsection*{Hlášení incidentů}
-NIS2 logika stojí na rychlém hlášení významných incidentů, ale český ZKB rozlišuje vyšší a nižší režim. \textbf{Vyšší režim} je přísnější: poskytovatel hlásí kybernetické bezpečnostní incidenty, které postihují regulovanou službu, mají původ v kyberprostoru a nelze u nich vyloučit úmyslné zavinění; prvotní hlášení má být rychlé, typicky do 24 hodin. NÚKIB následně posuzuje, zda jde o incident s významným dopadem. \textbf{Nižší režim} je užší: poskytovatel typicky hlásí až incidenty s významným dopadem, který vyhodnocuje podle vyhlášky.
-
-Pokud incident dosáhne významného dopadu, navazuje další rytmus: prvotní informace, podrobnější hlášení do 72 hodin, případné průběžné aktualizace na žádost a závěrečná zpráva typicky do 30 dnů, případně později u dlouhotrvajícího incidentu. Přesný postup se řídí zákonem a prováděcími předpisy. Zkouškově stačí umět vysvětlit logiku: stát potřebuje rychle vědět, že se něco děje, potom potřebuje doplnit technický a dopadový obraz a nakonec chce závěrečnou analýzu a poučení.
-
-Hlášení incidentu není totéž co oznámení porušení zabezpečení osobních údajů podle GDPR. Pokud incident obsahuje únik osobních údajů, běží vedle kybernetického hlášení i GDPR režim: dozorovému úřadu zpravidla do 72 hodin od zjištění, subjektům údajů při vysokém riziku.
 
 \subsection*{Praktické situace použití předpisů}
 \priklad{Modelový příklad - nemocnice a ransomware: nemocnice zjistí ransomware a možné odcizení zdravotnické dokumentace. Pokud poskytuje regulovanou službu, řeší podle ZKB kybernetický bezpečnostní incident, hlášení NÚKIB a splnění bezpečnostních opatření; vedení nemocnice nemůže tvrdit, že jde jen o problém IT. Současně běží GDPR: zdravotní údaje jsou zvláštní kategorie, správce posuzuje porušení zabezpečení, oznamuje ÚOOÚ při riziku a informuje pacienty při vysokém riziku. Policie řeší trestní rovinu, nemocnice kontinuitu péče, zřizovatel kapacity a komunikaci. Pokud jde zároveň o kritickou infrastrukturu nebo kritický subjekt, vstupuje i CER/ZKI logika odolnosti. Ke zkoušce: jeden incident spouští více režimů vedle sebe, žádný z nich automaticky "nepřebije" všechny ostatní.}
