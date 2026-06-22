@@ -1325,13 +1325,15 @@ Je zvláštní tím, že se snadno mění, rychle mizí, bývá šifrovaný, ča
 \addlinespace
 \textbf{§ 88a TŘ - provozní a lokalizační údaje} & Metadata, ne obsah komunikace. Kdo, kdy, odkud, s kým, jak dlouho, jaká IP nebo poloha. & U přihlášení do cizího účtu policie potřebuje zjistit, komu patřila IP adresa a odkud se připojovalo. To je § 88a, ne odposlech.\\
 \addlinespace
+\textbf{§ 158d TŘ - sledování osob a věcí} & Utajované získávání poznatků o osobách a věcech technickými nebo jinými prostředky. Může jít o sledování pohybu, předání věci, zásilky nebo pořizování obrazových, zvukových či jiných záznamů podle zákonných podmínek. & U phishingu policie zjistí, že podezřelý si má převzít telefon nebo hotovost na konkrétním místě. Sledování může dokumentovat, kdo přišel, s kým se setkal, jakou věc převzal a kam odešel. Není to nástroj na čtení starého chatu ani na budoucí odposlech komunikace.\\
+\addlinespace
 \textbf{§ 88 TŘ - odposlech a záznam telekomunikačního provozu} & Obsah budoucí komunikace za přísných podmínek. Není to nástroj na staré e-maily nebo staré zprávy uložené v cloudu. & U organizované skupiny, která plánuje další vydírání, může soud povolit odposlech budoucí komunikace. Historický e-mail ve schránce se ale řeší jako uložený obsah, ne jako odposlech.\\
 \addlinespace
 \textbf{Znalec / odborné vyjádření} & Technická analýza, malware, časová osa, hash, logy, konfigurace, vazba stop na zařízení nebo účet. & Znalec porovná hash forenzní kopie, rekonstruuje průnik z logů, určí funkci malwaru a vysvětlí, zda nalezený nástroj sloužil k útoku nebo má legitimní administrátorské použití.\\
 \bottomrule
 \end{longtable}
 
-\zkouska{Nejkratší rozlišení: § 7b = uchovat existující data, § 78/79 = vydat nebo odejmout věc/data, § 82 = najít věci při prohlídce, § 113a = podívat se do obsahu zajištěného zařízení, § 88a = metadata, § 88 = obsah budoucí komunikace.}
+\zkouska{Nejkratší rozlišení: § 7b = uchovat existující data, § 78/79 = vydat nebo odejmout věc/data, § 82 = najít věci při prohlídce, § 113a = podívat se do uloženého obsahu zajištěného zařízení, § 88a = metadata, § 158d = sledovat osobu nebo věc a dokumentovat poznatky, § 88 = obsah budoucí komunikace.}
 
 \subsection*{Metadata, obsah a data retention}
 \begin{itemize}
@@ -1358,9 +1360,11 @@ To znamená: ano, pokud jsou staré zprávy uložené v telefonu nebo v aplikaci
 
 Pátý krok je rozlišit starý obsah v telefonu od starého obsahu u poskytovatele. Pokud jsou zprávy fyzicky nebo aplikačně dostupné v zajištěném telefonu, řeší se ohledání obsahu zařízení podle § 113a. Pokud ale policie telefon nemá nebo zprávy nejsou v telefonu, ale jen u poskytovatele služby, typicky v cloudu, v účtu nebo na serveru platformy, nejde automaticky o § 113a. Pak se řeší vydání nebo zpřístupnění uložených dat u poskytovatele příslušným procesním postupem, případně přes mezinárodní spolupráci, EIO nebo e-evidence. Pořád je to ale \textbf{uložený obsah}, ne odposlech.
 
-Šestý krok je § 88. Ten se použije až tehdy, když policie nechce jen staré stopy, ale potřebuje zachytávat \textbf{budoucí obsah komunikace}. Například zjistí, že podezřelý není sám, ale je součástí skupiny, která právě domlouvá další phishingovou kampaň, převod výnosů nebo nátlak na další oběti. Pokud jsou splněny zákonné podmínky, soud může povolit odposlech a záznam telekomunikačního provozu. To je přísnější institut než § 113a i § 88a. § 88 tedy není "chci starý chat z mobilu"; § 88 je "za přísných podmínek chci zachytávat komunikaci do budoucna".
+Šestý krok může být \textbf{§ 158d TŘ - sledování osob a věcí}. Ten se hodí, když policie potřebuje utajeně zjistit a zdokumentovat, co podezřelý dělá, kam chodí, s kým se schází, jaké zařízení používá nebo zda si jde převzít věc či peníze. U Bazoš phishingu může například poškozený domluvit osobní předání telefonu, dobírky nebo hotovosti a policie chce sledovat, kdo na místo přijde, jaký telefon používá, s kým komunikuje navenek, kam po předání odjede a zda u sebe má další věci důležité pro řízení. Podle povahy zásahu se řeší zákonné podmínky a povolení, zejména pokud se pořizují obrazové, zvukové nebo jiné záznamy nebo se zasahuje do soukromí. Důležité: § 158d není čtení obsahu starých zpráv a není to ani odposlech. Je to sledování osoby nebo věci a dokumentace poznatků.
 
-Krátká zkoušková věta: \textbf{§ 88a = metadata od operátora, § 113a = uložený obsah v zajištěném zařízení nebo jeho kopii, § 88 = budoucí obsah komunikace}. Zákon o elektronických komunikacích vysvětluje, proč má operátor po dobu 6 měsíců metadata, ale nevytváří sklad starých zpráv a nenahrazuje trestní řád.
+Sedmý krok je § 88. Ten se použije až tehdy, když policie nechce jen staré stopy nebo sledování pohybu, ale potřebuje zachytávat \textbf{budoucí obsah komunikace}. Například zjistí, že podezřelý není sám, ale je součástí skupiny, která právě domlouvá další phishingovou kampaň, převod výnosů nebo nátlak na další oběti. Pokud jsou splněny zákonné podmínky, soud může povolit odposlech a záznam telekomunikačního provozu. To je přísnější institut než § 113a, § 88a i § 158d. § 88 tedy není "chci starý chat z mobilu"; § 88 je "za přísných podmínek chci zachytávat komunikaci do budoucna".
+
+Krátká zkoušková věta: \textbf{§ 88a = metadata od operátora, § 113a = uložený obsah v zajištěném zařízení nebo jeho kopii, § 158d = sledování osob a věcí, § 88 = budoucí obsah komunikace}. Zákon o elektronických komunikacích vysvětluje, proč má operátor po dobu 6 měsíců metadata, ale nevytváří sklad starých zpráv a nenahrazuje trestní řád.
 
 Nakonec se všechno musí forenzně udržet: zařízení se zdokumentují, data se kopírují pokud možno forenzně, počítá se hash, vede se chain of custody a znalec nebo specialista vysvětlí, co logy, telefon, IP adresy, platební stopa, uložené zprávy a metadata dohromady dokazují.}
 
